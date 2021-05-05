@@ -1,0 +1,69 @@
+<template>
+  <div>
+    <div v-if="error">
+      {{ error }}
+    </div>
+
+    <div class="product-list" v-else>
+      <div v-for="product in products" :key="product.id" class="product">
+        <nuxt-link :to="`/products/${product.slug}`">
+          <img
+            v-lazy
+            alt=""
+            class="product-image"
+            :src="`${getStrapiMedia(product.image[0].url)}`"
+          />
+          <h1 class="product-title">{{ product.name }}</h1>
+
+          <p>Fra {{ product.poster_price_sizes[0].price }}kr</p>
+        </nuxt-link>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import { getStrapiMedia } from "@/helpers/strapi-media";
+export default {
+  name: "Products",
+  props: {
+    products: Array,
+    error: Object
+  },
+  data() {
+    return {
+      price: 0
+    };
+  },
+  computed: {
+    getProducts() {
+      return this.products;
+    }
+  },
+  methods: {
+    getStrapiMedia
+  }
+};
+</script>
+
+<style scoped lang="scss">
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin: 2rem;
+  .product {
+    text-align: center;
+
+    width: 100%;
+    border: 1px solid red;
+    .product-image {
+      width: 100%;
+    }
+    .product-title {
+    }
+    .product-price {
+    }
+  }
+}
+</style>
