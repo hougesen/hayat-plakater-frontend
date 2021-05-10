@@ -8,7 +8,6 @@
       <div v-for="product in products" :key="product.id" class="product">
         <nuxt-link :to="`/products/${product.slug}`">
           <img
-            v-lazy
             alt=""
             class="product-image"
             :src="`${getStrapiMedia(product.image[0].url)}`"
@@ -59,10 +58,6 @@ export default {
     border: 1px solid red;
     .product-image {
       width: 100%;
-    }
-    .product-title {
-    }
-    .product-price {
     }
   }
 }
