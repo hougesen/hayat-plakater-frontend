@@ -3,7 +3,7 @@ export const state = () => ({
   shoppingCartVisible: false
 });
 
-// Normal functioner
+// Normal functions
 export const mutations = {
   addToShoppingCart(state, payload) {
     console.log("state", state);
@@ -27,6 +27,28 @@ export const mutations = {
 
   setShoppingCartVisible(state) {
     state.shoppingCartVisible = !state.shoppingCartVisible;
+  },
+  changeProductAmount(state, payload) {
+    let index = state.shoppingCart.findIndex(
+      p => p.productId === payload.productId
+    );
+
+    console.log(index);
+
+    if (payload.e === "increment") {
+      state.shoppingCart[index].amount++;
+    } else {
+      if (state.shoppingCart[index].amount > 1) {
+        state.shoppingCart[index].amount--;
+      }
+    }
+  },
+  removeProduct(state, payload) {
+    let index = state.shoppingCart.findIndex(
+      p => p.productId === payload.productId
+    );
+
+    state.shoppingCart.splice(index, 1);
   }
 };
 

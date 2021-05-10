@@ -2,7 +2,7 @@
   <div>
     <TopNav />
     <div v-if="shoppingCartVisible">
-      <ShoppingCart />
+      <ShoppingCartModal />
     </div>
 
     <Nuxt />
@@ -28,29 +28,28 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Ubuntu:wght@300;400;700&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
   &::before,
   &::after {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
   }
 }
-
 html {
   scroll-behavior: smooth;
 }
 body,
 html {
+  background-color: var(--default-background-color);
+  color: var(--default-text-color);
   font-family: "Open Sans", sans-serif;
   padding-top: 0;
   width: 100%;
-  color: var(--default-text-color);
-  background-color: var(--default-background-color);
 }
 h1,
 h2,
