@@ -48,14 +48,13 @@ export default {
 <style scoped lang="scss">
 .product-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
   margin: 2rem;
   .product {
-    text-align: center;
-
-    width: 100%;
     border: 1px solid red;
+    text-align: center;
+    width: 100%;
     .product-image {
       width: 100%;
     }

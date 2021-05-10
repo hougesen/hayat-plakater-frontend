@@ -32,15 +32,12 @@ export default {
 <style lang="scss" scoped>
 .accordion {
   .accordion-title {
-    font-size: 2rem;
     border: 1px solid #707070;
+    font-size: 2rem;
     i {
       margin: 1rem;
     }
     &--open {
-      /*       background-color: red;
-      border: 1px solid red;
-      color: white; */
       i {
         transform: rotate(90deg);
       }

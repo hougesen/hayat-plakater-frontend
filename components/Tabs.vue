@@ -53,13 +53,11 @@ export default {
 
   .tabs-header {
     display: flex;
-
     .tabs-button {
-      border: none;
       background: none;
-      margin-right: 1rem;
-
+      border: none;
       font-size: 2rem;
+      margin-right: 1rem;
     }
     .selected {
       text-decoration: underline;
