@@ -52,10 +52,5 @@ export default {
 .top-nav {
   display: flex;
   flex-direction: row;
-  .logo {
-  }
-
-  .pages {
-  }
 }
 </style>
