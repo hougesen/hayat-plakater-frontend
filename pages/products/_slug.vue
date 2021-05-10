@@ -70,10 +70,11 @@ export default {
 
   async mounted() {
     try {
-      console.log(this.$route.params.id);
-      this.product = await this.$strapi.$products.findOne(
-        this.$route.params.id
-      );
+      let path = window.location.pathname.replace("/products/", "");
+
+      this.product = await this.$strapi.$products.find({ slug: path });
+
+      this.product = this.product[0];
     } catch (error) {
       this.error = error;
     }

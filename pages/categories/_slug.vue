@@ -11,10 +11,11 @@ export default {
     };
   },
   async mounted() {
-    console.log("id", this.$route.params.slug);
+    let path = window.location.pathname.replace("/categories/", "");
+
     try {
       this.category = await this.$strapi.$categories.find({
-        slug: this.$route.params.slug
+        slug: path
       });
       this.category = this.category[0];
     } catch (error) {

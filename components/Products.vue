@@ -6,7 +6,7 @@
 
     <div class="product-list" v-else>
       <div v-for="product in products" :key="product.id" class="product">
-        <nuxt-link :to="`/products/${product._id}`">
+        <nuxt-link :to="`/products/${product.slug}`">
           <img
             alt=""
             class="product-image"
