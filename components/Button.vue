@@ -5,6 +5,7 @@
     :class="`button--${buttonType}`"
   >
     <slot />
+    {{ buttonType }}
   </button>
 </template>
 
@@ -15,7 +16,7 @@ export default {
   props: {
     buttonType: {
       type: String,
-      default: "secondary"
+      default: "primary"
     }
   }
 };
@@ -37,6 +38,10 @@ export default {
 
   &--nordic {
     background-color: #157fec;
+    color: white;
+  }
+  &--nature {
+    background-color: greenyellow;
     color: white;
   }
 }

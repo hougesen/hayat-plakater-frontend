@@ -30,12 +30,9 @@
 
         <p v-if="priceInfo">{{ priceInfo.price }}kr</p>
 
-        <Button
-          :buttonType="getTheme"
-          @buttonClick="addToShoppingCart(product)"
-        >
+        <button class="button">
           Læg i kurv
-        </Button>
+        </button>
       </div>
     </div>
   </div>
@@ -46,10 +43,8 @@
 
 <script>
 import { getStrapiMedia } from "@/helpers/strapi-media";
-import InputIncrement from "../../components/InputIncrement.vue";
 
 export default {
-  components: { InputIncrement },
   data() {
     return {
       product: null,
@@ -60,8 +55,7 @@ export default {
         sizeId: "609033df6f5a97b74a65f520",
         size: "12x18",
         price: 100
-      },
-      currentTheme: null
+      }
     };
   },
 
@@ -70,16 +64,15 @@ export default {
       return this.amount * this.priceInfo.price;
     },
     getTheme() {
-      return this.product.product_page_theme.name;
+      return this.theme;
     }
   },
 
   async mounted() {
     try {
-      this.product = await this.$strapi.$products.find({
-        slug: this.$route.params.slug
-      });
-      this.product = this.product[0];
+      this.product = await this.$strapi.$products.findOne(
+        this.$route.params.id
+      );
     } catch (error) {
       this.error = error;
     }
@@ -139,6 +132,28 @@ export default {
       align-content: center;
       align-self: center;
     }
+  }
+}
+.button {
+  border: none;
+  font-weight: 700;
+  padding: 1rem;
+  &--primary {
+    background-color: black;
+    color: white;
+  }
+
+  &--secondary {
+    background-color: lighten(black, 90);
+  }
+
+  &--nordic {
+    background-color: #157fec;
+    color: white;
+  }
+  &--nature {
+    background-color: greenyellow;
+    color: white;
   }
 }
 </style>
