@@ -70,6 +70,7 @@ export default {
 
   async mounted() {
     try {
+      console.log(this.$route.params.id);
       this.product = await this.$strapi.$products.findOne(
         this.$route.params.id
       );
