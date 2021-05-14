@@ -6,6 +6,7 @@
     </div>
 
     <Nuxt />
+    <Footer />
   </div>
 </template>
 
@@ -45,11 +46,14 @@ html {
 }
 body,
 html {
-  background-color: var(--default-background-color);
-  color: var(--default-text-color);
+  position: relative;
+  min-height: 100vh;
   font-family: "Open Sans", sans-serif;
   padding-top: 0;
   width: 100%;
+  padding-top: 50px;
+  color: var(--default-text-color);
+  background-color: var(--default-background-color);
 }
 h1,
 h2,

@@ -1,8 +1,7 @@
 <template>
   <nav class="top-nav" :style="{ top: showNav ? '0' : '-100px' }">
     <nuxt-link to="/" class="logoSection">
-      <img class="logo" src="../assets/haa-hvid.svg" alt="" />
-      <h1>Hayat Plakater</h1>
+      <img class="logo" src="../assets/Logo.svg" alt="" />
     </nuxt-link>
     <div class="nav-links">
       <nuxt-link
@@ -15,18 +14,6 @@
       </nuxt-link>
     </div>
     <div class="buttonsGrid">
-      <div>
-        <i class="fas fa-heart "></i>
-        <p>Ønskelister</p>
-      </div>
-      <div>
-        <i class="fas fa-headset "></i>
-        <p>Kundeservice</p>
-      </div>
-      <div>
-        <i class="fas fa-user-alt "></i>
-        <p>Log ind</p>
-      </div>
       <div @click.prevent="setShoppingCartVisible">
         <i class="fas fa-shopping-cart "></i>
         <p>Indkøbsvogn</p>
@@ -77,9 +64,10 @@ export default {
 
 <style lang="scss" scoped>
 .top-nav {
+  padding: 1rem;
   position: fixed;
   width: 100%;
-  background: #489efc;
+  background: #1c6ed8;
   display: grid;
   text-align: center;
   align-items: center;
@@ -95,18 +83,11 @@ export default {
   }
   .logo {
     stroke: #fff;
-    height: 58px;
-    width: 50px;
+    width: 150px;
   }
   .pages {
   }
   .buttonsGrid {
-    display: grid;
-    text-align: center;
-    align-items: center;
-    grid-template-columns: repeat(4, 100px);
-    padding: 1rem;
-    cursor: pointer;
     i {
       display: inline-block;
       font-size: 1.2rem;
@@ -121,11 +102,15 @@ export default {
       &:hover {
         color: #489efc;
         background-color: #fff;
+        cursor: pointer;
       }
     }
     p {
       font-size: 0.9rem;
       color: #fff;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
