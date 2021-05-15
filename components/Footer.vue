@@ -26,7 +26,7 @@
 
 <style lang="scss" scoped>
 .footer {
-  background: #1c6ed8;
+  background: #000;
   color: #fff;
   position: absolute;
   bottom: 0;

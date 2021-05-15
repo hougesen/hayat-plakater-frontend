@@ -4,14 +4,16 @@
     <div v-if="shoppingCartVisible">
       <ShoppingCartModal />
     </div>
-
+    <Hero />
     <Nuxt />
-    <Footer />
+    
   </div>
 </template>
 
 <script>
+import Hero from "../components/Hero.vue";
 export default {
+  components: { Hero },
   computed: {
     shoppingCartVisible() {
       return this.$store.getters.getShoppingCartVisible;
@@ -51,7 +53,7 @@ html {
   font-family: "Open Sans", sans-serif;
   padding-top: 0;
   width: 100%;
-  padding-top: 50px;
+  padding-top: 30px;
   color: var(--default-text-color);
   background-color: var(--default-background-color);
 }

@@ -16,7 +16,6 @@
     <div class="buttonsGrid">
       <div @click.prevent="setShoppingCartVisible">
         <i class="fas fa-shopping-cart "></i>
-        <p>Indkøbsvogn</p>
       </div>
     </div>
   </nav>
@@ -67,12 +66,14 @@ export default {
   padding: 1rem;
   position: fixed;
   width: 100%;
-  background: #1c6ed8;
+  background: #000;
   display: grid;
   text-align: center;
   align-items: center;
   transition: 0.5s;
   grid-template-columns: repeat(3, 1fr);
+  color: #fff;
+  text-decoration: none;
   .logoSection {
     display: flex;
     justify-content: center;
@@ -83,25 +84,17 @@ export default {
   }
   .logo {
     stroke: #fff;
-    width: 150px;
+    width: 170px;
   }
   .pages {
   }
   .buttonsGrid {
     i {
-      display: inline-block;
-      font-size: 1.2rem;
-      line-height: 50px;
-      background-color: #f5f5f5;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      text-align: center;
-      vertical-align: bottom;
+      font-size: 1.5rem;
+      color: #fff;
       transition: 0.3s;
       &:hover {
         color: #489efc;
-        background-color: #fff;
         cursor: pointer;
       }
     }
@@ -113,5 +106,21 @@ export default {
       }
     }
   }
+}
+.fa-stack[data-count]:after {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  content: attr(data-count);
+  font-size: 40%;
+  padding: 0.6em;
+  border-radius: 999px;
+  line-height: 0.75em;
+  color: white;
+  text-align: center;
+  min-width: 2em;
+  font-weight: bold;
+  background: white;
+  border-style: solid;
 }
 </style>
