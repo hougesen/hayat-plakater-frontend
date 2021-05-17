@@ -3,10 +3,12 @@ import axios from 'axios';
 // http://localhost:1337/products
 
 export default async () => {
+  let baseUrl = process.env.API_URL || 'http://localhost:1337';
+
   let routes = ['/'];
 
   let products = await axios
-    .get('http://localhost:1337/products')
+    .get(`${baseUrl}/products`)
     .then(res => res.data)
     .catch(err => {
       console.log(err);
@@ -17,7 +19,7 @@ export default async () => {
   }
 
   let categories = await axios
-    .get('http://localhost:1337/categories')
+    .get(`${baseUrl}/categories`)
     .then(res => res.data)
     .catch(err => {
       console.log(err);
