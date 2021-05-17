@@ -6,7 +6,7 @@
       <Slider :slides="slides" :slidesEachPage="3" />
     </div>
     <div class="about-us">
-      <Accordion class="standard-width" :open="true">
+      <Accordion class="standard-width">
         <template v-slot:title>Hvad er HAYAT?</template>
 
         <template v-slot:content>
@@ -22,7 +22,7 @@
         </template>
       </Accordion>
 
-      <Accordion class="standard-width" :open="true">
+      <Accordion class="standard-width">
         <template v-slot:title>Visioner og værdier</template>
 
         <template v-slot:content>
@@ -42,7 +42,6 @@
 </template>
 
 <script>
-import generateRoutes from '@/helpers/generateRoutes';
 export default {
   data() {
     return {
@@ -66,9 +65,6 @@ export default {
     } catch (error) {
       this.error = error;
     }
-
-    let test = await generateRoutes();
-    console.log(test);
   }
 };
 </script>

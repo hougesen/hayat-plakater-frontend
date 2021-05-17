@@ -1,43 +1,38 @@
 <template>
-  <div v-if="this.product != null">
-    <div class="product-page--grid">
-      <div class="product-image">
-        <img :src="`${getStrapiMedia(product.image[0].url)}`" alt="" />
-      </div>
-      <div class="product-information">
-        <h1 class="product-title">
-          {{ product.name }}
-        </h1>
-
-        <form class="product-form">
-          <div>
-            <label for="size">Vælg størrelse</label>
-            <select v-model="priceInfo" name="size">
-              <option
-                v-for="size in product.poster_price_sizes"
-                :key="size._id"
-                :value="{
-                  sizeId: size._id,
-                  price: size.price,
-                  size: size.size
-                }"
-              >
-                {{ size.size }}
-              </option>
-            </select>
-          </div>
-        </form>
-
-        <p v-if="priceInfo">{{ priceInfo.price }}kr</p>
-
-        <button class="button">
-          Læg i kurv
-        </button>
-      </div>
+  <div class="product-page--grid">
+    <div class="product-image">
+      <img :src="`${getStrapiMedia(currentProduct.image[0].url)}`" alt="" />
     </div>
-  </div>
-  <div v-else>
-    {{ error }}
+    <div class="product-information">
+      <h1 class="product-title">
+        {{ currentProduct.name }}
+      </h1>
+
+      <form class="product-form">
+        <div>
+          <label for="size">Vælg størrelse</label>
+          <select v-model="priceInfo" name="size">
+            <option
+              v-for="size in currentProduct.poster_price_sizes"
+              :key="size._id"
+              :value="{
+                sizeId: size._id,
+                price: size.price,
+                size: size.size
+              }"
+            >
+              {{ size.size }}
+            </option>
+          </select>
+        </div>
+      </form>
+
+      <p v-if="priceInfo">{{ priceInfo.price }}kr</p>
+
+      <button class="button">
+        Læg i kurv
+      </button>
+    </div>
   </div>
 </template>
 
@@ -45,8 +40,15 @@
 import { getStrapiMedia } from '@/helpers/strapi-media';
 
 export default {
+  async asyncData({ $strapi, route }) {
+    const id = route.params.slug;
+    let currentProduct = await $strapi.$products.find({ slug: id });
+    currentProduct = currentProduct[0];
+    return { currentProduct };
+  },
   data() {
     return {
+      //  currentProduct: {},
       product: null,
       error: null,
       amount: 1,
@@ -68,7 +70,7 @@ export default {
     }
   },
 
-  async mounted() {
+  /*  async mounted() {
     let path = window.location.pathname.replace('/products/', '');
 
     try {
@@ -79,7 +81,7 @@ export default {
     } catch (error) {
       this.error = error;
     }
-  },
+  }, */
 
   methods: {
     getStrapiMedia,

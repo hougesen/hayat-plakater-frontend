@@ -1,16 +1,23 @@
 <template>
-  <Products :products="this.category.products" :error="error" />
+  <Products :products="currentCategory.products" :error="error" />
 </template>
 
 <script>
 export default {
+  async asyncData({ $strapi, route }) {
+    const id = route.params.slug;
+    let currentCategory = await $strapi.$categories.find({ slug: id });
+    currentCategory = currentCategory[0];
+    return { currentCategory };
+  },
+
   data() {
     return {
       category: {},
       error: null
     };
-  },
-  async mounted() {
+  }
+  /*   async mounted() {
     let path = window.location.pathname.replace('/categories/', '');
 
     try {
@@ -21,7 +28,7 @@ export default {
     } catch (error) {
       this.error = error;
     }
-  }
+  } */
 };
 </script>
 
