@@ -3,7 +3,7 @@
     <Hero />
     <div class="frontpage-slider standard-width">
       <h2>Populære plak123ater</h2>
-      <Slider :slides="slides" :slidesEachPage="4" />
+      <Slider :slides="slides" :slidesEachPage="3" />
     </div>
     <div class="about-us">
       <Accordion class="standard-width" :open="true">

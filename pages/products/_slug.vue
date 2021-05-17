@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div v-if="this.product != null">
     <div class="product-page--grid">
       <div class="product-image">
-        <img :src="`${getStrapiMedia(page.image[0].url)}`" alt="" />
+        <img :src="`${getStrapiMedia(product.image[0].url)}`" alt="" />
       </div>
       <div class="product-information">
         <h1 class="product-title">
-          {{ page.name }}
+          {{ product.name }}
         </h1>
 
         <form class="product-form">
@@ -14,7 +14,7 @@
             <label for="size">Vælg størrelse</label>
             <select v-model="priceInfo" name="size">
               <option
-                v-for="size in page.poster_price_sizes"
+                v-for="size in product.poster_price_sizes"
                 :key="size._id"
                 :value="{
                   sizeId: size._id,
@@ -36,6 +36,9 @@
       </div>
     </div>
   </div>
+  <div v-else>
+    {{ error }}
+  </div>
 </template>
 
 <script>
@@ -52,8 +55,7 @@ export default {
         sizeId: '609033df6f5a97b74a65f520',
         size: '12x18',
         price: 100
-      },
-      test: null
+      }
     };
   },
 
@@ -66,10 +68,9 @@ export default {
     }
   },
 
-  /*   async mounted() {
+  async mounted() {
     try {
       let path = window.location.pathname.replace('/products/', '');
-      console.log(path);
 
       this.product = await this.$strapi.$products.find({ slug: path });
 
@@ -77,15 +78,6 @@ export default {
     } catch (error) {
       this.error = error;
     }
-  }, */
-  async asyncData({ params, route, $strapi }) {
-    const path = route.params.slug;
-
-    let page = await $strapi.$products.find({ slug: path });
-
-    page = page[0];
-
-    return { page };
   },
   methods: {
     getStrapiMedia,
