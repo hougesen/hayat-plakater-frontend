@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "license": "UNLICENSED",
-  "engines": {
-    "node": "14.16.1"
-  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
