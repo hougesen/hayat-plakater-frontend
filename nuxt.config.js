@@ -48,12 +48,12 @@ export default {
 
   generate: {
     async routes() {
-      let baseUrl = process.env.API_URL || 'http://localhost:1337';
+      let baseUrl = process.env.API_URL || 'http://localhost:1337/';
 
       let routes = ['/'];
 
       let products = await axios
-        .get(`${baseUrl}/products`)
+        .get(`${baseUrl}products`)
         .then(res => res.data)
         .catch(err => {
           console.log(err);
@@ -64,7 +64,7 @@ export default {
       }
 
       let categories = await axios
-        .get(`${baseUrl}/categories`)
+        .get(`${baseUrl}categories`)
         .then(res => res.data)
         .catch(err => {
           console.log(err);
