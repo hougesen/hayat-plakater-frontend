@@ -18,8 +18,7 @@ import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 import 'swiper/swiper-bundle.css';
 
 export default {
-  name: 'swiper-example-loop-group',
-  title: 'Loop mode with multiple slides per group',
+  name: 'Slider',
   components: {
     Swiper,
     SwiperSlide
