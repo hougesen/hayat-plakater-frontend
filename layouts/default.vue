@@ -1,17 +1,18 @@
 <template>
   <div>
     <TopNav />
+
     <div v-if="shoppingCartVisible">
       <ShoppingCartModal />
     </div>
     <Nuxt />
+
+    <Footer />
   </div>
 </template>
 
 <script>
-import Hero from '../components/Hero.vue';
 export default {
-  components: { Hero },
   computed: {
     shoppingCartVisible() {
       return this.$store.getters.getShoppingCartVisible;
@@ -46,7 +47,6 @@ html {
 }
 body,
 html {
-  position: relative;
   min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
   padding-top: 0;

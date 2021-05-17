@@ -28,8 +28,6 @@
 .footer {
   background: #000;
   color: #fff;
-  position: absolute;
-  bottom: 0;
   width: 100%;
   display: grid;
   place-items: center;

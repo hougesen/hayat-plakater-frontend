@@ -40,7 +40,6 @@ export const mutations = {
   },
   removeProduct(state, payload) {
     let index = state.shoppingCart.findIndex(p => p.productId === payload.productId);
-
     state.shoppingCart.splice(index, 1);
   }
 };
