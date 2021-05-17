@@ -2,7 +2,7 @@
   <div>
     <Hero />
     <div class="frontpage-slider standard-width">
-      <h2>Populære plakater</h2>
+      <h2>Populære plak123ater</h2>
       <Slider :slides="slides" :slidesEachPage="4" />
     </div>
     <div class="about-us">
