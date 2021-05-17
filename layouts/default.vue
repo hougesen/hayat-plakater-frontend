@@ -4,7 +4,6 @@
     <div v-if="shoppingCartVisible">
       <ShoppingCartModal />
     </div>
-    <Hero />
     <Nuxt />
   </div>
 </template>
@@ -67,5 +66,9 @@ h6 {
 
 button {
   cursor: pointer;
+}
+.standard-width {
+  padding-left: 20rem !important;
+  padding-right: 20rem !important;
 }
 </style>

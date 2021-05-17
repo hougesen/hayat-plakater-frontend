@@ -1,10 +1,8 @@
 <template>
   <swiper class="swiper" :options="swiperOption">
-    <swiper-slide
-      v-for="slide of slides"
-      :key="slide.id"
-      :style="`background-image:url(${getStrapiMedia(slide.imageUrl)})`"
-    >
+    <swiper-slide v-for="slide of slides" :key="slide.id">
+      <img :src="`${getStrapiMedia(slide.imageUrl)}`" alt="" />
+      <h3>{{ slide.title }}</h3>
     </swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
     <!-- <div class="swiper-button-prev" slot="button-prev"></div> -->
@@ -54,16 +52,16 @@ export default {
 
 <style lang="scss" scoped>
 .swiper {
-  height: 300px;
   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   .swiper-slide {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    flex-direction: column;
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 </style>

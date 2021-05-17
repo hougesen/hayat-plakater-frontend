@@ -1,9 +1,26 @@
 <template>
-  <div class="container">
-    <!--     <Products :products="products" :error="error" />
- -->
+  <div>
+    <Hero />
+    <div class="frontpage-slider standard-width">
+      <h2>Populære plakater</h2>
+      <Slider :slides="slides" :slidesEachPage="4" />
+    </div>
 
-    <Slider :slides="slides" :slidesEachPage="4" />
+    <Accordion class="standard-width" :open="true">
+      <template v-slot:title>Hvad er hayat</template>
+
+      <template v-slot:content>
+        <p class="accordion-content">
+          Utrolig flot og farverig kunstplakat med Permild & Rosengreen-logo, af den danske maler, skulptør og
+          forfatter, Asger Jorn. Plakaten ved navn “Orange samtale” afspejler den smukke, orange farve, der pryder
+          plakatens motiv. Udover orange indeholder plakaten også faver som sort og beige. De få farver i mange streger,
+          giver plakaten et på samme tid enkelt og ekspressivt udtryk, hvorfor den vil passe ind i de fleste stilarter.
+          Står du og mangler en fin plakat i sommerhuset eller i stuen, men er bange for at din vægdekoration vil stjæle
+          opmærksomhed fra andet interiør? Så frygt ej! Med denne flotte og varme plakat af Asger Jorn, er du garanteret
+          et roligt, men sigende bidrag til dit hjem.
+        </p>
+      </template>
+    </Accordion>
   </div>
 </template>
 
@@ -23,7 +40,8 @@ export default {
       for (const product of this.products) {
         this.slides.push({
           id: product._id,
-          imageUrl: product.image[0].url
+          imageUrl: product.image[0].url,
+          title: product.name
         });
       }
     } catch (error) {
@@ -33,4 +51,13 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.frontpage-slider {
+  background-color: rgba(162, 99, 62, 0.2);
+  margin-top: -5rem;
+  padding: 12rem 0 7rem 0;
+}
+.accordion-content {
+  font-size: 1.25rem;
+}
+</style>

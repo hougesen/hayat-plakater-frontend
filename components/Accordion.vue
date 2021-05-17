@@ -8,19 +8,28 @@
       </span>
     </h2>
 
-    <p v-if="showContent" class="accordion-content">
+    <div v-if="showContent" class="accordion-content">
       <slot name="content" />
-    </p>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Accordion',
+  props: {
+    open: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
       showContent: false
     };
+  },
+  beforeMount() {
+    this.showContent = this.open;
   }
 };
 </script>
@@ -28,10 +37,9 @@ export default {
 <style lang="scss" scoped>
 .accordion {
   .accordion-title {
-    border: 1px solid #707070;
     font-size: 2rem;
     i {
-      margin: 1rem;
+      margin-right: 1rem;
     }
     &--open {
       i {
@@ -40,8 +48,7 @@ export default {
     }
   }
   .accordion-content {
-    background-color: rgba($color: #cccccc, $alpha: 0.15);
-    padding: 1rem;
+    padding: 1rem 0;
   }
 }
 </style>
