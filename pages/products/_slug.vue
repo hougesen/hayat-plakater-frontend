@@ -69,16 +69,18 @@ export default {
   },
 
   async mounted() {
+    let path = window.location.pathname.replace('/products/', '');
+
     try {
-      let path = window.location.pathname.replace('/products/', '');
-
-      this.product = await this.$strapi.$products.find({ slug: path });
-
+      this.product = await this.$strapi.$products.find({
+        slug: path
+      });
       this.product = this.product[0];
     } catch (error) {
       this.error = error;
     }
   },
+
   methods: {
     getStrapiMedia,
     addToShoppingCart(product) {

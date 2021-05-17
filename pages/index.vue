@@ -2,7 +2,7 @@
   <div>
     <Hero />
     <div class="frontpage-slider standard-width">
-      <h2>Populære plakater</h2>
+      <h2>15:30 Populære plakater</h2>
       <Slider :slides="slides" :slidesEachPage="3" />
     </div>
     <div class="about-us">
@@ -42,6 +42,7 @@
 </template>
 
 <script>
+import generateRoutes from '@/helpers/generateRoutes';
 export default {
   data() {
     return {
@@ -65,6 +66,9 @@ export default {
     } catch (error) {
       this.error = error;
     }
+
+    let test = await generateRoutes();
+    console.log(test);
   }
 };
 </script>

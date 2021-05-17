@@ -1,3 +1,5 @@
+import generateRoutes from '@/helpers/generateRoutes';
+
 export default {
   target: 'static',
 
@@ -42,6 +44,10 @@ export default {
 
   env: {
     // storeUrl: process.env.STORE_URL || "http://localhost:1337"
+  },
+
+  generate: {
+    routes: generateRoutes()
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

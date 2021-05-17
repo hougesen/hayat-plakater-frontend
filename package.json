@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@nuxtjs/strapi": "^0.3.1",
+    "axios": "^0.21.1",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3",
     "swiper": "^6.6.1",
