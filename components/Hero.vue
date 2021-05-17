@@ -3,7 +3,9 @@
     <div class="child">
       <h1>Pynt væggen ekstra godt op med <strong>arabisk</strong> kalligrafi</h1>
       <br />
-      <button class="ctaBtn">Se udvalget</button>
+      <nuxt-link to="categories/plakater">
+        <button class="ctaBtn">Se udvalget</button>
+      </nuxt-link>
     </div>
     <div class="child1"></div>
   </div>

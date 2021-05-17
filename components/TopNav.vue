@@ -9,6 +9,7 @@
         v-for="category in categories"
         :key="category.slug"
         class="nav-link"
+        style="color:white"
       >
         {{ category.name }}
       </nuxt-link>
