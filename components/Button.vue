@@ -1,9 +1,5 @@
 <template>
-  <button
-    @click="$emit('buttonClick')"
-    class="button"
-    :class="`button--${buttonType}`"
-  >
+  <button @click="$emit('buttonClick')" class="button" :class="`button--${buttonType}`">
     <slot />
     {{ buttonType }}
   </button>
@@ -11,12 +7,12 @@
 
 <script>
 export default {
-  name: "Button",
+  name: 'Button',
 
   props: {
     buttonType: {
       type: String,
-      default: "primary"
+      default: 'primary'
     }
   }
 };

@@ -9,11 +9,7 @@
         <p>Din indkøbskurv er tom</p>
       </div>
       <div v-else class="cart-list">
-        <div
-          v-for="product in getShoppingCart"
-          :key="product.productId"
-          class="cart-product"
-        >
+        <div v-for="product in getShoppingCart" :key="product.productId" class="cart-product">
           <div class="cart-product-information">
             <h2>{{ product.name }}</h2>
             <p>{{ product.size }}</p>
@@ -22,9 +18,7 @@
           <div class="cart-product-amount">
             <p>
               <span>
-                <InputIncrement
-                  @changeAmount="changeAmount(product.productId, ...arguments)"
-                >
+                <InputIncrement @changeAmount="changeAmount(product.productId, ...arguments)">
                   {{ product.amount }}
                 </InputIncrement>
               </span>
@@ -50,7 +44,7 @@
 
 <script>
 export default {
-  name: "ShoppingCartModal",
+  name: 'ShoppingCartModal',
 
   computed: {
     getShoppingCart() {
@@ -62,23 +56,23 @@ export default {
   },
   methods: {
     clearShoppingCart() {
-      this.$store.commit("clearShoppingCart");
+      this.$store.commit('clearShoppingCart');
     },
     closeModal() {
-      console.log("CLOASD");
-      this.$store.commit("setShoppingCartVisible");
+      console.log('CLOASD');
+      this.$store.commit('setShoppingCartVisible');
     },
     changeAmount(productId, e) {
       console.log(`changeAmount(${productId})`);
       console.log(e);
 
-      this.$store.commit("changeProductAmount", {
+      this.$store.commit('changeProductAmount', {
         productId,
         e
       });
     },
     removeProduct(productId) {
-      this.$store.commit("removeProduct", { productId });
+      this.$store.commit('removeProduct', { productId });
     }
   }
 };

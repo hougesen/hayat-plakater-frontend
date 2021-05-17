@@ -6,14 +6,11 @@ export const state = () => ({
 // Normal functions
 export const mutations = {
   addToShoppingCart(state, payload) {
-    console.log("state", state);
-    console.log("payload", payload);
+    console.log('state', state);
+    console.log('payload', payload);
 
     for (let i = 0; i < state.shoppingCart.length; i++) {
-      if (
-        state.shoppingCart[i].productId === payload.productId &&
-        state.shoppingCart[i].sizeId === payload.sizeId
-      ) {
+      if (state.shoppingCart[i].productId === payload.productId && state.shoppingCart[i].sizeId === payload.sizeId) {
         state.shoppingCart[i].amount += parseInt(payload.amount);
         return;
       }
@@ -29,13 +26,11 @@ export const mutations = {
     state.shoppingCartVisible = !state.shoppingCartVisible;
   },
   changeProductAmount(state, payload) {
-    let index = state.shoppingCart.findIndex(
-      p => p.productId === payload.productId
-    );
+    let index = state.shoppingCart.findIndex(p => p.productId === payload.productId);
 
     console.log(index);
 
-    if (payload.e === "increment") {
+    if (payload.e === 'increment') {
       state.shoppingCart[index].amount++;
     } else {
       if (state.shoppingCart[index].amount > 1) {
@@ -44,9 +39,7 @@ export const mutations = {
     }
   },
   removeProduct(state, payload) {
-    let index = state.shoppingCart.findIndex(
-      p => p.productId === payload.productId
-    );
+    let index = state.shoppingCart.findIndex(p => p.productId === payload.productId);
 
     state.shoppingCart.splice(index, 1);
   }

@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: "TopNav",
+  name: 'TopNav',
 
   data() {
     return {
@@ -36,13 +36,13 @@ export default {
   },
   async mounted() {
     try {
-      this.categories = await this.$strapi.find("categories");
+      this.categories = await this.$strapi.find('categories');
     } catch (error) {
       this.error = error;
     }
     this.prevScrollPos = window.pageYOffset;
 
-    window.addEventListener("scroll", () => {
+    window.addEventListener('scroll', () => {
       this.currentScrollPos = window.pageYOffset;
       if (this.prevScrollPos > this.currentScrollPos) {
         this.showNav = true;
@@ -55,7 +55,7 @@ export default {
 
   methods: {
     setShoppingCartVisible() {
-      this.$store.commit("setShoppingCartVisible");
+      this.$store.commit('setShoppingCartVisible');
     }
   }
 };

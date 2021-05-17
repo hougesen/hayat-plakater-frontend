@@ -1,10 +1,6 @@
 <template>
   <div class="accordion">
-    <h2
-      @click="showContent = !showContent"
-      class="accordion-title"
-      :class="{ 'accordion-title--open': showContent }"
-    >
+    <h2 @click="showContent = !showContent" class="accordion-title" :class="{ 'accordion-title--open': showContent }">
       <span>
         <i class="fas fa-caret-right arrowIcon" />
 
@@ -20,7 +16,7 @@
 
 <script>
 export default {
-  name: "Accordion",
+  name: 'Accordion',
   data() {
     return {
       showContent: false

@@ -7,11 +7,7 @@
     <div class="product-list" v-else>
       <div v-for="product in products" :key="product.id" class="product">
         <nuxt-link :to="`/products/${product.slug}`">
-          <img
-            alt=""
-            class="product-image"
-            :src="`${getStrapiMedia(product.image[0].url)}`"
-          />
+          <img alt="" class="product-image" :src="`${getStrapiMedia(product.image[0].url)}`" />
           <h1 class="product-title">{{ product.name }}</h1>
 
           <p>Fra {{ product.poster_price_sizes[0].price }}kr</p>
@@ -22,9 +18,9 @@
 </template>
 
 <script>
-import { getStrapiMedia } from "@/helpers/strapi-media";
+import { getStrapiMedia } from '@/helpers/strapi-media';
 export default {
-  name: "Products",
+  name: 'Products',
   props: {
     products: Array,
     error: Object

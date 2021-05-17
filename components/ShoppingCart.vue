@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: "ShoppingCart",
+  name: 'ShoppingCart',
   computed: {
     getShoppingCart() {
       return this.$store.getters.getShoppingCart;
@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     clearShoppingCart() {
-      this.$store.commit("clearShoppingCart");
+      this.$store.commit('clearShoppingCart');
     }
   }
 };

@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { getStrapiMedia } from "@/helpers/strapi-media";
+import { getStrapiMedia } from '@/helpers/strapi-media';
 
 export default {
   data() {
@@ -52,8 +52,8 @@ export default {
       amount: 1,
       priceInfo: {
         // Hardcoded to be the first element
-        sizeId: "609033df6f5a97b74a65f520",
-        size: "12x18",
+        sizeId: '609033df6f5a97b74a65f520',
+        size: '12x18',
         price: 100
       }
     };
@@ -70,7 +70,7 @@ export default {
 
   async mounted() {
     try {
-      let path = window.location.pathname.replace("/products/", "");
+      let path = window.location.pathname.replace('/products/', '');
 
       this.product = await this.$strapi.$products.find({ slug: path });
 
@@ -95,7 +95,7 @@ export default {
 
       console.log(item);
 
-      this.$store.commit("addToShoppingCart", item);
+      this.$store.commit('addToShoppingCart', item);
     }
   }
 };

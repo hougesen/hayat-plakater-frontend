@@ -11,7 +11,7 @@ export default {
     };
   },
   async mounted() {
-    let path = window.location.pathname.replace("/categories/", "");
+    let path = window.location.pathname.replace('/categories/', '');
 
     try {
       this.category = await this.$strapi.$categories.find({

@@ -6,12 +6,11 @@
     </div>
     <Hero />
     <Nuxt />
-    
   </div>
 </template>
 
 <script>
-import Hero from "../components/Hero.vue";
+import Hero from '../components/Hero.vue';
 export default {
   components: { Hero },
   computed: {
@@ -28,7 +27,7 @@ export default {
   --default-text-color: #101010;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Ubuntu:wght@300;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Ubuntu:wght@300;400;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -50,7 +49,7 @@ body,
 html {
   position: relative;
   min-height: 100vh;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   padding-top: 0;
   width: 100%;
   padding-top: 30px;
@@ -63,7 +62,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 button {

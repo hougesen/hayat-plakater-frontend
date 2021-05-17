@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "InputIncrement"
+  name: 'InputIncrement'
 };
 </script>
 

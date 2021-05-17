@@ -1,11 +1,9 @@
 <template>
   <div class="hero">
     <div class="child">
-      <h1>
-        Pynt væggen ekstra godt op med <strong>arabisk</strong> kalligrafi
-      </h1>
+      <h1>Pynt væggen ekstra godt op med <strong>arabisk</strong> kalligrafi</h1>
       <br />
-      <button class="ctaBtn">se udvalget</button>
+      <button class="ctaBtn">Se udvalget</button>
     </div>
     <div class="child1"></div>
   </div>
@@ -35,23 +33,25 @@ export default {};
   height: 90vh;
   width: 100%;
   display: block;
-  background-image: url("https://images.pexels.com/photos/4067759/pexels-photo-4067759.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-image: url('https://images.pexels.com/photos/4067759/pexels-photo-4067759.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .ctaBtn {
-  background-color: #000;
-  height: 95px;
-  width: 350px;
+  padding: 1rem 3rem;
   transition: 0.3s;
   color: #fff;
   font-size: 2.5rem;
   text-transform: uppercase;
+  background: none;
   border: none;
+  border: 5px solid #000;
+  color: #000;
 
   &:hover {
-    background-color: blue;
+    color: #fff;
+    background-color: #000;
   }
 }
 </style>

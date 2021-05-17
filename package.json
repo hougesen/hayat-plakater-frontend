@@ -11,7 +11,9 @@
   "dependencies": {
     "@nuxtjs/strapi": "^0.3.1",
     "core-js": "^3.9.1",
-    "nuxt": "^2.15.3"
+    "nuxt": "^2.15.3",
+    "swiper": "^6.6.1",
+    "vue-awesome-swiper": "^4.1.1"
   },
   "devDependencies": {
     "fibers": "^5.0.0",
