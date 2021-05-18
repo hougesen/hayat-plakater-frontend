@@ -1,5 +1,5 @@
 <template>
-  <div class="categories">
+  <div class="category">
     <div class="categoryChild" :style="`background-image: url(${imgSrc})`">
       <a :href="linkTo">
         <div class="infoBox" :style="`left:${infoBoxPos}`">
@@ -12,7 +12,7 @@
 </template>
 <script>
 export default {
-  name: 'Categories',
+  name: 'Category',
 
   props: {
     title: String,
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.categories {
+.category {
   display: flex;
   justify-content: center;
   padding-bottom: 40px;
@@ -39,7 +39,7 @@ export default {
     background-size: cover;
     background-position: center;
     height: 100%;
-    width: 75%;
+    width: 100%;
     .infoBox {
       position: absolute;
       display: flex;

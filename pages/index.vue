@@ -5,6 +5,35 @@
       <h2>15:30 Populære plakater</h2>
       <Slider :slides="slides" :slidesEachPage="3" />
     </div>
+    <div class="standard-width">
+      <Category
+        title="Sahara"
+        titleColor="#CD9073"
+        linkTo="google.com"
+        imgSrc="https://images.pexels.com/photos/3889891/pexels-photo-3889891.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        text="Udforsk Saharaen"
+        textColor="#CD9073"
+        infoBoxPos="20px"
+      />
+      <Category
+        title="Nature"
+        titleColor="#395E4E"
+        linkTo="google.com"
+        imgSrc="https://images.pexels.com/photos/1995730/pexels-photo-1995730.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        text="Udforsk Saharaen"
+        textColor="#395E4E"
+        infoBoxPos="1040px"
+      />
+      <Category
+        title="Sahara"
+        titleColor="#A2D2CE"
+        linkTo="google.com"
+        imgSrc="https://images.pexels.com/photos/2335126/pexels-photo-2335126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        text="Udforsk Saharaen"
+        textColor="#A2D2CE"
+        infoBoxPos="20px"
+      />
+    </div>
     <div class="about-us">
       <Accordion class="standard-width">
         <template v-slot:title>Hvad er HAYAT?</template>
