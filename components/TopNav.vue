@@ -1,5 +1,5 @@
 <template>
-  <nav class="top-nav" :style="{ top: showNav ? '0' : '-100px' }">
+  <nav class="top-nav">
     <nuxt-link to="/" class="logoSection">
       <img class="logo" src="../assets/Logo.svg" alt="" />
     </nuxt-link>
@@ -41,17 +41,6 @@ export default {
     } catch (error) {
       this.error = error;
     }
-    this.prevScrollPos = window.pageYOffset;
-
-    window.addEventListener('scroll', () => {
-      this.currentScrollPos = window.pageYOffset;
-      if (this.prevScrollPos > this.currentScrollPos) {
-        this.showNav = true;
-      } else {
-        this.showNav = false;
-      }
-      this.prevScrollPos = this.currentScrollPos;
-    });
   },
 
   methods: {
@@ -64,8 +53,7 @@ export default {
 
 <style lang="scss" scoped>
 .top-nav {
-  padding: 1rem;
-  position: fixed;
+  padding: 1.5rem 0;
   width: 100%;
   background: #000;
   display: grid;
