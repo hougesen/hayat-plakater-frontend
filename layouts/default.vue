@@ -51,7 +51,6 @@ html {
   font-family: 'Open Sans', sans-serif;
   padding-top: 0;
   width: 100%;
-  padding-top: 30px;
   color: var(--default-text-color);
   background-color: var(--default-background-color);
 }
