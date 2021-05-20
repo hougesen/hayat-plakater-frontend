@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Hero />
+    <Hero
+      heroTxt="Giv dine vægge noget liv"
+      heroImg="https://images.pexels.com/photos/4067759/pexels-photo-4067759.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+    />
     <div class="frontpage-slider standard-width">
       <h2>15:30 Populære plakater</h2>
       <Slider :slides="slides" :slidesEachPage="3" />

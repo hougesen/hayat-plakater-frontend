@@ -6,7 +6,6 @@
       <ShoppingCartModal />
     </div>
     <Nuxt />
-
     <Footer />
   </div>
 </template>
