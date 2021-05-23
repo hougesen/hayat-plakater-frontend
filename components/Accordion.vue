@@ -20,17 +20,17 @@ export default {
   props: {
     open: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
-      showContent: false
+      showContent: false,
     };
   },
   beforeMount() {
     this.showContent = this.open;
-  }
+  },
 };
 </script>
 

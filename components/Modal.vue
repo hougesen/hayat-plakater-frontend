@@ -5,7 +5,7 @@
         <h1>
           <slot name="title" />
         </h1>
-        <button @click="$emit('closeModal')">
+        <button @click="$emit('closeModal')" v-if="closeButton">
           X
         </button>
       </div>
@@ -19,7 +19,13 @@
 
 <script>
 export default {
-  name: 'Modal'
+  name: 'Modal',
+  props: {
+    closeButton: {
+      type: Boolean,
+      default: true,
+    },
+  },
 };
 </script>
 
@@ -42,6 +48,7 @@ export default {
     padding: 1rem 0;
     .modal-header {
       display: flex;
+      text-align: center;
     }
   }
 }

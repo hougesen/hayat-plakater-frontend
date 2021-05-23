@@ -14,9 +14,9 @@ export default {
   data() {
     return {
       category: {},
-      error: null
+      error: null,
     };
-  }
+  },
   /*   async mounted() {
     let path = window.location.pathname.replace('/categories/', '');
 

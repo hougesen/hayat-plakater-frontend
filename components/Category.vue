@@ -21,8 +21,8 @@ export default {
     imgSrc: String,
     text: String,
     textColor: String,
-    infoBoxPos: String
-  }
+    infoBoxPos: String,
+  },
 };
 </script>
 

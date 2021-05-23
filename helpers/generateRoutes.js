@@ -9,8 +9,8 @@ export default async () => {
 
   let products = await axios
     .get(`${baseUrl}/products`)
-    .then(res => res.data)
-    .catch(err => {
+    .then((res) => res.data)
+    .catch((err) => {
       console.log(err);
     });
 
@@ -20,8 +20,8 @@ export default async () => {
 
   let categories = await axios
     .get(`${baseUrl}/categories`)
-    .then(res => res.data)
-    .catch(err => {
+    .then((res) => res.data)
+    .catch((err) => {
       console.log(err);
     });
 

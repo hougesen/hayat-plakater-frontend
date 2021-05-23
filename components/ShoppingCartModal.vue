@@ -9,7 +9,7 @@
         <p>Din indkøbskurv er tom</p>
       </div>
       <div v-else class="cart-list">
-        <div v-for="product in getShoppingCart" :key="product.productId" class="cart-product">
+        <div v-for="(product, index) in getShoppingCart" :key="index" class="cart-product">
           <div class="cart-product-information">
             <h2>{{ product.name }}</h2>
             <p>{{ product.size }}</p>
@@ -37,6 +37,7 @@
         </div>
 
         <p>Pris i alt: {{ getTotalPrice }}</p>
+        <button @click="goToCheckout" name="button">Process to checkout</button>
       </div>
     </template>
   </Modal>
@@ -52,7 +53,7 @@ export default {
     },
     getTotalPrice() {
       return this.$store.getters.getTotalPrice;
-    }
+    },
   },
   methods: {
     clearShoppingCart() {
@@ -68,13 +69,16 @@ export default {
 
       this.$store.commit('changeProductAmount', {
         productId,
-        e
+        e,
       });
     },
     removeProduct(productId) {
       this.$store.commit('removeProduct', { productId });
-    }
-  }
+    },
+    goToCheckout() {
+      this.$router.push('/checkout');
+    },
+  },
 };
 </script>
 

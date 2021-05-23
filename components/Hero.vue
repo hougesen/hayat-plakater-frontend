@@ -15,8 +15,8 @@ export default {
   name: 'Hero',
   props: {
     heroImg: String,
-    heroTxt: String
-  }
+    heroTxt: String,
+  },
 };
 </script>
 
@@ -25,9 +25,9 @@ export default {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(200px, auto);
-  h1{
+  h1 {
     margin: 3rem;
-    font-size:6rem;
+    font-size: 6rem;
   }
 }
 .child {

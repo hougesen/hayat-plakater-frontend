@@ -35,15 +35,15 @@ export default {
       ]
       */
       type: Array,
-      default: []
-    }
+      default: [],
+    },
   },
 
   data() {
     return {
-      activePage: 0
+      activePage: 0,
     };
-  }
+  },
 };
 </script>
 

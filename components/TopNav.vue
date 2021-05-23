@@ -15,7 +15,7 @@
       </nuxt-link>
     </div>
     <div class="buttonsGrid">
-      <div @click.prevent="setShoppingCartVisible">
+      <div @click.prevent="goToCheckout">
         <i class="fas fa-shopping-cart "></i>
       </div>
     </div>
@@ -32,7 +32,7 @@ export default {
       prevScrollPos: 0,
       currentScrollPos: 0,
       categories: null,
-      error: null
+      error: null,
     };
   },
   async mounted() {
@@ -46,8 +46,11 @@ export default {
   methods: {
     setShoppingCartVisible() {
       this.$store.commit('setShoppingCartVisible');
-    }
-  }
+    },
+    goToCheckout() {
+      this.$router.push('/checkout');
+    },
+  },
 };
 </script>
 
@@ -74,8 +77,6 @@ export default {
   .logo {
     stroke: #fff;
     width: 170px;
-  }
-  .pages {
   }
   .buttonsGrid {
     i {

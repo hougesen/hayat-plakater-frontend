@@ -12,11 +12,14 @@
 
 <script>
 export default {
+  beforeCreate() {
+    this.$store.commit('initStore');
+  },
   computed: {
     shoppingCartVisible() {
       return this.$store.getters.getShoppingCartVisible;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -24,15 +27,17 @@ export default {
 :root {
   --default-background-color: #fff;
   --default-text-color: #101010;
+  --cta-color: #1a722f;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Ubuntu:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Raleway&display=swap');
 
 * {
   box-sizing: border-box;
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  font-family: 'Raleway', sans-serif;
   &::before,
   &::after {
     box-sizing: border-box;
@@ -59,10 +64,12 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
-
 button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
   cursor: pointer;
 }
 .standard-width {
