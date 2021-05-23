@@ -170,19 +170,10 @@ export default {
 .product-page--grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  .product-image {
-  }
 
   .product-information {
     display: flex;
     flex-direction: column;
-
-    .product-title {
-    }
-    .product-form {
-    }
-    .product-amount {
-    }
   }
 }
 .button {
@@ -193,7 +184,5 @@ export default {
 
   background-color: var(--cta-color);
   color: white;
-}
-.featured-slider {
 }
 </style>
