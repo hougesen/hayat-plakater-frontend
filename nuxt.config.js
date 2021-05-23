@@ -51,7 +51,7 @@ export default {
 
   generate: {
     async routes() {
-      let baseUrl = process.env.API_URL || 'http://localhost:1337/';
+      const baseUrl = process.env.API_URL || 'http://localhost:1337/';
 
       let routes = ['/', 'checkout'];
 

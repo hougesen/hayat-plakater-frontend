@@ -136,8 +136,10 @@ export default {
       this.$store.commit('removeProduct', { productId, sizeId });
     },
     async handleSubmit(e) {
+      const baseUrl = process.env.API_URL || 'http://localhost:1337/';
+
       e.preventDefault();
-      const response = await this.$http.$post(`${process.env.API_URL || 'http://localhost:1337/'}orders`, {
+      const response = await this.$http.$post(`${baseUrl}orders`, {
         cartDetail: this.$store.getters.getShoppingCart,
         cartTotal: this.$store.getters.getTotalPrice,
         name: '',
