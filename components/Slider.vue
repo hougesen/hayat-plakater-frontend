@@ -22,15 +22,15 @@ export default {
   name: 'Slider',
   components: {
     Swiper,
-    SwiperSlide
+    SwiperSlide,
   },
   props: {
     slides: Array,
     slidesEachPage: Number,
     desc: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   data() {
     return {
@@ -42,18 +42,18 @@ export default {
         loopFillGroupWithBlank: true,
         pagination: {
           el: '.swiper-pagination',
-          clickable: true
+          clickable: true,
         },
         navigation: {
           nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        }
-      }
+          prevEl: '.swiper-button-prev',
+        },
+      },
     };
   },
   methods: {
-    getStrapiMedia
-  }
+    getStrapiMedia,
+  },
 };
 </script>
 

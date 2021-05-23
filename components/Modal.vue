@@ -23,9 +23,9 @@ export default {
   props: {
     closeButton: {
       type: Boolean,
-      default: true
-    }
-  }
+      default: true,
+    },
+  },
 };
 </script>
 

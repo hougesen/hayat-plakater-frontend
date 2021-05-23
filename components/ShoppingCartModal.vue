@@ -53,7 +53,7 @@ export default {
     },
     getTotalPrice() {
       return this.$store.getters.getTotalPrice;
-    }
+    },
   },
   methods: {
     clearShoppingCart() {
@@ -69,7 +69,7 @@ export default {
 
       this.$store.commit('changeProductAmount', {
         productId,
-        e
+        e,
       });
     },
     removeProduct(productId) {
@@ -77,8 +77,8 @@ export default {
     },
     goToCheckout() {
       this.$router.push('/checkout');
-    }
-  }
+    },
+  },
 };
 </script>
 

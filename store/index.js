@@ -1,6 +1,6 @@
 export const state = () => ({
   shoppingCart: [],
-  shoppingCartVisible: false
+  shoppingCartVisible: false,
 });
 
 // Normal functions
@@ -35,7 +35,7 @@ export const mutations = {
   },
 
   changeProductAmount(state, payload) {
-    let index = state.shoppingCart.findIndex(p => p.productId === payload.productId && p.sizeId === payload.sizeId);
+    let index = state.shoppingCart.findIndex((p) => p.productId === payload.productId && p.sizeId === payload.sizeId);
 
     if (payload.e === 'increment') {
       state.shoppingCart[index].amount++;
@@ -48,7 +48,7 @@ export const mutations = {
     this.commit('updateLocalStorage');
   },
   removeProduct(state, payload) {
-    let index = state.shoppingCart.findIndex(p => p.productId === payload.productId && p.sizeId === payload.sizeId);
+    let index = state.shoppingCart.findIndex((p) => p.productId === payload.productId && p.sizeId === payload.sizeId);
     state.shoppingCart.splice(index, 1);
 
     this.commit('updateLocalStorage');
@@ -59,20 +59,20 @@ export const mutations = {
     const jsonShoppingCart = JSON.stringify(state.shoppingCart);
 
     localStorage.setItem('shoppingCart', jsonShoppingCart);
-  }
+  },
 };
 
 // Async function
 export const actions = {};
 
 export const getters = {
-  getShoppingCart: state => state.shoppingCart,
-  getShoppingCartVisible: state => state.shoppingCartVisible,
-  getTotalPrice: state => {
+  getShoppingCart: (state) => state.shoppingCart,
+  getShoppingCartVisible: (state) => state.shoppingCartVisible,
+  getTotalPrice: (state) => {
     let total = 0;
-    state.shoppingCart.forEach(product => {
+    state.shoppingCart.forEach((product) => {
       total += product.amount * product.price;
     });
     return total;
-  }
+  },
 };

@@ -32,7 +32,7 @@ export default {
       prevScrollPos: 0,
       currentScrollPos: 0,
       categories: null,
-      error: null
+      error: null,
     };
   },
   async mounted() {
@@ -49,8 +49,8 @@ export default {
     },
     goToCheckout() {
       this.$router.push('/checkout');
-    }
-  }
+    },
+  },
 };
 </script>
 

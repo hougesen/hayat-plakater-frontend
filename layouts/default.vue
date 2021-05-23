@@ -18,8 +18,8 @@ export default {
   computed: {
     shoppingCartVisible() {
       return this.$store.getters.getShoppingCartVisible;
-    }
-  }
+    },
+  },
 };
 </script>
 

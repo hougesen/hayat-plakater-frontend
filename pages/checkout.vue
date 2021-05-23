@@ -110,14 +110,14 @@ export default {
       dataItems: {},
       session: {},
       stripe: {},
-      stripePromise: {}
+      stripePromise: {},
     };
   },
 
   computed: {
     getShoppingCart() {
       return this.$store.getters.getShoppingCart;
-    }
+    },
   },
 
   methods: {
@@ -129,7 +129,7 @@ export default {
       this.$store.commit('changeProductAmount', {
         productId,
         sizeId,
-        e
+        e,
       });
     },
     removeProduct(productId, sizeId) {
@@ -144,12 +144,12 @@ export default {
         email: '',
         address: '',
         city: '',
-        postalCode: ''
+        postalCode: '',
       });
 
       // stripe logic
       const stripePromise = loadStripe(
-        'pk_test_51ImhvGGzZhtJza9VidZIydizkNx35J8AtdTfxP7ug5lAJnZhuegGEcs95mgRzpMVi5z6EsKYfNjVSxBzLblYsViv00z9CxmUFY'
+        'pk_test_51ImhvGGzZhtJza9VidZIydizkNx35J8AtdTfxP7ug5lAJnZhuegGEcs95mgRzpMVi5z6EsKYfNjVSxBzLblYsViv00z9CxmUFY',
       );
 
       const session = response;
@@ -157,7 +157,7 @@ export default {
       const stripe = await stripePromise;
 
       const result = await stripe.redirectToCheckout({
-        sessionId: session.id
+        sessionId: session.id,
       });
 
       console.log(response);
@@ -165,8 +165,8 @@ export default {
       if (result.error) {
         this.$nuxt.context.error(result.error.message);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

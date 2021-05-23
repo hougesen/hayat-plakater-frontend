@@ -12,9 +12,9 @@ export default {
   props: {
     buttonType: {
       type: String,
-      default: 'primary'
-    }
-  }
+      default: 'primary',
+    },
+  },
 };
 </script>
 

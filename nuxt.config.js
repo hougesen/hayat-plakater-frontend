@@ -6,28 +6,28 @@ export default {
   head: {
     title: 'hayat-plakater-frontend',
     htmlAttrs: {
-      lang: 'da'
+      lang: 'da',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: '' },
     ],
     link: [
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: '/favicon.ico'
-      }
+        href: '/favicon.ico',
+      },
     ],
     script: [
       {
-        src: 'https://kit.fontawesome.com/438b659a03.js'
+        src: 'https://kit.fontawesome.com/438b659a03.js',
       },
       {
-        src: 'https://js.stripe.com/v3'
-      }
-    ]
+        src: 'https://js.stripe.com/v3',
+      },
+    ],
   },
 
   css: [],
@@ -42,7 +42,7 @@ export default {
 
   strapi: {
     url: process.env.API_URL || 'http://localhost:1337',
-    entities: ['products', 'categories']
+    entities: ['products', 'categories'],
   },
 
   env: {
@@ -57,8 +57,8 @@ export default {
 
       let products = await axios
         .get(`${baseUrl}products`)
-        .then(res => res.data)
-        .catch(err => {
+        .then((res) => res.data)
+        .catch((err) => {
           console.log(err);
         });
 
@@ -68,8 +68,8 @@ export default {
 
       let categories = await axios
         .get(`${baseUrl}categories`)
-        .then(res => res.data)
-        .catch(err => {
+        .then((res) => res.data)
+        .catch((err) => {
           console.log(err);
         });
 
@@ -78,13 +78,13 @@ export default {
       }
 
       return routes;
-    }
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     babel: {
-      plugins: [['@babel/plugin-proposal-private-methods', { loose: true }]]
-    }
-  }
+      plugins: [['@babel/plugin-proposal-private-methods', { loose: true }]],
+    },
+  },
 };

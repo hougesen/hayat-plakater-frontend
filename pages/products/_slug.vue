@@ -34,7 +34,7 @@
                 :value="{
                   sizeId: size._id,
                   price: size.price,
-                  size: size.size
+                  size: size.size,
                 }"
               >
                 {{ size.size }}
@@ -83,9 +83,9 @@ export default {
         // Hardcoded to be the first element
         sizeId: '609033df6f5a97b74a65f520',
         size: '12x18',
-        price: 100
+        price: 100,
       },
-      slides: []
+      slides: [],
     };
   },
 
@@ -100,18 +100,28 @@ export default {
       return [
         {
           title: 'Beskrivelse',
-          text: this.currentProduct.description
+          text: this.currentProduct.description,
         },
         {
           title: 'Forsendelse og levering',
           text: `
-          Vi trykker og sender samme dag på første arbejdsdag. Dvs., at hvis du bestiller i weekenden, sender vi din vare allerede mandag. For at sikre at plakaten ankommer i perfekt stand, pakker vi den rullet op i en papkasse med kassefyld.
-          En plakat er mere end bare farve på papir. En minimalistisk plakat passer lige så godt til et soveværelse, som til en stue eller en entré. Plakaten kan også bruges som en personlig gave til din partner, dit barn eller en ven. Alle vores produkter trykkes på et nøje udvalgt 200 g semi-mat, premium papir af høj kvalitet, specielt udviklet til fotorealistiske plakater og prints. Papiret har en mat bestrøget overflade som er yderst holdbar, og dette resulterer i et ekslusivt look.
-          Vi sender dagligt, så din nye plakat hurtigt kan komme op og hænge. Så snart vi har pakket din ordre, kan du følge den. Prisen er uden ramme.
-          `
-        }
+          Vi trykker og sender samme dag på første arbejdsdag. 
+          Dvs., at hvis du bestiller i weekenden, sender vi din vare allerede mandag. 
+          For at sikre at plakaten ankommer i perfekt stand, pakker vi den rullet op i en papkasse med kassefyld.
+          En plakat er mere end bare farve på papir. 
+          En minimalistisk plakat passer lige så godt til et soveværelse, 
+          som til en stue eller en entré. 
+          Plakaten kan også bruges som en personlig gave til din partner, dit barn eller en ven. 
+          Alle vores produkter trykkes på et nøje udvalgt 200 g semi-mat, premium papir af høj kvalitet, 
+          specielt udviklet til fotorealistiske plakater og prints. 
+          Papiret har en mat bestrøget overflade som er yderst holdbar, og dette resulterer i et ekslusivt look.
+          Vi sender dagligt, så din nye plakat hurtigt kan komme op og hænge. 
+          Så snart vi har pakket din ordre, kan du følge den. 
+          Prisen er uden ramme.
+          `,
+        },
       ];
-    }
+    },
   },
 
   async mounted() {
@@ -123,7 +133,7 @@ export default {
           id: product._id,
           imageUrl: product.image[0].url,
           title: product.name,
-          slug: product.slug
+          slug: product.slug,
         });
       }
     } catch (error) {
@@ -140,7 +150,7 @@ export default {
         sizeId: this.priceInfo.sizeId,
         size: this.priceInfo.size,
         price: this.priceInfo.price,
-        image: this.currentProduct.image[0].url
+        image: this.currentProduct.image[0].url,
       };
 
       console.log(item);
@@ -151,8 +161,8 @@ export default {
     },
     closeModal() {
       this.showModal = false;
-    }
-  }
+    },
+  },
 };
 </script>
 

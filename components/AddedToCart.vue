@@ -22,7 +22,7 @@ export default {
   name: 'AddedToCart',
 
   props: {
-    productImage: String
+    productImage: String,
   },
 
   methods: {
@@ -33,8 +33,8 @@ export default {
 
     goToCheckout() {
       this.$router.push('/checkout');
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -28,13 +28,13 @@ export default {
     },
     getTotalPrice() {
       return this.$store.getters.getTotalPrice;
-    }
+    },
   },
   methods: {
     clearShoppingCart() {
       this.$store.commit('clearShoppingCart');
-    }
-  }
+    },
+  },
 };
 </script>
 

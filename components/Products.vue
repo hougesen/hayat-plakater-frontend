@@ -23,21 +23,21 @@ export default {
   name: 'Products',
   props: {
     products: Array,
-    error: Object
+    error: Object,
   },
   data() {
     return {
-      price: 0
+      price: 0,
     };
   },
   computed: {
     getProducts() {
       return this.products;
-    }
+    },
   },
   methods: {
-    getStrapiMedia
-  }
+    getStrapiMedia,
+  },
 };
 </script>
 
