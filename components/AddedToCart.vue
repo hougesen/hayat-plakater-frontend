@@ -1,10 +1,8 @@
 <template>
-  <Modal @closeModal="closeModal" :closeButton="false">
-    <template v-slot:title>
-      Plakaten er lagt i kurven
-    </template>
+  <Modal :close-button="false" @closeModal="closeModal">
+    <template #title> Plakaten er lagt i kurven </template>
 
-    <template v-slot:content>
+    <template #content>
       <div class="modal-content">
         <img :src="`${getStrapiMedia(productImage)}`" alt="" />
 
@@ -22,7 +20,10 @@ export default {
   name: 'AddedToCart',
 
   props: {
-    productImage: String,
+    productImage: {
+      type: String,
+      required: true,
+    },
   },
 
   methods: {

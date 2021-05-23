@@ -1,10 +1,8 @@
 <template>
   <Modal @closeModal="closeModal">
-    <template v-slot:title>
-      Shopping kurv
-    </template>
+    <template #title> Shopping kurv </template>
 
-    <template v-slot:content>
+    <template #content>
       <div v-if="getShoppingCart.length === 0">
         <p>Din indkøbskurv er tom</p>
       </div>
@@ -30,14 +28,12 @@
           </div>
 
           <div>
-            <button @click="removeProduct(product.productId)" type="button">
-              Fjern
-            </button>
+            <button type="button" @click="removeProduct(product.productId)">Fjern</button>
           </div>
         </div>
 
         <p>Pris i alt: {{ getTotalPrice }}</p>
-        <button @click="goToCheckout" name="button">Process to checkout</button>
+        <button name="button" @click="goToCheckout">Process to checkout</button>
       </div>
     </template>
   </Modal>
@@ -46,7 +42,6 @@
 <script>
 export default {
   name: 'ShoppingCartModal',
-
   computed: {
     getShoppingCart() {
       return this.$store.getters.getShoppingCart;

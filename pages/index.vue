@@ -1,47 +1,47 @@
 <template>
   <div>
     <Hero
-      heroTxt="Giv dine vægge noget liv"
-      heroImg="https://images.pexels.com/photos/4067759/pexels-photo-4067759.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+      hero-txt="Giv dine vægge noget liv"
+      hero-img="https://images.pexels.com/photos/4067759/pexels-photo-4067759.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
     />
     <div class="frontpage-slider standard-width">
       <h2>Populære plakater</h2>
-      <Slider :slides="slides" :slidesEachPage="3" />
+      <Slider :slides="slides" :slides-each-page="3" />
     </div>
     <div class="standard-width">
       <Category
         title="Sahara"
-        titleColor="#CD9073"
-        linkTo="google.com"
-        imgSrc="https://images.pexels.com/photos/3889891/pexels-photo-3889891.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        title-color="#CD9073"
+        link-to="google.com"
+        img-src="https://images.pexels.com/photos/3889891/pexels-photo-3889891.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         text="Udforsk Saharaen"
-        textColor="#CD9073"
-        infoBoxPos="20px"
+        text-color="#CD9073"
+        info-box-pos="20px"
       />
       <Category
         title="Nature"
-        titleColor="#395E4E"
-        linkTo="google.com"
-        imgSrc="https://images.pexels.com/photos/1995730/pexels-photo-1995730.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        title-color="#395E4E"
+        link-to="google.com"
+        img-src="https://images.pexels.com/photos/1995730/pexels-photo-1995730.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         text="Udforsk Saharaen"
-        textColor="#395E4E"
-        infoBoxPos="1040px"
+        text-color="#395E4E"
+        info-box-pos="1040px"
       />
       <Category
         title="Sahara"
-        titleColor="#A2D2CE"
-        linkTo="google.com"
-        imgSrc="https://images.pexels.com/photos/2335126/pexels-photo-2335126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        title-color="#A2D2CE"
+        link-to="google.com"
+        img-src="https://images.pexels.com/photos/2335126/pexels-photo-2335126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         text="Udforsk Saharaen"
-        textColor="#A2D2CE"
-        infoBoxPos="20px"
+        text-color="#A2D2CE"
+        info-box-pos="20px"
       />
     </div>
     <div class="about-us">
       <Accordion class="standard-width">
-        <template v-slot:title>Hvad er HAYAT?</template>
+        <template #title>Hvad er HAYAT?</template>
 
-        <template v-slot:content>
+        <template #content>
           <p class="accordion-content">
             Utrolig flot og farverig kunstplakat med Permild & Rosengreen-logo, af den danske maler, skulptør og
             forfatter, Asger Jorn. Plakaten ved navn “Orange samtale” afspejler den smukke, orange farve, der pryder
@@ -55,9 +55,9 @@
       </Accordion>
 
       <Accordion class="standard-width">
-        <template v-slot:title>Visioner og værdier</template>
+        <template #title>Visioner og værdier</template>
 
-        <template v-slot:content>
+        <template #content>
           <p class="accordion-content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex

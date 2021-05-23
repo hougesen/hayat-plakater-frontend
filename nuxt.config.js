@@ -36,7 +36,11 @@ export default {
 
   components: true,
 
-  buildModules: [],
+  buildModules: ['@nuxtjs/eslint-module'],
+
+  eslint: {
+    fix: true,
+  },
 
   modules: ['@nuxtjs/strapi'],
 

@@ -13,15 +13,35 @@
 <script>
 export default {
   name: 'Category',
-
   props: {
-    title: String,
-    titleColor: String,
-    linkTo: String,
-    imgSrc: String,
-    text: String,
-    textColor: String,
-    infoBoxPos: String,
+    title: {
+      type: String,
+      required: true,
+    },
+    titleColor: {
+      type: String,
+      default: 'black',
+    },
+    linkTo: {
+      type: String,
+      required: true,
+    },
+    imgSrc: {
+      type: String,
+      required: true,
+    },
+    text: {
+      type: String,
+      default: '',
+    },
+    textColor: {
+      type: String,
+      default: 'black',
+    },
+    infoBoxPos: {
+      type: String,
+      default: '0',
+    },
   },
 };
 </script>

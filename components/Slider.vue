@@ -1,16 +1,16 @@
 <template>
-  <swiper class="swiper" :options="swiperOption">
-    <swiper-slide v-for="slide of slides" :key="slide.id">
+  <Swiper class="swiper" :options="swiperOption">
+    <SwiperSlide v-for="slide of slides" :key="slide.id">
       <nuxt-link :to="`products/${slide.slug}`">
         <img :src="`${getStrapiMedia(slide.imageUrl)}`" alt="" />
 
         <h3 v-if="desc">{{ slide.title }}</h3>
       </nuxt-link>
-    </swiper-slide>
-    <div class="swiper-pagination" slot="pagination"></div>
+    </SwiperSlide>
+    <div slot="pagination" class="swiper-pagination"></div>
     <!-- <div class="swiper-button-prev" slot="button-prev"></div> -->
     <!-- <div class="swiper-button-next" slot="button-next"></div> -->
-  </swiper>
+  </Swiper>
 </template>
 
 <script>
@@ -25,8 +25,14 @@ export default {
     SwiperSlide,
   },
   props: {
-    slides: Array,
-    slidesEachPage: Number,
+    slides: {
+      type: Array,
+      required: true,
+    },
+    slidesEachPage: {
+      type: Number,
+      default: 3,
+    },
     desc: {
       type: Boolean,
       default: true,

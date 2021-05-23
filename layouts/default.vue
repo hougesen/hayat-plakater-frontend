@@ -12,13 +12,13 @@
 
 <script>
 export default {
-  beforeCreate() {
-    this.$store.commit('initStore');
-  },
   computed: {
     shoppingCartVisible() {
       return this.$store.getters.getShoppingCartVisible;
     },
+  },
+  beforeCreate() {
+    this.$store.commit('initStore');
   },
 };
 </script>

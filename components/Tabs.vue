@@ -2,11 +2,11 @@
   <div class="tabs">
     <div class="tabs-header">
       <button
-        class="tabs-button"
         v-for="(item, index) of data"
         :key="index"
-        @click="activePage = index"
+        class="tabs-button"
         :class="{ selected: activePage == index }"
+        @click="activePage = index"
       >
         {{ item.title }}
       </button>
@@ -35,7 +35,7 @@ export default {
       ]
       */
       type: Array,
-      default: [],
+      required: true,
     },
   },
 

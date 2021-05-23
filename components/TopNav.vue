@@ -5,18 +5,18 @@
     </nuxt-link>
     <div class="nav-links">
       <nuxt-link
-        :to="`/categories/${category.slug}`"
         v-for="category in categories"
         :key="category.slug"
+        :to="`/categories/${category.slug}`"
         class="nav-link"
-        style="color:white"
+        style="color: white"
       >
         {{ category.name }}
       </nuxt-link>
     </div>
     <div class="buttonsGrid">
       <div @click.prevent="goToCheckout">
-        <i class="fas fa-shopping-cart "></i>
+        <i class="fas fa-shopping-cart"></i>
       </div>
     </div>
   </nav>

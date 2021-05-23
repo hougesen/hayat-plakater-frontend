@@ -5,9 +5,7 @@
         <h1>
           <slot name="title" />
         </h1>
-        <button @click="$emit('closeModal')" v-if="closeButton">
-          X
-        </button>
+        <button v-if="closeButton" @click="$emit('closeModal')">X</button>
       </div>
 
       <div>

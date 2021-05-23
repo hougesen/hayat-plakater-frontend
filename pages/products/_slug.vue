@@ -2,13 +2,9 @@
   <div>
     <div class="standard-width">
       <p>
-        <nuxt-link to="/">
-          Forside
-        </nuxt-link>
+        <nuxt-link to="/"> Forside </nuxt-link>
         >
-        <nuxt-link to="/categories/plakater">
-          Plakater
-        </nuxt-link>
+        <nuxt-link to="/categories/plakater"> Plakater </nuxt-link>
         >
         {{ currentProduct.name }}
       </p>
@@ -43,9 +39,7 @@
           </div>
         </form>
 
-        <button class="button" @click="addToShoppingCart">
-          Læg i kurv
-        </button>
+        <button class="button" @click="addToShoppingCart">Læg i kurv</button>
       </div>
     </div>
 
@@ -56,9 +50,9 @@
     <div class="standard-width">
       <h2>Relaterede produkter</h2>
 
-      <Slider :slides="slides" :slidesEachPage="3" v-if="slides" :desc="false" />
+      <Slider v-if="slides" :slides="slides" :slides-each-page="3" :desc="false" />
     </div>
-    <AddedToCart :productImage="currentProduct.image[0].url" v-if="showModal" @closeModal="closeModal" />
+    <AddedToCart v-if="showModal" :product-image="currentProduct.image[0].url" @closeModal="closeModal" />
   </div>
 </template>
 

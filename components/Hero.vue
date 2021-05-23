@@ -14,8 +14,14 @@
 export default {
   name: 'Hero',
   props: {
-    heroImg: String,
-    heroTxt: String,
+    heroImg: {
+      type: String,
+      required: true,
+    },
+    heroTxt: {
+      type: String,
+      required: true,
+    },
   },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="accordion">
-    <h2 @click="showContent = !showContent" class="accordion-title" :class="{ 'accordion-title--open': showContent }">
+    <h2 class="accordion-title" :class="{ 'accordion-title--open': showContent }" @click="showContent = !showContent">
       <span>
         <i class="fas fa-caret-right arrowIcon" />
 
