@@ -137,7 +137,7 @@ export default {
     },
     async handleSubmit(e) {
       const baseUrl = process.env.API_URL || 'http://localhost:1337/';
-
+      console.log(`baseUrl: ${baseUrl}`, `process.env.API_URL: ${process.env.API_URL}`);
       e.preventDefault();
       const response = await this.$http.$post(`${baseUrl}orders`, {
         cartDetail: this.$store.getters.getShoppingCart,

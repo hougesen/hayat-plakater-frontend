@@ -5,9 +5,9 @@ import axios from 'axios';
 export default async () => {
   const baseUrl = process.env.API_URL || 'http://localhost:1337';
 
-  let routes = ['/'];
+  const routes = ['/'];
 
-  let products = await axios
+  const products = await axios
     .get(`${baseUrl}/products`)
     .then((res) => res.data)
     .catch((err) => {
@@ -18,7 +18,7 @@ export default async () => {
     routes.push(`/products/${product.slug}`);
   }
 
-  let categories = await axios
+  const categories = await axios
     .get(`${baseUrl}/categories`)
     .then((res) => res.data)
     .catch((err) => {
