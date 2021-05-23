@@ -137,7 +137,7 @@ export default {
     },
     async handleSubmit(e) {
       e.preventDefault();
-      const response = await this.$http.$post(`http://localhost:1337/orders`, {
+      const response = await this.$http.$post(`${process.env.API_URL || 'http://localhost:1337/'}orders`, {
         cartDetail: this.$store.getters.getShoppingCart,
         cartTotal: this.$store.getters.getTotalPrice,
         name: '',

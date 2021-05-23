@@ -41,7 +41,7 @@ export default {
   modules: ['@nuxtjs/strapi'],
 
   strapi: {
-    url: process.env.API_URL || 'http://localhost:1337',
+    url: process.env.API_URL || 'http://localhost:1337/',
     entities: ['products', 'categories'],
   },
 
@@ -53,7 +53,7 @@ export default {
     async routes() {
       let baseUrl = process.env.API_URL || 'http://localhost:1337/';
 
-      let routes = ['/'];
+      let routes = ['/', 'checkout'];
 
       let products = await axios
         .get(`${baseUrl}products`)
