@@ -23,6 +23,9 @@ export default {
     script: [
       {
         src: 'https://kit.fontawesome.com/438b659a03.js'
+      },
+      {
+        src: 'https://js.stripe.com/v3'
       }
     ]
   },

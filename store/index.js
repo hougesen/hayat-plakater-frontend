@@ -5,30 +5,37 @@ export const state = () => ({
 
 // Normal functions
 export const mutations = {
-  addToShoppingCart(state, payload) {
-    console.log('state', state);
-    console.log('payload', payload);
+  initStore(state) {
+    if (process.browser && localStorage.getItem('shoppingCart')) {
+      state.shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
+    }
+  },
 
+  addToShoppingCart(state, payload) {
     for (let i = 0; i < state.shoppingCart.length; i++) {
       if (state.shoppingCart[i].productId === payload.productId && state.shoppingCart[i].sizeId === payload.sizeId) {
         state.shoppingCart[i].amount += parseInt(payload.amount);
-        return;
+
+        return this.commit('updateLocalStorage');
       }
     }
     state.shoppingCart.push(payload);
+
+    this.commit('updateLocalStorage');
   },
 
   clearShoppingCart(state) {
     state.shoppingCart = [];
+
+    this.commit('updateLocalStorage');
   },
 
   setShoppingCartVisible(state) {
     state.shoppingCartVisible = !state.shoppingCartVisible;
   },
-  changeProductAmount(state, payload) {
-    let index = state.shoppingCart.findIndex(p => p.productId === payload.productId);
 
-    console.log(index);
+  changeProductAmount(state, payload) {
+    let index = state.shoppingCart.findIndex(p => p.productId === payload.productId && p.sizeId === payload.sizeId);
 
     if (payload.e === 'increment') {
       state.shoppingCart[index].amount++;
@@ -37,10 +44,21 @@ export const mutations = {
         state.shoppingCart[index].amount--;
       }
     }
+
+    this.commit('updateLocalStorage');
   },
   removeProduct(state, payload) {
-    let index = state.shoppingCart.findIndex(p => p.productId === payload.productId);
+    let index = state.shoppingCart.findIndex(p => p.productId === payload.productId && p.sizeId === payload.sizeId);
     state.shoppingCart.splice(index, 1);
+
+    this.commit('updateLocalStorage');
+  },
+
+  updateLocalStorage(state) {
+    console.log(state, 'updateLocalstorage');
+    const jsonShoppingCart = JSON.stringify(state.shoppingCart);
+
+    localStorage.setItem('shoppingCart', jsonShoppingCart);
   }
 };
 

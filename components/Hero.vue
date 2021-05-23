@@ -1,17 +1,23 @@
 <template>
   <div class="hero">
     <div class="child">
-      <h1>Pynt væggen ekstra godt op med <strong>arabisk</strong> kalligrafi</h1>
+      <h1>{{ heroTxt }}</h1>
       <br />
       <nuxt-link to="categories/plakater">
         <button class="ctaBtn">Se udvalget</button>
       </nuxt-link>
     </div>
-    <div class="child1"></div>
+    <div class="child1" :style="`background-image: url(${heroImg})`"></div>
   </div>
 </template>
 <script>
-export default {};
+export default {
+  name: 'Hero',
+  props: {
+    heroImg: String,
+    heroTxt: String
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -19,6 +25,10 @@ export default {};
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(200px, auto);
+  h1{
+    margin: 3rem;
+    font-size:6rem;
+  }
 }
 .child {
   font-size: 2rem;
@@ -35,12 +45,12 @@ export default {};
   height: 90vh;
   width: 100%;
   display: block;
-  background-image: url('https://images.pexels.com/photos/4067759/pexels-photo-4067759.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .ctaBtn {
+  margin: 0 3rem;
   padding: 1rem 3rem;
   transition: 0.3s;
   color: #fff;

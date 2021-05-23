@@ -21,7 +21,6 @@ export default {
 <style lang="scss" scoped>
 .button {
   border: none;
-  font-weight: 700;
   padding: 1rem;
   &--primary {
     background-color: black;

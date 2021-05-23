@@ -1,8 +1,11 @@
 <template>
   <swiper class="swiper" :options="swiperOption">
     <swiper-slide v-for="slide of slides" :key="slide.id">
-      <img :src="`${getStrapiMedia(slide.imageUrl)}`" alt="" />
-      <h3>{{ slide.title }}</h3>
+      <nuxt-link :to="`products/${slide.slug}`">
+        <img :src="`${getStrapiMedia(slide.imageUrl)}`" alt="" />
+
+        <h3 v-if="desc">{{ slide.title }}</h3>
+      </nuxt-link>
     </swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
     <!-- <div class="swiper-button-prev" slot="button-prev"></div> -->
@@ -23,7 +26,11 @@ export default {
   },
   props: {
     slides: Array,
-    slidesEachPage: Number
+    slidesEachPage: Number,
+    desc: {
+      type: Boolean,
+      default: true
+    }
   },
   data() {
     return {

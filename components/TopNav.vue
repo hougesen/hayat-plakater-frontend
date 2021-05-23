@@ -15,7 +15,7 @@
       </nuxt-link>
     </div>
     <div class="buttonsGrid">
-      <div @click.prevent="setShoppingCartVisible">
+      <div @click.prevent="goToCheckout">
         <i class="fas fa-shopping-cart "></i>
       </div>
     </div>
@@ -46,6 +46,9 @@ export default {
   methods: {
     setShoppingCartVisible() {
       this.$store.commit('setShoppingCartVisible');
+    },
+    goToCheckout() {
+      this.$router.push('/checkout');
     }
   }
 };
@@ -74,8 +77,6 @@ export default {
   .logo {
     stroke: #fff;
     width: 170px;
-  }
-  .pages {
   }
   .buttonsGrid {
     i {

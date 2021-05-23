@@ -33,7 +33,6 @@
   place-items: center;
   grid-template-columns: repeat(5, 1fr);
   padding: 1rem;
-  cursor: pointer;
   p {
     display: flex;
     flex-direction: column;

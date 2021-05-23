@@ -6,13 +6,15 @@
       <ShoppingCartModal />
     </div>
     <Nuxt />
-
-    <!--  <Footer /> -->
+    <Footer />
   </div>
 </template>
 
 <script>
 export default {
+  beforeCreate() {
+    this.$store.commit('initStore');
+  },
   computed: {
     shoppingCartVisible() {
       return this.$store.getters.getShoppingCartVisible;
@@ -25,6 +27,7 @@ export default {
 :root {
   --default-background-color: #fff;
   --default-text-color: #101010;
+  --cta-color: #1a722f;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Raleway&display=swap');
