@@ -179,4 +179,9 @@ export default {
   background-color: var(--cta-color);
   color: white;
 }
+.product-image {
+  img {
+    max-height: 600px;
+  }
+}
 </style>

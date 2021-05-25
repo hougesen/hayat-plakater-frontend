@@ -4,12 +4,12 @@
       <img class="logo" src="@/assets/Logo.svg" alt="" />
     </nuxt-link>
     <div class="nav-links">
+      <nuxt-link to="/" class="nav-link"> Forside </nuxt-link>
       <nuxt-link
         v-for="category in categories"
         :key="category.slug"
         :to="`/categories/${category.slug}`"
         class="nav-link"
-        style="color: white"
       >
         {{ category.name }}
       </nuxt-link>
@@ -96,6 +96,11 @@ export default {
       }
     }
   }
+}
+.nav-link {
+  font-size: 1.25rem;
+  color: white;
+  text-decoration: none;
 }
 .fa-stack[data-count]:after {
   position: absolute;
