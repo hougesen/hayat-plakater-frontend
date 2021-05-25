@@ -64,27 +64,27 @@
     <form @submit.prevent="handleSubmit">
       <div>
         <label for="name">Navn</label>
-        <input type="text" v-model="name" placeholder="Navn" name="name" required />
+        <input v-model="name" type="text" placeholder="Navn" name="name" required />
       </div>
 
       <div>
         <label for="email">Email</label>
-        <input type="email" v-model="email" placeholder="Email" name="email" required />
+        <input v-model="email" type="email" placeholder="Email" name="email" required />
       </div>
 
       <div>
         <label for="adress">Adresse</label>
-        <input type="text" v-model="address" placeholder="Addresse" name="address" required />
+        <input v-model="address" type="text" placeholder="Addresse" name="address" required />
       </div>
 
       <div>
         <label for="city">By</label>
-        <input type="text" v-model="city" placeholder="By" name="city" required />
+        <input v-model="city" type="text" placeholder="By" name="city" required />
       </div>
 
       <div>
         <label for="postalCode">Postnummer</label>
-        <input type="number" v-model="postalCode" placeholder="Postnummer" name="postalCode" required />
+        <input v-model="postalCode" type="number" placeholder="Postnummer" name="postalCode" required />
       </div>
 
       <button type="submit">Checkout</button>
@@ -98,7 +98,7 @@ import { getStrapiMedia } from '@/helpers/strapi-media';
 import { loadStripe } from '@stripe/stripe-js';
 
 export default {
-  name: 'checkout',
+  name: 'Checkout',
   components: {},
   data() {
     return {
@@ -138,8 +138,8 @@ export default {
     async handleSubmit(e) {
       e.preventDefault();
 
-      const baseUrl = 'http://localhost:1337/';
-      // const baseUrl = 'https://hayat-plakater-backend-irztg.ondigitalocean.app/';
+      // const baseUrl = 'http://localhost:1337/';
+      const baseUrl = 'https://hayat-plakater-backend-irztg.ondigitalocean.app/';
 
       const response = await this.$http.$post(`${baseUrl}orders`, {
         cartDetail: this.$store.getters.getShoppingCart,
@@ -155,6 +155,7 @@ export default {
       const stripePromise = loadStripe(
         'pk_test_51ImhvGGzZhtJza9VidZIydizkNx35J8AtdTfxP7ug5lAJnZhuegGEcs95mgRzpMVi5z6EsKYfNjVSxBzLblYsViv00z9CxmUFY',
       );
+      console.log(stripePromise);
 
       const session = response;
 
