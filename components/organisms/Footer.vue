@@ -1,20 +1,22 @@
 <template>
   <div class="footer">
-    <div class="logo"><img src="@/assets/Logo.svg" alt="" /></div>
+    <div class="logo">
+      <img src="@/assets/Logo.svg" alt="Hayat Plakater logo" />
+    </div>
     <div>
       <h2>Hayat plakater</h2>
-      <p>
-        Kranvejen 77 <br />
-        5000 Odense C <br />+45 20 97 44 30 <br />
-        kontakt@hayatplakat.dk
-      </p>
+      <p>Kranvejen 77</p>
+      <p>5000 Odense C</p>
+      <p>+45 20 97 44 30</p>
+      <p>kontakt@hayatplakat.dk</p>
     </div>
-    <div><h2>Information</h2></div>
+    <div>
+      <h2>Information</h2>
+    </div>
     <div>
       <h2>Kategorier</h2>
     </div>
     <div>
-      <h2>Følg os her:</h2>
       <i class="fab fa-facebook"></i>
       <i class="fab fa-instagram"></i>
       <i class="fab fa-pinterest"></i>

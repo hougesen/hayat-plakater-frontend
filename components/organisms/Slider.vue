@@ -2,9 +2,9 @@
   <Swiper class="swiper" :options="swiperOption">
     <SwiperSlide v-for="slide of slides" :key="slide.id">
       <nuxt-link :to="`products/${slide.slug}`">
-        <img :src="`${getStrapiMedia(slide.imageUrl)}`" alt="" />
+        <img :src="`${getStrapiMedia(slide.imageUrl)}`" :alt="slide.title" />
 
-        <h3 v-if="desc">{{ slide.title }}</h3>
+        <h3 v-if="title" class="slide-title">{{ slide.title }}</h3>
       </nuxt-link>
     </SwiperSlide>
     <div slot="pagination" class="swiper-pagination"></div>
@@ -33,7 +33,7 @@ export default {
       type: Number,
       default: 3,
     },
-    desc: {
+    title: {
       type: Boolean,
       default: true,
     },
@@ -71,9 +71,18 @@ export default {
   .swiper-slide {
     display: flex;
     flex-direction: column;
+    a {
+      text-decoration: none;
+    }
     img {
       width: 100%;
       height: auto;
+    }
+
+    .slide-title {
+      font-size: 1.25rem;
+      color: var(--default-text-color);
+      text-decoration: none;
     }
   }
 }

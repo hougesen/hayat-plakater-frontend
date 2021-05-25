@@ -8,7 +8,8 @@
       <h2>Populære plakater</h2>
       <OrganismsSlider :slides="slides" :slides-each-page="3" />
     </div>
-    <div class="standard-width">
+
+    <div class="category-banners standard-width">
       <OrganismsCategory
         title="Sahara"
         title-color="#CD9073"
@@ -37,8 +38,9 @@
         info-box-pos="20px"
       />
     </div>
-    <div class="about-us">
-      <OrganismsAccordion class="standard-width">
+
+    <div class="about-us standard-width">
+      <OrganismsAccordion>
         <template #title>Hvad er HAYAT?</template>
 
         <template #content>
@@ -54,7 +56,7 @@
         </template>
       </OrganismsAccordion>
 
-      <OrganismsAccordion class="standard-width">
+      <OrganismsAccordion>
         <template #title>Visioner og værdier</template>
 
         <template #content>
@@ -113,10 +115,18 @@ export default {
 .frontpage-slider {
   background-color: rgba(162, 99, 62, 0.2);
   margin-top: -5rem;
-  padding: 12rem 0 7rem 0;
+  margin-bottom: 3rem;
+  padding: 10rem 0 5rem 0;
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+.category-banners {
+  margin: 3rem 0;
 }
 .about-us {
-  margin: 2rem 0;
+  margin: 3rem 0;
   .accordion-content {
     font-size: 1.25rem;
   }
