@@ -55,12 +55,12 @@ export default {
 
   generate: {
     async routes() {
-      //  const baseUrl = process.env.API_URL || 'http://localhost:1337/';
+      const baseUrl = process.env.API_URL || 'http://localhost:1337/';
 
       const routes = ['/', 'checkout'];
 
       const products = await axios
-        .get(`${process.env.storeUrl}products`)
+        .get(`${baseUrl}products`)
         .then((res) => res.data)
         .catch((err) => {
           console.log(err);
@@ -71,7 +71,7 @@ export default {
       }
 
       const categories = await axios
-        .get(`${process.env.storeUrl}categories`)
+        .get(`${baseUrl}categories`)
         .then((res) => res.data)
         .catch((err) => {
           console.log(err);
