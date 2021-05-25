@@ -50,9 +50,9 @@
     <div class="standard-width">
       <h2>Relaterede produkter</h2>
 
-      <TemplatesSlider v-if="slides" :slides="slides" :slides-each-page="3" :desc="false" />
+      <OrganismsSlider v-if="slides" :slides="slides" :slides-each-page="3" :desc="false" />
     </div>
-    <TemplatesAddedToCart v-if="showModal" :product-image="currentProduct.image[0].url" @closeModal="closeModal" />
+    <OrganismsAddedToCart v-if="showModal" :product-image="currentProduct.image[0].url" @closeModal="closeModal" />
   </div>
 </template>
 

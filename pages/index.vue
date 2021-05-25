@@ -6,7 +6,7 @@
     />
     <div class="frontpage-slider standard-width">
       <h2>Populære plakater</h2>
-      <TemplatesSlider :slides="slides" :slides-each-page="3" />
+      <OrganismsSlider :slides="slides" :slides-each-page="3" />
     </div>
     <div class="standard-width">
       <OrganismsCategory
