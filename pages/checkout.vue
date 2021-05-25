@@ -12,9 +12,9 @@
         <img :src="`${getStrapiMedia(product.image)}`" :alt="product.name" class="product__image" />
         <p>{{ product.name }} - {{ product.size }}</p>
 
-        <InputIncrement @changeAmount="changeAmount(product.productId, ...arguments)">
+        <MoleculesInputIncrement @changeAmount="changeAmount(product.productId, ...arguments)">
           {{ product.amount }}
-        </InputIncrement>
+        </MoleculesInputIncrement>
       </div> -->
 
       <table class="product-table">
@@ -40,9 +40,9 @@
             </td>
 
             <td>
-              <InputIncrement @changeAmount="changeAmount(product.productId, product.sizeId, ...arguments)">
+              <MoleculesInputIncrement @changeAmount="changeAmount(product.productId, product.sizeId, ...arguments)">
                 {{ product.amount }}
-              </InputIncrement>
+              </MoleculesInputIncrement>
             </td>
 
             <td>
@@ -138,8 +138,8 @@ export default {
     async handleSubmit(e) {
       e.preventDefault();
 
-      // const baseUrl = 'http://localhost:1337/';
-      const baseUrl = 'https://hayat-plakater-backend-irztg.ondigitalocean.app/';
+      const baseUrl = 'http://localhost:1337/';
+      // const baseUrl = 'https://hayat-plakater-backend-irztg.ondigitalocean.app/';
 
       const response = await this.$http.$post(`${baseUrl}orders`, {
         cartDetail: this.$store.getters.getShoppingCart,

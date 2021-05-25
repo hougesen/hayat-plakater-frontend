@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <div class="logo"><img src="../assets/Logo.svg" alt="" /></div>
+    <div class="logo"><img src="@/assets/Logo.svg" alt="" /></div>
     <div>
       <h2>Hayat plakater</h2>
       <p>

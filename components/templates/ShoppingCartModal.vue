@@ -1,5 +1,5 @@
 <template>
-  <Modal @closeModal="closeModal">
+  <OrganismsModal @closeModal="closeModal">
     <template #title> Shopping kurv </template>
 
     <template #content>
@@ -16,9 +16,9 @@
           <div class="cart-product-amount">
             <p>
               <span>
-                <InputIncrement @changeAmount="changeAmount(product.productId, ...arguments)">
+                <MoleculesInputIncrement @changeAmount="changeAmount(product.productId, ...arguments)">
                   {{ product.amount }}
-                </InputIncrement>
+                </MoleculesInputIncrement>
               </span>
             </p>
           </div>
@@ -36,7 +36,7 @@
         <button name="button" @click="goToCheckout">Process to checkout</button>
       </div>
     </template>
-  </Modal>
+  </OrganismsModal>
 </template>
 
 <script>

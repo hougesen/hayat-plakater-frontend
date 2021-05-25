@@ -1,15 +1,15 @@
 <template>
   <div>
-    <Hero
+    <OrganismsHero
       hero-txt="Giv dine vægge noget liv"
       hero-img="https://images.pexels.com/photos/4067759/pexels-photo-4067759.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
     />
     <div class="frontpage-slider standard-width">
       <h2>Populære plakater</h2>
-      <Slider :slides="slides" :slides-each-page="3" />
+      <TemplatesSlider :slides="slides" :slides-each-page="3" />
     </div>
     <div class="standard-width">
-      <Category
+      <OrganismsCategory
         title="Sahara"
         title-color="#CD9073"
         link-to="google.com"
@@ -18,7 +18,7 @@
         text-color="#CD9073"
         info-box-pos="20px"
       />
-      <Category
+      <OrganismsCategory
         title="Nature"
         title-color="#395E4E"
         link-to="google.com"
@@ -27,7 +27,7 @@
         text-color="#395E4E"
         info-box-pos="1040px"
       />
-      <Category
+      <OrganismsCategory
         title="Sahara"
         title-color="#A2D2CE"
         link-to="google.com"
@@ -38,7 +38,7 @@
       />
     </div>
     <div class="about-us">
-      <Accordion class="standard-width">
+      <OrganismsAccordion class="standard-width">
         <template #title>Hvad er HAYAT?</template>
 
         <template #content>
@@ -52,9 +52,9 @@
             Asger Jorn, er du garanteret et roligt, men sigende bidrag til dit hjem.
           </p>
         </template>
-      </Accordion>
+      </OrganismsAccordion>
 
-      <Accordion class="standard-width">
+      <OrganismsAccordion class="standard-width">
         <template #title>Visioner og værdier</template>
 
         <template #content>
@@ -75,7 +75,7 @@
             nulla pariatur?
           </p>
         </template>
-      </Accordion>
+      </OrganismsAccordion>
     </div>
   </div>
 </template>

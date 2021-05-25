@@ -1,5 +1,5 @@
 <template>
-  <Modal :close-button="false" @closeModal="closeModal">
+  <OrganismsModal :close-button="false" @closeModal="closeModal">
     <template #title> Plakaten er lagt i kurven </template>
 
     <template #content>
@@ -10,7 +10,7 @@
         <button @click="closeModal">Fortsæt shopping</button>
       </div>
     </template>
-  </Modal>
+  </OrganismsModal>
 </template>
 
 <script>
