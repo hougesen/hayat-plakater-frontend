@@ -138,8 +138,8 @@ export default {
     async handleSubmit(e) {
       e.preventDefault();
 
-      const baseUrl = 'http://localhost:1337/';
-      // const baseUrl = 'https://hayat-plakater-backend-irztg.ondigitalocean.app/';
+      // const baseUrl = 'http://localhost:1337/';
+      const baseUrl = 'https://hayat-plakater-backend-irztg.ondigitalocean.app/';
 
       const response = await this.$http.$post(`${baseUrl}orders`, {
         cartDetail: this.$store.getters.getShoppingCart,
