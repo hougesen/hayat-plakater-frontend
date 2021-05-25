@@ -54,13 +54,15 @@
             </td>
 
             <td>
-              <button @click="removeProduct(product.productId, product.sizeId)">X</button>
+              <button @click="removeProduct(product.productId, product.sizeId)">
+                <i class="fas fa-trash-alt"></i>
+              </button>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-
+    <hr />
     <form @submit.prevent="handleSubmit">
       <div>
         <label for="name">Navn</label>
