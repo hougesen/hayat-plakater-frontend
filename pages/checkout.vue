@@ -139,9 +139,9 @@ export default {
       e.preventDefault();
 
       // const baseUrl = 'http://localhost:1337/';
-      const baseUrl = 'https://hayat-plakater-backend-irztg.ondigitalocean.app/';
+      // const baseUrl = 'https://hayat-plakater-backend-irztg.ondigitalocean.app/';
 
-      const response = await this.$http.$post(`${baseUrl}orders`, {
+      const response = await this.$http.$post(`${process.env.storeUrl}orders`, {
         cartDetail: this.$store.getters.getShoppingCart,
         cartTotal: this.$store.getters.getTotalPrice,
         name: '',
