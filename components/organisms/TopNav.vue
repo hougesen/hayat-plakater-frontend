@@ -4,7 +4,7 @@
       <img class="logo" src="@/assets/Logo.svg" alt="" />
     </nuxt-link>
     <div class="nav-links">
-      <nuxt-link to="/" class="nav-link"> Forside </nuxt-link>
+      <nuxt-link to="/" class="nav-link">Forside</nuxt-link>
       <nuxt-link
         v-for="category in categories"
         :key="category.slug"
@@ -98,9 +98,11 @@ export default {
   }
 }
 .nav-link {
+  text-transform: capitalize;
   font-size: 1.25rem;
   color: white;
   text-decoration: none;
+  margin: 0 1rem;
 }
 .fa-stack[data-count]:after {
   position: absolute;

@@ -23,7 +23,7 @@ export default {
   border: none;
   padding: 1rem;
   &--primary {
-    background-color: black;
+    background-color: var(--default-text-color);
     color: white;
   }
 
