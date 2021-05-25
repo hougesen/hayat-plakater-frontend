@@ -23,8 +23,9 @@ export default {
   border: none;
   padding: 1rem;
   &--primary {
-    background-color: var(--default-text-color);
-    color: white;
+    border: 5px solid #000;
+    background-color: #fff;
+    color: #000;
   }
 
   &--secondary {

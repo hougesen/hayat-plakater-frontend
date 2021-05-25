@@ -4,7 +4,7 @@
       <h1>{{ heroTxt }}</h1>
       <br />
       <nuxt-link to="categories/plakater">
-        <button class="ctaBtn">Se udvalget</button>
+        <AtomsButton class="ctaBtn">Se udvalget</AtomsButton>
       </nuxt-link>
     </div>
     <div class="child1" :style="`background-image: url(${heroImg})`"></div>
@@ -62,10 +62,6 @@ export default {
   color: #fff;
   font-size: 2.5rem;
   text-transform: uppercase;
-  background: none;
-  border: none;
-  border: 5px solid #000;
-  color: #000;
 
   &:hover {
     color: #fff;
