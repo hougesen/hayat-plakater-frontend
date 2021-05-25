@@ -1,7 +1,7 @@
 <template>
   <nav class="top-nav">
     <nuxt-link to="/" class="logoSection">
-      <img class="logo" src="../assets/Logo.svg" alt="" />
+      <img class="logo" src="@/assets/Logo.svg" alt="" />
     </nuxt-link>
     <div class="nav-links">
       <nuxt-link

@@ -1,12 +1,12 @@
 <template>
   <div>
-    <TopNav />
+    <OrganismsTopNav />
 
     <div v-if="shoppingCartVisible">
-      <ShoppingCartModal />
+      <OrganismsShoppingCartModal />
     </div>
     <Nuxt />
-    <Footer />
+    <OrganismsFooter />
   </div>
 </template>
 
