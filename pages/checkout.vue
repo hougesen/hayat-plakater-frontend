@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="standard-width">
     <h1>Kassen</h1>
 
     <div class="checkout-products">
@@ -16,7 +16,9 @@
           {{ product.amount }}
         </MoleculesInputIncrement>
       </div> -->
-
+      <div class="GratisFragt">
+        <h2>GRATIS FRAGT PÅ ALLE KØB</h2>
+      </div>
       <table class="product-table">
         <thead>
           <tr>
@@ -54,41 +56,49 @@
             </td>
 
             <td>
-              <button @click="removeProduct(product.productId, product.sizeId)">X</button>
+              <a @click="removeProduct(product.productId, product.sizeId)">
+                <i class="fas fa-trash-alt"></i>
+              </a>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
+    <br />
+    <hr />
+    <h2>Dine oplysninger</h2>
+    <div class="forms">
+      <div class="form">
+        <form @submit.prevent="handleSubmit">
+          <div>
+            <label for="name">Navn</label>
+            <input v-model="name" type="text" placeholder="Navn" name="name" required />
+          </div>
 
-    <form @submit.prevent="handleSubmit">
-      <div>
-        <label for="name">Navn</label>
-        <input v-model="name" type="text" placeholder="Navn" name="name" required />
+          <div>
+            <label for="email">Email</label>
+            <input v-model="email" type="email" placeholder="Email" name="email" required />
+          </div>
+
+          <div>
+            <label for="adress">Adresse</label>
+            <input v-model="address" type="text" placeholder="Addresse" name="address" required />
+          </div>
+
+          <div>
+            <label for="city">By</label>
+            <input v-model="city" type="text" placeholder="By" name="city" required />
+          </div>
+
+          <div>
+            <label for="postalCode">Postnummer</label>
+            <input v-model="postalCode" type="number" placeholder="Postnummer" name="postalCode" required />
+          </div>
+
+          <AtomsButton class="ctaBtn">Checkout</AtomsButton>
+        </form>
       </div>
-
-      <div>
-        <label for="email">Email</label>
-        <input v-model="email" type="email" placeholder="Email" name="email" required />
-      </div>
-
-      <div>
-        <label for="adress">Adresse</label>
-        <input v-model="address" type="text" placeholder="Addresse" name="address" required />
-      </div>
-
-      <div>
-        <label for="city">By</label>
-        <input v-model="city" type="text" placeholder="By" name="city" required />
-      </div>
-
-      <div>
-        <label for="postalCode">Postnummer</label>
-        <input v-model="postalCode" type="number" placeholder="Postnummer" name="postalCode" required />
-      </div>
-
-      <button type="submit">Checkout</button>
-    </form>
+    </div>
   </div>
 </template>
 
@@ -176,6 +186,57 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.forms {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  background-color: #f0f0f0;
+  margin: 1rem 0;
+  padding: 2rem;
+}
+label {
+  font-weight: 900;
+}
+input[type='text'],
+input[type='number'],
+input[type='email'] {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.1s;
+  font-size: 1rem;
+}
+input:focus {
+  outline: 3px solid #000;
+  -moz-outline-radius: 25px;
+}
+.ctaBtn {
+  margin: 1rem 0;
+  width: 100%;
+  transition: 0.3s;
+  color: #000;
+  font-size: 1rem;
+  text-transform: uppercase;
+
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+.GratisFragt {
+  margin: 3rem 0;
+  text-align: center;
+  background-color: #d8d8d8;
+}
+
 .product-table {
   width: 100%;
   border-collapse: collapse;
@@ -185,6 +246,9 @@ export default {
     }
     img {
       height: 125px;
+    }
+    a {
+      cursor: pointer;
     }
   }
 }
