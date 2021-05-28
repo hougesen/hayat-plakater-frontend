@@ -92,7 +92,15 @@
 
           <div>
             <label for="postalCode">Postnummer</label>
-            <input v-model="postalCode" type="number" placeholder="Postnummer" name="postalCode" required />
+            <input
+              v-model="postalCode"
+              type="number"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              maxlength="4"
+              placeholder="Postnummer"
+              name="postalCode"
+              required
+            />
           </div>
 
           <AtomsButton class="ctaBtn">Checkout</AtomsButton>
