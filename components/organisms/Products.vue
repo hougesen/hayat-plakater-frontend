@@ -10,7 +10,7 @@
           <img class="product-image" :src="`${getStrapiMedia(product.image[0].url)}`" :alt="product.name" />
           <h1 class="product-title">{{ product.name }}</h1>
 
-          <p>Fra {{ product.poster_price_sizes[0].price }}kr</p>
+          <p class="product-text">Fra {{ product.poster_price_sizes[0].price }}kr</p>
         </nuxt-link>
       </div>
     </div>
@@ -47,18 +47,30 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .product-list {
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
   margin: 2rem;
   .product {
-    border: 1px solid red;
     text-align: center;
     width: 100%;
+    margin: 1rem 0;
+    a {
+      text-decoration: none;
+    }
     .product-image {
       width: 100%;
+    }
+    .product-title,
+    .product-text {
+      text-align: left;
+      color: var(--default-text-color);
+      text-decoration: none;
+    }
+    .product-text {
+      font-size: 1.25rem;
     }
   }
 }

@@ -17,11 +17,26 @@ export default {
   name: 'Project',
 
   props: {
-    categoryImg: String,
-    categoryTxt: String,
-    categoryInfoBoxColor: String,
-    categoryInfoBoxTxt: String,
-    categoryTxtColor: String,
+    categoryImg: {
+      type: String,
+      default: '',
+    },
+    categoryTxt: {
+      type: String,
+      required: true,
+    },
+    categoryInfoBoxColor: {
+      type: String,
+      default: '#000',
+    },
+    categoryInfoBoxTxt: {
+      type: String,
+      default: '',
+    },
+    categoryTxtColor: {
+      type: String,
+      default: '#fff',
+    },
   },
 };
 </script>

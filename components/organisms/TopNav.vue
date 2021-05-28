@@ -5,6 +5,7 @@
     </nuxt-link>
     <div class="nav-links">
       <nuxt-link to="/" class="nav-link">Forside</nuxt-link>
+      <nuxt-link to="/plakater" class="nav-link">Plakater</nuxt-link>
       <nuxt-link
         v-for="category in categories"
         :key="category.slug"
