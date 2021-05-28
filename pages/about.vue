@@ -13,14 +13,14 @@
         <h2>Hvor det hele startede</h2>
         <p>
           From holy texts to royal decrees, Chaucer to Shakespeare and Greek to Latin, all writing was passed down from
-          generation to generation – strange to think about in this technological age!
+          generation to generation – strange to think about in this technological age!1
         </p>
       </div>
       <div class="child bgcb">
         <h2>Oprindelse og anvendelse</h2>
         <p>
           From holy texts to royal decrees, Chaucer to Shakespeare and Greek to Latin, all writing was passed down from
-          generation to generation – strange to think about in this technological age!
+          generation to generation – strange to think about in this technological age!2
         </p>
       </div>
       <div
@@ -35,14 +35,14 @@
         <h2>De forskellige stilarter</h2>
         <p>
           From holy texts to royal decrees, Chaucer to Shakespeare and Greek to Latin, all writing was passed down from
-          generation to generation – strange to think about in this technological age!
+          generation to generation – strange to think about in this technological age!3
         </p>
       </div>
       <div class="child bgcb">
         <h2>Moderne kalligrafi</h2>
         <p>
           From holy texts to royal decrees, Chaucer to Shakespeare and Greek to Latin, all writing was passed down from
-          generation to generation – strange to think about in this technological age!
+          generation to generation – strange to think about in this technological age!4
         </p>
       </div>
       <div
