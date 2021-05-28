@@ -1,7 +1,6 @@
 <template>
   <button class="button" :class="`button--${buttonType}`" @click="$emit('buttonClick')">
     <slot />
-    {{ buttonType }}
   </button>
 </template>
 

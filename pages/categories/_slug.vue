@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div v-if="currentCategory">
     <OrganismsCategoryHero
       category-img="https://images.pexels.com/photos/1995730/pexels-photo-1995730.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-      category-txt="I Nature kollektionen vil du finde en række idylliske natur inspirerede plakater med ligeledes idylliske
-  budskab."
-      category-info-box-color="#01291D"
-      category-info-box-txt="Nature"
+      :category-txt="currentCategory.description"
+      :category-info-box-color="currentCategory.infoBoxColor"
+      :category-info-box-txt="currentCategory.name"
       category-txt-color="#fff"
     />
-    <OrganismsProducts :products="currentCategory.products" :error="error" />
+
+    <OrganismsProducts :products="currentCategory.products" />
   </div>
 </template>
 

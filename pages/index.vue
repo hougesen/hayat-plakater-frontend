@@ -3,13 +3,14 @@
     <OrganismsHero
       hero-txt="Giv dine vægge noget liv"
       hero-img="https://images.pexels.com/photos/4067759/pexels-photo-4067759.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+      button-link="/plakater"
     />
     <div class="frontpage-slider standard-width">
       <h2>Populære plakater</h2>
       <OrganismsSlider :slides="slides" :slides-each-page="3" />
     </div>
 
-    <div class="category-banners standard-width">
+    <!--     <div class="category-banners standard-width">
       <OrganismsCategory
         title="Sahara"
         title-color="#CD9073"
@@ -37,10 +38,10 @@
         text-color="#A2D2CE"
         info-box-pos="20px"
       />
-    </div>
+    </div> -->
 
     <div class="about-us standard-width">
-      <OrganismsAccordion>
+      <OrganismsAccordion :open="true">
         <template #title>Hvad er HAYAT?</template>
 
         <template #content>
@@ -56,7 +57,7 @@
         </template>
       </OrganismsAccordion>
 
-      <OrganismsAccordion>
+      <OrganismsAccordion :open="true">
         <template #title>Visioner og værdier</template>
 
         <template #content>
