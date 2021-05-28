@@ -3,7 +3,7 @@
     <div class="child">
       <h1>{{ heroTxt }}</h1>
       <br />
-      <nuxt-link to="categories/plakater">
+      <nuxt-link v-if="buttonLink" :to="buttonLink">
         <AtomsButton class="ctaBtn">Se udvalget</AtomsButton>
       </nuxt-link>
     </div>
@@ -21,6 +21,10 @@ export default {
     heroTxt: {
       type: String,
       required: true,
+    },
+    buttonLink: {
+      type: String,
+      default: '',
     },
   },
 };
