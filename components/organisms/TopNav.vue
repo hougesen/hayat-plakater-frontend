@@ -14,6 +14,7 @@
       >
         {{ category.name }}
       </nuxt-link>
+      <nuxt-link to="/history" class="nav-link">History</nuxt-link>
       <nuxt-link to="/about" class="nav-link">About</nuxt-link>
     </div>
     <div class="buttonsGrid">
