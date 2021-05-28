@@ -63,5 +63,10 @@ export default {
       text-decoration: underline;
     }
   }
+  .tabs-body {
+    p {
+      font-size: 1.25rem;
+    }
+  }
 }
 </style>
