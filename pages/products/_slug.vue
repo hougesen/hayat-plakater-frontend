@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="standard-width">
+    <div class="breadcrumb standard-width">
       <p>
         <nuxt-link to="/"> Forside </nuxt-link>
         >
@@ -47,7 +47,7 @@
       <OrganismsTabs :data="getProductTabs" />
     </div>
 
-    <div class="standard-width">
+    <div class="related-products standard-width">
       <h2>Relaterede produkter</h2>
 
       <OrganismsSlider v-if="slides" :slides="slides" :slides-each-page="3" :title="false" />
@@ -96,7 +96,7 @@ export default {
           title: 'Beskrivelse',
           text: this.currentProduct.description,
         },
-        {
+        /*         {
           title: 'Forsendelse og levering',
           text: `
           Vi trykker og sender samme dag på første arbejdsdag. 
@@ -113,7 +113,7 @@ export default {
           Så snart vi har pakket din ordre, kan du følge den. 
           Prisen er uden ramme.
           `,
-        },
+        }, */
       ];
     },
   },
@@ -161,9 +161,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.breadcrumb {
+  margin: 1rem 0;
+}
 .product-page--grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  margin: 3rem 0;
 
   .product-information {
     display: flex;
@@ -183,5 +187,12 @@ export default {
   img {
     max-height: 600px;
   }
+}
+
+.product-description {
+  margin: 4rem 0;
+}
+.related-products {
+  margin: 3rem 0;
 }
 </style>
