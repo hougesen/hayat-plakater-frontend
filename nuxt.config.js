@@ -51,6 +51,8 @@ export default {
 
   env: {
     storeUrl: process.env.STORE_URL || 'http://localhost:1337/',
+    STRIPE_PK:
+      'pk_test_51ImhvGGzZhtJza9VidZIydizkNx35J8AtdTfxP7ug5lAJnZhuegGEcs95mgRzpMVi5z6EsKYfNjVSxBzLblYsViv00z9CxmUFY',
   },
 
   generate: {

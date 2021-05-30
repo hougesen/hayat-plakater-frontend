@@ -2,10 +2,6 @@
   <div>
     <OrganismsTopNav />
 
-    <div v-if="shoppingCartVisible">
-      <OrganismsShoppingCartModal />
-    </div>
-
     <Nuxt />
 
     <OrganismsFooter />
@@ -14,11 +10,6 @@
 
 <script>
 export default {
-  computed: {
-    shoppingCartVisible() {
-      return this.$store.getters.getShoppingCartVisible;
-    },
-  },
   beforeCreate() {
     this.$store.commit('initStore');
   },

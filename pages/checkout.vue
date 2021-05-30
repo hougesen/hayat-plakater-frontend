@@ -69,7 +69,7 @@
     <h2>Dine oplysninger</h2>
     <div class="forms">
       <div class="form">
-        <form @submit.prevent="handleSubmit">
+        <form @submit.prevent="handleCheckout">
           <div>
             <label for="name">Navn</label>
             <input v-model="name" type="text" placeholder="Navn" name="name" required />
@@ -150,38 +150,38 @@ export default {
     removeProduct(productId, sizeId) {
       this.$store.commit('removeProduct', { productId, sizeId });
     },
-    async handleSubmit(e) {
-      e.preventDefault();
+    async handleCheckout() {
+      // Initate Stripe public key
+      const stripe = await loadStripe(process.env.STRIPE_PK);
 
-      // const baseUrl = 'http://localhost:1337/';
-      // const baseUrl = 'https://hayat-plakater-backend-irztg.ondigitalocean.app/';
-
-      const response = await this.$http.$post(`${process.env.storeUrl}orders`, {
-        cartDetail: this.$store.getters.getShoppingCart,
-        cartTotal: this.$store.getters.getTotalPrice,
-        name: '',
-        email: '',
-        address: '',
-        city: '',
-        postalCode: '',
-      });
-
-      // stripe logic
-      const stripePromise = loadStripe(
-        'pk_test_51ImhvGGzZhtJza9VidZIydizkNx35J8AtdTfxP7ug5lAJnZhuegGEcs95mgRzpMVi5z6EsKYfNjVSxBzLblYsViv00z9CxmUFY',
-      );
-
-      const session = response;
-
-      const stripe = await stripePromise;
-
-      const result = await stripe.redirectToCheckout({
-        sessionId: session.id,
-      });
-
-      if (result.error) {
-        this.$nuxt.context.error(result.error.message);
-      }
+      // Send request to backend
+      await this.$http
+        .$post(`${process.env.storeUrl}orders`, {
+          cartDetail: this.$store.getters.getShoppingCart,
+          cartTotal: this.$store.getters.getTotalPrice,
+          name: this.name,
+          email: this.email,
+          address: this.address,
+          city: this.city,
+          postalCode: this.postalCode,
+        })
+        .then((response) => {
+          // Returns the backend response (Stripe session id)
+          return response;
+        })
+        .then((session) => {
+          // Redirect to Stripe checkout
+          return stripe.redirectToCheckout({ sessionId: session.id });
+        })
+        .then((result) => {
+          // Alert the customer if an error occurs
+          if (result.error) {
+            alert(result.error.message);
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
     },
   },
 };
