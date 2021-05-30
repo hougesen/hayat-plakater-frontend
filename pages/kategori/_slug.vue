@@ -14,9 +14,10 @@
 
 <script>
 export default {
+  // Get current category page
   async asyncData({ $strapi, route }) {
-    const id = route.params.slug;
-    let currentCategory = await $strapi.$categories.find({ slug: id });
+    const slug = route.params.slug;
+    let currentCategory = await $strapi.$categories.find({ slug: slug });
     currentCategory = currentCategory[0];
     return { currentCategory };
   },
@@ -27,18 +28,6 @@ export default {
       error: null,
     };
   },
-  /*   async mounted() {
-    let path = window.location.pathname.replace('/categories/', '');
-
-    try {
-      this.category = await this.$strapi.$categories.find({
-        slug: path
-      });
-      this.category = this.category[0];
-    } catch (error) {
-      this.error = error;
-    }
-  } */
 };
 </script>
 

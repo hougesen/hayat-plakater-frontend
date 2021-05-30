@@ -141,9 +141,6 @@ export default {
   methods: {
     getStrapiMedia,
     changeAmount(productId, sizeId, e) {
-      console.log(`changeAmount(${productId})`);
-      console.log(e);
-
       this.$store.commit('changeProductAmount', {
         productId,
         sizeId,
@@ -173,7 +170,6 @@ export default {
       const stripePromise = loadStripe(
         'pk_test_51ImhvGGzZhtJza9VidZIydizkNx35J8AtdTfxP7ug5lAJnZhuegGEcs95mgRzpMVi5z6EsKYfNjVSxBzLblYsViv00z9CxmUFY',
       );
-      console.log(stripePromise);
 
       const session = response;
 
@@ -182,8 +178,6 @@ export default {
       const result = await stripe.redirectToCheckout({
         sessionId: session.id,
       });
-
-      console.log(response);
 
       if (result.error) {
         this.$nuxt.context.error(result.error.message);

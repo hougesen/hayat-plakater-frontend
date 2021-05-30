@@ -18,20 +18,17 @@ import { getStrapiMedia } from '@/helpers/strapi-media';
 
 export default {
   name: 'AddedToCart',
-
   props: {
     productImage: {
       type: String,
       required: true,
     },
   },
-
   methods: {
     getStrapiMedia,
     closeModal() {
       this.$emit('closeModal');
     },
-
     goToCheckout() {
       this.$router.push('/checkout');
     },

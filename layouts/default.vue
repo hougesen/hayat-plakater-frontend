@@ -5,7 +5,9 @@
     <div v-if="shoppingCartVisible">
       <OrganismsShoppingCartModal />
     </div>
+
     <Nuxt />
+
     <OrganismsFooter />
   </div>
 </template>

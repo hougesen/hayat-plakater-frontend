@@ -4,7 +4,7 @@
       <p>
         <nuxt-link to="/"> Forside </nuxt-link>
         >
-        <nuxt-link to="/categories/plakater"> Plakater </nuxt-link>
+        <nuxt-link to="/plakater"> Plakater </nuxt-link>
         >
         {{ currentProduct.name }}
       </p>
@@ -60,9 +60,10 @@
 import { getStrapiMedia } from '@/helpers/strapi-media';
 
 export default {
+  // Get current product page
   async asyncData({ $strapi, route }) {
-    const id = route.params.slug;
-    let currentProduct = await $strapi.$products.find({ slug: id });
+    const slug = route.params.slug;
+    let currentProduct = await $strapi.$products.find({ slug: slug });
     currentProduct = currentProduct[0];
     return { currentProduct };
   },
@@ -119,6 +120,7 @@ export default {
   },
 
   async mounted() {
+    // Fetch featured products for slider
     try {
       let featuredProducts = await this.$strapi.$products.find({ featured: true });
 
@@ -146,9 +148,6 @@ export default {
         price: this.priceInfo.price,
         image: this.currentProduct.image[0].url,
       };
-
-      console.log(item);
-
       this.$store.commit('addToShoppingCart', item);
 
       this.showModal = true;

@@ -23,7 +23,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'About',
+};
 </script>
 
 <style lang="scss" scoped>

@@ -67,7 +67,7 @@ export default {
         });
 
       for (const product of products) {
-        routes.push(`/products/${product.slug}`);
+        routes.push(`/produkt/${product.slug}`);
       }
 
       const categories = await axios
@@ -78,7 +78,7 @@ export default {
         });
 
       for (const category of categories) {
-        routes.push(`/categories/${category.slug}`);
+        routes.push(`/kategori/${category.slug}`);
       }
 
       return routes;

@@ -9,7 +9,7 @@
       <nuxt-link
         v-for="category in categories"
         :key="category.slug"
-        :to="`/categories/${category.slug}`"
+        :to="`/kategori/${category.slug}`"
         class="nav-link"
       >
         {{ category.name }}
@@ -39,6 +39,7 @@ export default {
     };
   },
   async mounted() {
+    // Get name of all categories
     try {
       this.categories = await this.$strapi.find('categories');
     } catch (error) {

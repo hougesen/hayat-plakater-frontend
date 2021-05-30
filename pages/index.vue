@@ -94,6 +94,7 @@ export default {
     };
   },
   async mounted() {
+    // Fetch featured products for slider
     try {
       this.products = await this.$strapi.$products.find({ featured: true });
 

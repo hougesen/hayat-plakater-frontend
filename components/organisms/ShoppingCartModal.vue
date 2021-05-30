@@ -55,13 +55,9 @@ export default {
       this.$store.commit('clearShoppingCart');
     },
     closeModal() {
-      console.log('CLOASD');
       this.$store.commit('setShoppingCartVisible');
     },
     changeAmount(productId, e) {
-      console.log(`changeAmount(${productId})`);
-      console.log(e);
-
       this.$store.commit('changeProductAmount', {
         productId,
         e,

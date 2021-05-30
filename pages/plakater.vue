@@ -19,6 +19,7 @@
 
 <script>
 export default {
+  // Fetch all products
   async asyncData({ $strapi }) {
     let currentCategory = await $strapi.$products.find({});
 

@@ -23,7 +23,6 @@
 <script>
 export default {
   name: 'Tabs',
-
   props: {
     data: {
       /* The data array is expected to look like this:
@@ -38,7 +37,6 @@ export default {
       required: true,
     },
   },
-
   data() {
     return {
       activePage: 0,

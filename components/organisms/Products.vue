@@ -6,7 +6,7 @@
 
     <div v-else class="product-list">
       <div v-for="product in products" :key="product.id" class="product">
-        <nuxt-link :to="`/products/${product.slug}`">
+        <nuxt-link :to="`/produkt/${product.slug}`">
           <img class="product-image" :src="`${getStrapiMedia(product.image[0].url)}`" :alt="product.name" />
           <h1 class="product-title">{{ product.name }}</h1>
 

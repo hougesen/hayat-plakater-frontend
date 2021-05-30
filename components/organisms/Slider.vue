@@ -1,7 +1,7 @@
 <template>
   <Swiper class="swiper" :options="swiperOption">
     <SwiperSlide v-for="slide of slides" :key="slide.id">
-      <nuxt-link :to="`products/${slide.slug}`">
+      <nuxt-link :to="`/produkt/${slide.slug}`">
         <img :src="`${getStrapiMedia(slide.imageUrl)}`" :alt="slide.title" />
 
         <h3 v-if="title" class="slide-title">{{ slide.title }}</h3>
