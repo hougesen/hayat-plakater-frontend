@@ -4,7 +4,7 @@
 
     <template #content>
       <div class="modal-content">
-        <img :src="`${getStrapiMedia(productImage)}`" alt="" />
+        <img :src="`${getStrapiMedia(productImage)}`" :alt="`Plakat ${productName} - Hayat Plakater`" />
 
         <button @click="goToCheckout">Til kassen</button>
         <button @click="closeModal">Fortsæt shopping</button>
@@ -20,6 +20,10 @@ export default {
   name: 'AddedToCart',
   props: {
     productImage: {
+      type: String,
+      required: true,
+    },
+    productName: {
       type: String,
       required: true,
     },

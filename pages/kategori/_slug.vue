@@ -28,6 +28,20 @@ export default {
       error: null,
     };
   },
+  head() {
+    return {
+      title: `${this.currentCategory.name} Kollektion - Hayat Plakater`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            this.currentCategory.metaDescription ||
+            'Hos Hayat Plakater finder du et udvalg af arabisk kalligrafi plakater med stilfulde rammer. Vi har plakater i forskellige kategorier, uanset stil og smag, kan du finde noget at resonere med',
+        },
+      ],
+    };
+  },
 };
 </script>
 

@@ -1,17 +1,24 @@
-import axios from 'axios';
+// import axios from 'axios';
+
+import generateRoutes from './helpers/generateRoutes';
 
 export default {
   target: 'static',
 
   head: {
-    title: 'hayat-plakater-frontend',
+    title: 'Hayat Plakater',
     htmlAttrs: {
       lang: 'da',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Hos Hayat Plakater finder du et udvalg af arabisk kalligrafi plakater med stilfulde rammer. Vi har plakater i forskellige kategorier, uanset stil og smag, kan du finde noget at resonere med',
+      },
     ],
     link: [
       {
@@ -29,8 +36,6 @@ export default {
       },
     ],
   },
-
-  css: [],
 
   plugins: [{ src: '@/plugins/vue-awesome-swiper', mode: 'client' }],
 
@@ -56,38 +61,24 @@ export default {
   },
 
   generate: {
-    async routes() {
-      const baseUrl = process.env.API_URL || 'http://localhost:1337/';
-
-      const routes = ['/', 'checkout'];
-
-      const products = await axios
-        .get(`${baseUrl}products`)
-        .then((res) => res.data)
-        .catch((err) => {
-          console.log(err);
-        });
-
-      for (const product of products) {
-        routes.push(`/produkt/${product.slug}`);
-      }
-
-      const categories = await axios
-        .get(`${baseUrl}categories`)
-        .then((res) => res.data)
-        .catch((err) => {
-          console.log(err);
-        });
-
-      for (const category of categories) {
-        routes.push(`/kategori/${category.slug}`);
-      }
-
-      return routes;
+    routes() {
+      return generateRoutes();
     },
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
+  sitemap: {
+    hostname: 'https://hayatplakater.dk',
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date(),
+    },
+    gzip: true,
+    routes() {
+      return generateRoutes();
+    },
+  },
+
   build: {
     babel: {
       plugins: [['@babel/plugin-proposal-private-methods', { loose: true }]],

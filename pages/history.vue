@@ -56,6 +56,11 @@
 <script>
 export default {
   name: 'History',
+  head() {
+    return {
+      title: `Kalligrafiens Historie - Hayat Plakater`,
+    };
+  },
 };
 </script>
 

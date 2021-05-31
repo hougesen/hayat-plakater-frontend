@@ -33,7 +33,11 @@
         <tbody>
           <tr v-for="(product, index) of getShoppingCart" :key="index" class="product">
             <td class="product-description">
-              <img :src="`${getStrapiMedia(product.image)}`" :alt="product.name" class="product__image" />
+              <img
+                :src="`${getStrapiMedia(product.image)}`"
+                :alt="`Plakat ${product.name} - Hayat Plakater`"
+                class="product__image"
+              />
               <div>
                 <h2>{{ product.name }}</h2>
                 <h3>{{ product.size }}</h3>
@@ -117,7 +121,6 @@ import { loadStripe } from '@stripe/stripe-js';
 
 export default {
   name: 'Checkout',
-  components: {},
   data() {
     return {
       name: '',
@@ -131,13 +134,16 @@ export default {
       stripePromise: {},
     };
   },
-
+  head() {
+    return {
+      title: `Indkøbskurv - Hayat Plakater`,
+    };
+  },
   computed: {
     getShoppingCart() {
       return this.$store.getters.getShoppingCart;
     },
   },
-
   methods: {
     getStrapiMedia,
     changeAmount(productId, sizeId, e) {

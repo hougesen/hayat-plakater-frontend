@@ -2,9 +2,10 @@
   <div>
     <div class="breadcrumb standard-width">
       <p>
-        <nuxt-link to="/"> Forside </nuxt-link>
+        <nuxt-link to="/">Forside</nuxt-link>
         >
-        <nuxt-link to="/plakater"> Plakater </nuxt-link>
+        <nuxt-link to="/plakater">Plakater</nuxt-link>
+
         >
         {{ currentProduct.name }}
       </p>
@@ -12,7 +13,10 @@
 
     <div class="product-page--grid standard-width">
       <div class="product-image">
-        <img :src="`${getStrapiMedia(currentProduct.image[0].url)}`" alt="" />
+        <img
+          :src="`${getStrapiMedia(currentProduct.image[0].url)}`"
+          alt="`Billede der viser Hayat Plakater i en stue`"
+        />
       </div>
       <div class="product-information">
         <h1 class="product-title">
@@ -52,7 +56,12 @@
 
       <OrganismsSlider v-if="slides" :slides="slides" :slides-each-page="3" :title="false" />
     </div>
-    <OrganismsAddedToCart v-if="showModal" :product-image="currentProduct.image[0].url" @closeModal="closeModal" />
+    <OrganismsAddedToCart
+      v-if="showModal"
+      :product-image="currentProduct.image[0].url"
+      :product-name="currentProduct.name"
+      @closeModal="closeModal"
+    />
   </div>
 </template>
 
@@ -83,7 +92,20 @@ export default {
       slides: [],
     };
   },
-
+  head() {
+    return {
+      title: `Plakat ${this.currentProduct.name} - Hayat Plakater`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            this.currentProduct.metaDescription ||
+            'Hos Hayat Plakater finder du et udvalg af arabisk kalligrafi plakater med stilfulde rammer. Vi har plakater i forskellige kategorier, uanset stil og smag, kan du finde noget at resonere med',
+        },
+      ],
+    };
+  },
   computed: {
     totalPrice() {
       return this.amount * this.priceInfo.price;
@@ -97,21 +119,21 @@ export default {
           title: 'Beskrivelse',
           text: this.currentProduct.description,
         },
-        /*         {
+        /* {
           title: 'Forsendelse og levering',
           text: `
-          Vi trykker og sender samme dag på første arbejdsdag. 
-          Dvs., at hvis du bestiller i weekenden, sender vi din vare allerede mandag. 
+          Vi trykker og sender samme dag på første arbejdsdag.
+          Dvs., at hvis du bestiller i weekenden, sender vi din vare allerede mandag.
           For at sikre at plakaten ankommer i perfekt stand, pakker vi den rullet op i en papkasse med kassefyld.
-          En plakat er mere end bare farve på papir. 
-          En minimalistisk plakat passer lige så godt til et soveværelse, 
-          som til en stue eller en entré. 
-          Plakaten kan også bruges som en personlig gave til din partner, dit barn eller en ven. 
-          Alle vores produkter trykkes på et nøje udvalgt 200 g semi-mat, premium papir af høj kvalitet, 
-          specielt udviklet til fotorealistiske plakater og prints. 
+          En plakat er mere end bare farve på papir.
+          En minimalistisk plakat passer lige så godt til et soveværelse,
+          som til en stue eller en entré.
+          Plakaten kan også bruges som en personlig gave til din partner, dit barn eller en ven.
+          Alle vores produkter trykkes på et nøje udvalgt 200 g semi-mat, premium papir af høj kvalitet,
+          specielt udviklet til fotorealistiske plakater og prints.
           Papiret har en mat bestrøget overflade som er yderst holdbar, og dette resulterer i et ekslusivt look.
-          Vi sender dagligt, så din nye plakat hurtigt kan komme op og hænge. 
-          Så snart vi har pakket din ordre, kan du følge den. 
+          Vi sender dagligt, så din nye plakat hurtigt kan komme op og hænge.
+          Så snart vi har pakket din ordre, kan du følge den.
           Prisen er uden ramme.
           `,
         }, */

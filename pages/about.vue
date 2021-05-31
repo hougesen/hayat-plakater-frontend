@@ -25,6 +25,11 @@
 <script>
 export default {
   name: 'About',
+  head() {
+    return {
+      title: `Om os - Hayat Plakater`,
+    };
+  },
 };
 </script>
 
