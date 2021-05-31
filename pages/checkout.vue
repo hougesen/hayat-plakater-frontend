@@ -1,9 +1,6 @@
 <template>
-  <div class="standard-width">
-    <h1>Kassen</h1>
-
-    <div class="checkout-products">
-      <!--       <div
+  <div class="checkout-container">
+    <!--       <div
         v-for="(product, index) of getShoppingCart"
         :key="index"
         style="background-color:blue; margin:2rem;"
@@ -16,95 +13,73 @@
           {{ product.amount }}
         </MoleculesInputIncrement>
       </div> -->
-      <div class="GratisFragt">
-        <h2>GRATIS FRAGT PÅ ALLE KØB</h2>
+
+    <div class="checkout-grid">
+      <div class="checkout-order-grid">
+        <h1>kassen</h1>
+        <div v-for="(product, index) of getShoppingCart" :key="index" class="order-grid">
+          <div
+            class="order-image"
+            :style="`background-image: url(${getStrapiMedia(product.image)})`"
+            :alt="product.name"
+          ></div>
+          <div class="order-info">
+            <h2>Navn: {{ product.name }}</h2>
+            <h3>Størrelse: {{ product.size }}</h3>
+            <h3>Pris: {{ product.price }}</h3>
+            <h3>Totalpris: {{ parseInt(product.price) * parseInt(product.amount) }}</h3>
+          </div>
+          <div class="order-trash">
+            <MoleculesInputIncrement @changeAmount="changeAmount(product.productId, product.sizeId, ...arguments)">
+              {{ product.amount }}
+            </MoleculesInputIncrement>
+          </div>
+          <div class="order-add-or-remove">
+            <a @click="removeProduct(product.productId, product.sizeId)">
+              <i class="fas fa-trash-alt"></i>
+            </a>
+          </div>
+        </div>
       </div>
-      <table class="product-table">
-        <thead>
-          <tr>
-            <td><!-- Product desc --></td>
-            <td>Antal</td>
-            <td>Pris</td>
-            <td>Totalt</td>
-            <td>Slet</td>
-          </tr>
-        </thead>
+      <div class="forms">
+        <div class="form">
+          <form @submit.prevent="handleSubmit">
+            <div>
+              <label for="name">Navn</label>
+              <input v-model="name" type="text" placeholder="Navn" name="name" required />
+            </div>
 
-        <tbody>
-          <tr v-for="(product, index) of getShoppingCart" :key="index" class="product">
-            <td class="product-description">
-              <img :src="`${getStrapiMedia(product.image)}`" :alt="product.name" class="product__image" />
-              <div>
-                <h2>{{ product.name }}</h2>
-                <h3>{{ product.size }}</h3>
-                {{ product.sizeId }}
-              </div>
-            </td>
+            <div>
+              <label for="email">Email</label>
+              <input v-model="email" type="email" placeholder="Email" name="email" required />
+            </div>
 
-            <td>
-              <MoleculesInputIncrement @changeAmount="changeAmount(product.productId, product.sizeId, ...arguments)">
-                {{ product.amount }}
-              </MoleculesInputIncrement>
-            </td>
+            <div>
+              <label for="adress">Adresse</label>
+              <input v-model="address" type="text" placeholder="Addresse" name="address" required />
+            </div>
 
-            <td>
-              {{ product.price }}
-            </td>
+            <div>
+              <label for="city">By</label>
+              <input v-model="city" type="text" placeholder="By" name="city" required />
+            </div>
 
-            <td>
-              {{ parseInt(product.price) * parseInt(product.amount) }}
-            </td>
+            <div>
+              <label for="postalCode">Postnummer</label>
+              <input
+                v-model="postalCode"
+                type="number"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="4"
+                placeholder="Postnummer"
+                name="postalCode"
+                required
+              />
+            </div>
 
-            <td>
-              <a @click="removeProduct(product.productId, product.sizeId)">
-                <i class="fas fa-trash-alt"></i>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <br />
-    <hr />
-    <h2>Dine oplysninger</h2>
-    <div class="forms">
-      <div class="form">
-        <form @submit.prevent="handleSubmit">
-          <div>
-            <label for="name">Navn</label>
-            <input v-model="name" type="text" placeholder="Navn" name="name" required />
-          </div>
-
-          <div>
-            <label for="email">Email</label>
-            <input v-model="email" type="email" placeholder="Email" name="email" required />
-          </div>
-
-          <div>
-            <label for="adress">Adresse</label>
-            <input v-model="address" type="text" placeholder="Addresse" name="address" required />
-          </div>
-
-          <div>
-            <label for="city">By</label>
-            <input v-model="city" type="text" placeholder="By" name="city" required />
-          </div>
-
-          <div>
-            <label for="postalCode">Postnummer</label>
-            <input
-              v-model="postalCode"
-              type="number"
-              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-              maxlength="4"
-              placeholder="Postnummer"
-              name="postalCode"
-              required
-            />
-          </div>
-
-          <AtomsButton class="ctaBtn">Checkout</AtomsButton>
-        </form>
+            <AtomsButton class="ctaBtn">Checkout</AtomsButton>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -188,12 +163,71 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.checkout-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.checkout-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.GratisFragt {
+  margin: 3rem 0;
+  text-align: center;
+  background-color: #d8d8d8;
+}
+
+.checkout-order-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1rem;
+  padding: 1rem 0;
+}
+.order-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  grid-auto-rows: minmax(100px, auto);
+  .order-image {
+    grid-column: 1 / 3;
+    grid-row: 1/ 4;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .order-info {
+    background-color: #f0f0f0;
+    grid-column: 3 / 5;
+    grid-row: 1/ 3;
+    padding: 1rem;
+  }
+  .order-trash {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    grid-column: 3 / 3;
+    grid-row: 3/ 3;
+  }
+  .order-add-or-remove {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    grid-column: 4 / 4;
+    grid-row: 3/ 3;
+    cursor: pointer;
+  }
+}
 .forms {
   display: flex;
-  justify-content: flex-end;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 .form {
+  position: fixed;
   display: flex;
   justify-content: center;
   width: 500px;
@@ -231,27 +265,6 @@ input:focus {
   &:hover {
     color: #fff;
     background-color: #000;
-  }
-}
-.GratisFragt {
-  margin: 3rem 0;
-  text-align: center;
-  background-color: #d8d8d8;
-}
-
-.product-table {
-  width: 100%;
-  border-collapse: collapse;
-  .product {
-    .product-description {
-      display: flex;
-    }
-    img {
-      height: 125px;
-    }
-    a {
-      cursor: pointer;
-    }
   }
 }
 </style>
