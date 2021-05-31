@@ -41,13 +41,13 @@ export default {
 
   components: true,
 
-  buildModules: ['@nuxtjs/eslint-module'],
+  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/google-analytics'],
 
   eslint: {
     fix: true,
   },
 
-  modules: ['@nuxtjs/strapi'],
+  modules: ['@nuxtjs/strapi', '@nuxtjs/sitemap'],
 
   strapi: {
     url: process.env.API_URL || 'http://localhost:1337/',
@@ -77,6 +77,11 @@ export default {
     routes() {
       return generateRoutes();
     },
+  },
+
+  // Google Analytics
+  googleAnalytics: {
+    id: 'G-NDEQ9S0PPD',
   },
 
   build: {
