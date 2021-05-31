@@ -1,17 +1,24 @@
-import axios from 'axios';
+// import axios from 'axios';
+
+import generateRoutes from './helpers/generateRoutes';
 
 export default {
   target: 'static',
 
   head: {
-    title: 'hayat-plakater-frontend',
+    title: 'Hayat Plakater',
     htmlAttrs: {
       lang: 'da',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Hos Hayat Plakater finder du et udvalg af arabisk kalligrafi plakater med stilfulde rammer. Vi har plakater i forskellige kategorier, uanset stil og smag, kan du finde noget at resonere med',
+      },
     ],
     link: [
       {
@@ -30,19 +37,17 @@ export default {
     ],
   },
 
-  css: [],
-
   plugins: [{ src: '@/plugins/vue-awesome-swiper', mode: 'client' }],
 
   components: true,
 
-  buildModules: ['@nuxtjs/eslint-module'],
+  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/google-analytics'],
 
   eslint: {
     fix: true,
   },
 
-  modules: ['@nuxtjs/strapi'],
+  modules: ['@nuxtjs/strapi', '@nuxtjs/sitemap'],
 
   strapi: {
     url: process.env.API_URL || 'http://localhost:1337/',
@@ -51,41 +56,34 @@ export default {
 
   env: {
     storeUrl: process.env.STORE_URL || 'http://localhost:1337/',
+    STRIPE_PK:
+      'pk_test_51ImhvGGzZhtJza9VidZIydizkNx35J8AtdTfxP7ug5lAJnZhuegGEcs95mgRzpMVi5z6EsKYfNjVSxBzLblYsViv00z9CxmUFY',
   },
 
   generate: {
-    async routes() {
-      const baseUrl = process.env.API_URL || 'http://localhost:1337/';
-
-      const routes = ['/', 'checkout'];
-
-      const products = await axios
-        .get(`${baseUrl}products`)
-        .then((res) => res.data)
-        .catch((err) => {
-          console.log(err);
-        });
-
-      for (const product of products) {
-        routes.push(`/produkt/${product.slug}`);
-      }
-
-      const categories = await axios
-        .get(`${baseUrl}categories`)
-        .then((res) => res.data)
-        .catch((err) => {
-          console.log(err);
-        });
-
-      for (const category of categories) {
-        routes.push(`/kategori/${category.slug}`);
-      }
-
-      return routes;
+    routes() {
+      return generateRoutes();
     },
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
+  sitemap: {
+    hostname: 'https://hayatplakater.dk',
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date(),
+    },
+    gzip: true,
+    routes() {
+      return generateRoutes();
+    },
+  },
+
+  // Google Analytics
+  googleAnalytics: {
+    id: 'G-NDEQ9S0PPD',
+  },
+
   build: {
     babel: {
       plugins: [['@babel/plugin-proposal-private-methods', { loose: true }]],

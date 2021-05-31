@@ -12,6 +12,8 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
+    "@nuxtjs/google-analytics": "^2.4.0",
+    "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/strapi": "^0.3.1",
     "@stripe/stripe-js": "^1.15.0",
     "axios": "^0.21.1",

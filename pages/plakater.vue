@@ -32,6 +32,11 @@ export default {
       error: null,
     };
   },
+  head() {
+    return {
+      title: `Plakater - Hayat Plakater`,
+    };
+  },
 };
 </script>
 

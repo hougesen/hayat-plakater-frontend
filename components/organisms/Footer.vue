@@ -1,22 +1,23 @@
 <template>
   <div class="footer">
-    <div class="logo">
+    <div class="logo footer-element">
       <img src="@/assets/Logo.svg" alt="Hayat Plakater logo" />
     </div>
-    <div>
+    <div class="footer-element">
       <h2>Hayat plakater</h2>
-      <p>Kranvejen 77</p>
-      <p>5000 Odense C</p>
-      <p>+45 20 97 44 30</p>
       <p>kontakt@hayatplakat.dk</p>
+
+      <p>CVR: 42361542</p>
     </div>
-    <div>
+    <div class="footer-element">
       <h2>Information</h2>
+      <nuxt-link to="/about" class="nav-link">Om os</nuxt-link>
+      <nuxt-link to="/history" class="nav-link">Kalligrafiens historie</nuxt-link>
     </div>
-    <div>
+    <!-- <div>
       <h2>Kategorier</h2>
-    </div>
-    <div>
+    </div> -->
+    <div class="footer-element social-media">
       <i class="fab fa-facebook"></i>
       <i class="fab fa-instagram"></i>
       <i class="fab fa-pinterest"></i>
@@ -36,8 +37,7 @@ export default {
   color: #fff;
   width: 100%;
   display: grid;
-  place-items: center;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   padding: 1rem;
   p {
     display: flex;
@@ -53,6 +53,19 @@ export default {
     &:hover {
       color: #000;
     }
+  }
+  .footer-element {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    a {
+      color: white;
+    }
+  }
+  .logo,
+  .social-media {
+    flex-direction: row;
+    margin: auto;
   }
 }
 </style>

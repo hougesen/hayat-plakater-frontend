@@ -1,21 +1,20 @@
 <template>
   <nav class="top-nav">
     <nuxt-link to="/" class="logoSection">
-      <img class="logo" src="@/assets/Logo.svg" alt="" />
+      <img class="logo" src="@/assets/Logo.svg" alt="Hayat plakater logo" />
     </nuxt-link>
     <div class="nav-links">
       <nuxt-link to="/" class="nav-link">Forside</nuxt-link>
       <nuxt-link to="/plakater" class="nav-link">Plakater</nuxt-link>
-      <nuxt-link
+      <!-- <nuxt-link
         v-for="category in categories"
         :key="category.slug"
         :to="`/kategori/${category.slug}`"
         class="nav-link"
       >
         {{ category.name }}
-      </nuxt-link>
-      <nuxt-link to="/history" class="nav-link">History</nuxt-link>
-      <nuxt-link to="/about" class="nav-link">About</nuxt-link>
+      </nuxt-link> -->
+      <nuxt-link to="/about" class="nav-link">Om os</nuxt-link>
     </div>
     <div class="buttonsGrid">
       <div @click.prevent="goToCheckout">
