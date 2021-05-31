@@ -1,34 +1,30 @@
 import axios from 'axios';
 
-// http://localhost:1337/products
-
+// O(n²) ?
 export default async () => {
   const baseUrl = process.env.API_URL || 'http://localhost:1337/';
 
   const routes = ['/', '/plakater', '/about', '/checkout', '/history'];
 
-  const products = await axios
-    .get(`${baseUrl}products`)
-    .then((res) => res.data)
-    .catch((err) => {
-      console.log(err);
-    });
+  const types = [
+    {
+      apiName: 'products',
+      pageDir: 'produkt',
+    },
+  ];
 
-  for (const product of products) {
-    routes.push(`/produkt/${product.slug}`);
+  for (const type of types) {
+    await axios
+      .get(`${baseUrl}${type.apiName}`)
+      .then((res) => res.data)
+      .then((result) => {
+        for (const elm of result) {
+          routes.push(`/${type.pageDir}/${elm.slug}`);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
-
-  /* Currently not implemented (in a good way)
-  const categories = await axios
-    .get(`${baseUrl}categories`)
-    .then((res) => res.data)
-    .catch((err) => {
-      console.log(err);
-    });
-
-  for (const category of categories) {
-    routes.push(`/kategori/${category.slug}`);
-  } */
-
   return routes;
 };

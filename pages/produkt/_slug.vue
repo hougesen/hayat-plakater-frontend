@@ -101,7 +101,8 @@ export default {
           name: 'description',
           content:
             this.currentProduct.metaDescription ||
-            'Hos Hayat Plakater finder du et udvalg af arabisk kalligrafi plakater med stilfulde rammer. Vi har plakater i forskellige kategorier, uanset stil og smag, kan du finde noget at resonere med',
+            `Hos Hayat Plakater finder du et udvalg af arabisk kalligrafi plakater med stilfulde rammer. 
+             Vi har plakater i forskellige kategorier, uanset stil og smag, kan du finde noget at resonere med`,
         },
       ],
     };

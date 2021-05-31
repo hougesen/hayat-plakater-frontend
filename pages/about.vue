@@ -1,19 +1,19 @@
 <template>
   <div class="about">
     <div class="txt standard-width">
-      <h2>mission</h2>
+      <h2>Mission</h2>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam rerum explicabo similique, voluptate sunt facere
         ex. Rem maxime nobis deleniti debitis laborum et minus labore voluptatibus aliquam, itaque nihil quos!
       </p>
       <hr />
-      <h2>vision</h2>
+      <h2>Vision</h2>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam rerum explicabo similique, voluptate sunt facere
         ex. Rem maxime nobis deleniti debitis laborum et minus labore voluptatibus aliquam, itaque nihil quos!
       </p>
       <hr />
-      <h2>værdier</h2>
+      <h2>Værdier</h2>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam rerum explicabo similique, voluptate sunt facere
         ex. Rem maxime nobis deleniti debitis laborum et minus labore voluptatibus aliquam, itaque nihil quos!
