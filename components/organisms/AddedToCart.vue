@@ -48,6 +48,8 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+  overflow: hidden;
+  height: 100%;
   img {
     border: 2px solid #000;
     max-width: 350px;

@@ -51,5 +51,23 @@ export default {
   p {
     font-size: 1.25rem;
   }
+  @media only screen and (max-width: 1200px) {
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+  @media only screen and (max-width: 425px) {
+  }
 }
 </style>

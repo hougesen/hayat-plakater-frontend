@@ -1,5 +1,5 @@
 <template>
-  <div class="checkout-container">
+  <div class="checkout-container standard-width">
     <!--       <div
         v-for="(product, index) of getShoppingCart"
         :key="index"

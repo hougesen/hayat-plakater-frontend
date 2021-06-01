@@ -34,6 +34,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+hr {
+  margin: 2rem 0;
+}
 .about {
   margin: 3rem 0;
 }
@@ -62,8 +65,25 @@ export default {
   p {
     font-size: 2.5rem;
   }
-}
-hr {
-  margin: 2rem 0;
+  @media only screen and (max-width: 1200px) {
+    h2 {
+      font-size: 1.5rem;
+      &:hover {
+        font-size: 1.6rem;
+        text-decoration: underline;
+      }
+    }
+    p {
+      font-size: 1.5rem;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    h2 {
+      font-size: 1rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
 }
 </style>

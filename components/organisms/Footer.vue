@@ -38,7 +38,8 @@ export default {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 1rem;
+  height: 100px;
+  position: relative;
   p {
     display: flex;
     flex-direction: column;

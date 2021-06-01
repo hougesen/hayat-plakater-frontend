@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="container">
     <OrganismsTopNav />
 
     <Nuxt />
@@ -31,6 +31,7 @@ export default {
   margin: 0;
   padding: 0;
   font-family: 'Raleway', sans-serif;
+  transition: 0.3s;
   &::before,
   &::after {
     box-sizing: border-box;
@@ -68,5 +69,34 @@ button {
 .standard-width {
   padding-left: 20rem !important;
   padding-right: 20rem !important;
+}
+#container {
+  min-height: 100%;
+  margin-bottom: -330px;
+  position: relative;
+}
+@media only screen and (max-width: 1400px) {
+  .standard-width {
+    padding-left: 5rem !important;
+    padding-right: 5rem !important;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .standard-width {
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .standard-width {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .standard-width {
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+  }
 }
 </style>
