@@ -21,6 +21,7 @@ export default {
   --default-background-color: #fff;
   --default-text-color: #101010;
   --cta-color: #1a722f;
+  --highlight-color: rgb(62, 228, 173);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Raleway&display=swap');

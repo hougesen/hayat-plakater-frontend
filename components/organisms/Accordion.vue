@@ -25,10 +25,10 @@ export default {
   },
   data() {
     return {
-      showContent: false,
+      showContent: true,
     };
   },
-  beforeMount() {
+  created() {
     this.showContent = this.open;
   },
 };

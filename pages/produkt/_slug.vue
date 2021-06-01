@@ -37,7 +37,7 @@
                   size: size.size,
                 }"
               >
-                {{ size.size }}
+                {{ size.size }}cm
               </option>
             </select>
           </div>
@@ -78,7 +78,6 @@ export default {
   },
   data() {
     return {
-      //  currentProduct: {},
       showModal: false,
       product: null,
       error: null,

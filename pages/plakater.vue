@@ -2,7 +2,6 @@
   <div class="standard-width">
     <div class="header">
       <h1>Gratis levering på alle produkter</h1>
-
       <p>
         Hos HAYAT Plakater kan du finde lige den plakat, der passer ind i din bolig. Budskab, design eller tema er her
         rigeligt at finde, så det handler kun om, hvilken du kan resonere mest med.
