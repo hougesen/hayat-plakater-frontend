@@ -77,5 +77,11 @@ export default {
       font-size: 1.25rem;
     }
   }
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 </style>

@@ -72,4 +72,37 @@ export default {
     background-color: #000;
   }
 }
+
+@media only screen and (max-width: 1200px) {
+  .hero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    h1 {
+      margin: 3rem;
+      font-size: 2rem;
+    }
+  }
+  .ctaBtn {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .hero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    h1 {
+      margin: 3rem;
+      font-size: 1rem;
+    }
+  }
+  .ctaBtn {
+    margin: 0 3rem;
+    padding: 1rem 3rem;
+    font-size: 0.5rem;
+  }
+}
+@media only screen and (max-width: 425px) {
+}
 </style>

@@ -32,22 +32,21 @@ export default {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100vh;
-  overflow: auto;
+  height: 100%;
   z-index: 100000;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.4);
-  overflow-y: hidden;
+  overflow: hidden;
   .modal-inner {
     margin: 15% auto;
     width: 50%;
     background-color: white;
     text-align: center;
     padding: 1rem 0;
-    overflow-y: hidden;
     border-radius: 10px;
     .modal-header {
-      overflow-y: hidden;
+      overflow: hidden;
+      height: 100%;
       display: flex;
       justify-content: center;
       text-align: center;
