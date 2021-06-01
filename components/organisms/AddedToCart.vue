@@ -1,13 +1,14 @@
 <template>
   <OrganismsModal :close-button="false" @closeModal="closeModal">
-    <template #title> Plakaten er lagt i kurven </template>
+    <template #title class="title"> Plakaten er lagt i kurven </template>
 
     <template #content>
       <div class="modal-content">
         <img :src="`${getStrapiMedia(productImage)}`" :alt="`Plakat ${productName} - Hayat Plakater`" />
-
-        <button @click="goToCheckout">Til kassen</button>
-        <button @click="closeModal">Fortsæt shopping</button>
+        <div class="btns">
+          <button @click="goToCheckout">Til kassen</button>
+          <button @click="closeModal">Fortsæt shopping</button>
+        </div>
       </div>
     </template>
   </OrganismsModal>
@@ -44,10 +45,30 @@ export default {
 .modal-content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   img {
-    max-width: 250px;
+    border: 2px solid #000;
+    max-width: 350px;
     height: auto;
+  }
+  button {
+    margin: 0.5rem;
+    padding: 1rem;
+    border: 3px solid #000;
+    outline: none;
+    background-color: #fff;
+    transition: 0.3s;
+    &:hover {
+      color: #fff;
+      background-color: #000;
+    }
+  }
+  .btns {
+    display: flex;
+    justify-content: center;
+    align-content: center;
   }
 }
 </style>

@@ -18,9 +18,9 @@
       <h2>Kategorier</h2>
     </div> -->
     <div class="footer-element social-media">
-      <i class="fab fa-facebook"></i>
-      <i class="fab fa-instagram"></i>
-      <i class="fab fa-pinterest"></i>
+      <a href="https://www.facebook.com/hayatplakater/" target="_blank"> <i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/hayatplakater/" target="_blank"> <i class="fab fa-instagram"></i></a>
+      <a href="https://www.pinterest.dk/Hayatplakater/" target="_blank"> <i class="fab fa-pinterest"></i></a>
     </div>
   </div>
 </template>
@@ -51,7 +51,7 @@ export default {
     font-size: 2rem;
     transition: 1s;
     &:hover {
-      color: #000;
+      color: #489efc;
     }
   }
   .footer-element {
