@@ -15,9 +15,9 @@ jobs:
           title-or-body: both
           parameters: >-
             [ {"keywords": ["backend", "database", "db"], "assignees":
-            ["Hougesen"]}, {"keywords": ["frontend"], "assignees": ["Hougesen",
-            "Abdjulaziz"]}, {"keywords": ["design"], "assignees":
+            ["Hougesen"], "labels": ["backend"]}, {"keywords": ["frontend"], "assignees": ["Hougesen",
+            "Abdjulaziz"],"labels": ["frontend"]}, {"keywords": ["design"], "assignees":
             ["khalidalatti", "Hougesen", "Abdjulaziz",
-            "skrog19"]},{"keywords":["fix", "bug", "fejl", "error"],
+            "skrog19"],"labels": ["design"]},{"keywords":["fix", "bug", "fejl", "error"],
             "assignees": ["Hougesen", "Abdjulaziz"] ,"labels": ["BUG"]}]
           github-token: '${{ secrets.GITHUB_TOKEN }}'
