@@ -39,13 +39,13 @@ export default {
   overflow: hidden;
 
   .modal-inner {
-    margin: 15% auto;
-    width: fit-content;
+    margin: 2rem auto;
+    width: 70%;
+    height: fit-content;
     background-color: var(--white);
     text-align: center;
-    padding: 1rem 0;
     border-radius: var(--default-border-radius);
-    padding: 2rem;
+    padding: 2rem 0;
 
     .modal-header {
       overflow: hidden;
@@ -54,8 +54,11 @@ export default {
       justify-content: center;
       text-align: center;
     }
-
-    @media only screen and (max-width: 1200px) {
+  }
+}
+@media only screen and (max-width: 600px) {
+  .modal-container {
+    .modal-inner {
       width: 90%;
     }
   }

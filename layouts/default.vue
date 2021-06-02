@@ -131,13 +131,21 @@ button {
 .standard-width {
   padding-left: 20rem !important;
   padding-right: 20rem !important;
-
+  @media only screen and (max-width: 1600px) {
+    padding-left: 8rem !important;
+    padding-right: 8rem !important;
+  }
   @media only screen and (max-width: 1400px) {
     padding-left: 5rem !important;
     padding-right: 5rem !important;
   }
 
   @media only screen and (max-width: 1200px) {
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
+  }
+
+  @media only screen and (max-width: 1000px) {
     padding-left: 2.5rem !important;
     padding-right: 2.5rem !important;
   }

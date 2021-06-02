@@ -59,12 +59,8 @@ export default {
 
   img {
     border: 2px solid var(--black);
-    max-width: 80%;
+    max-width: 35%;
     height: auto;
-
-    @media only screen and (min-width: 1200px) {
-      max-width: 350px;
-    }
   }
 
   .btns {
@@ -84,6 +80,27 @@ export default {
         color: var(--white);
         background-color: var(--black);
       }
+    }
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .modal-content {
+    img {
+      max-width: 50%;
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .modal-content {
+    img {
+      max-width: 70%;
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .modal-content {
+    img {
+      max-width: 90%;
     }
   }
 }

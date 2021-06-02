@@ -214,6 +214,7 @@ export default {
   display: flex;
 }
 .form {
+  margin: 2rem 0;
   padding: 2rem 0;
   display: flex;
   justify-content: center;
@@ -325,8 +326,5 @@ input:focus {
       grid-row: 3/ 3;
     }
   }
-}
-
-@media only screen and (max-width: 600px) {
 }
 </style>
