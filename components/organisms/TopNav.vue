@@ -1,5 +1,5 @@
 <template>
-  <nav class="top-nav">
+  <nav class="top-nav flex-center">
     <nuxt-link to="/" class="logoSection">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 423.606 112.97" class="logo">
         <g>
@@ -22,20 +22,12 @@
         </g>
       </svg>
     </nuxt-link>
-    <div class="nav-links">
+    <div class="nav-links flex-center">
       <nuxt-link to="/" class="nav-link">Forside</nuxt-link>
       <nuxt-link to="/plakater" class="nav-link">Plakater</nuxt-link>
-      <!-- <nuxt-link
-        v-for="category in categories"
-        :key="category.slug"
-        :to="`/kategori/${category.slug}`"
-        class="nav-link"
-      >
-        {{ category.name }}
-      </nuxt-link> -->
       <nuxt-link to="/about" class="nav-link">Om os</nuxt-link>
     </div>
-    <div class="buttonsGrid">
+    <div class="buttonsGrid flex-center">
       <div @click.prevent="goToCheckout">
         <i class="fas fa-shopping-cart"></i>
       </div>
@@ -46,7 +38,6 @@
 <script>
 export default {
   name: 'TopNav',
-
   data() {
     return {
       showNav: true,
@@ -86,80 +77,73 @@ export default {
   transition: 0.5s;
   grid-template-columns: repeat(3, 1fr);
   text-decoration: none;
+
   .logoSection {
     display: flex;
     justify-content: center;
     align-content: center;
     text-decoration: none;
-    font-weight: lighter;
-  }
-  .logo {
-    fill: var(--default-text-color);
-    stroke: var(--default-text-color);
-    g {
-      fill: inherit;
-      stroke: inherit;
-      path {
+
+    .logo {
+      width: 170px;
+      fill: var(--black);
+      stroke: var(--black);
+
+      g {
         fill: inherit;
         stroke: inherit;
+
+        path {
+          fill: inherit;
+          stroke: inherit;
+        }
       }
     }
-
-    /*   fill:  #fff;
-    stroke: #fff; */
-    width: 170px;
   }
+
   .buttonsGrid {
     i {
       font-size: 1.5rem;
-      color: var(--default-text-color); //#fff;
+      color: var(--black);
       transition: 0.3s;
+
       &:hover {
         color: #489efc;
         cursor: pointer;
       }
     }
+
     p {
       font-size: 0.9rem;
-      color: #fff;
+      color: var(--white);
+
       &:hover {
         cursor: pointer;
       }
     }
   }
-}
-.nav-link {
-  font-size: 1.5rem;
-  color: var(--default-text-color);
-  text-decoration: none;
-  margin: 0 1rem;
-  position: relative;
-  z-index: 100;
-  font-weight: 600;
-}
-.nav-link:after {
-  position: absolute;
-  content: '';
-  background: rgb(62, 228, 173);
-  bottom: -20%;
-  left: 5%;
-  z-index: 1;
-  padding: 0.175rem 1.2rem;
-}
-.fa-stack[data-count]:after {
-  position: absolute;
-  right: 0%;
-  top: 0%;
-  content: attr(data-count);
-  font-size: 40%;
-  padding: 0.6em;
-  border-radius: 999px;
-  line-height: 0.75em;
-  color: white;
-  text-align: center;
-  min-width: 2em;
-  font-weight: bold;
-  background: white;
-  border-style: solid;
+  .nav-links {
+    display: flex;
+
+    .nav-link {
+      font-size: 1.5rem;
+      color: var(--black);
+      text-decoration: none;
+      margin: 0 1rem;
+      position: relative;
+      z-index: 100;
+      font-weight: 600;
+
+      &::after {
+        position: absolute;
+        content: '';
+        background: rgb(62, 228, 173);
+        bottom: -20%;
+        left: 5%;
+        z-index: 1;
+        padding: 0.175rem 1.2rem;
+      }
+    }
+  }
 }
 </style>

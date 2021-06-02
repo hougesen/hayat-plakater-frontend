@@ -33,7 +33,7 @@
         </div>
 
         <p>Pris i alt: {{ getTotalPrice }}</p>
-        <button name="button" @click="goToCheckout">Process to checkout</button>
+        <button name="button" @click="goToCheckout">Gå til checkout</button>
       </div>
     </template>
   </OrganismsModal>
@@ -77,6 +77,7 @@ export default {
 .cart-list {
   .cart-product {
     display: flex;
+
     div {
       margin: 1rem;
     }
