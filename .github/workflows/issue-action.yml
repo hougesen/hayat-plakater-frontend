@@ -1,16 +1,23 @@
-name: 'Set Issue Label and Assignee'
-on:
+name: Set Issue Label and Assignee
+'on':
   issues:
-    types: [opened]
+    types:
+      - opened
   pull_request:
-    typed: [opened]
-
+    typed:
+      - opened
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: Naturalclar/issue-action@v2.0.2
         with:
-          title-or-body: 'both'
-          parameters: '[ {"keywords": ["backend", "database", "db"], "assignees": ["Hougesen"]}, {"keywords": ["frontend"], "assignees": ["Hougesen", "Abdjulaziz"]}, {"keywords": ["design"], "assignees": ["khalidalatti", "Hougesen", "Abdjulaziz", "skrog19"]}]'
+          title-or-body: both
+          parameters: >-
+            [ {"keywords": ["backend", "database", "db"], "assignees":
+            ["Hougesen"]}, {"keywords": ["frontend"], "assignees": ["Hougesen",
+            "Abdjulaziz"]}, {"keywords": ["design"], "assignees":
+            ["khalidalatti", "Hougesen", "Abdjulaziz",
+            "skrog19"]},{"keywords":["fix", "bug", "fejl", "error"],
+            "assignees": ["Hougesen", Abdjulaziz"] ,"labels": ["BUG"]}]
           github-token: '${{ secrets.GITHUB_TOKEN }}'
