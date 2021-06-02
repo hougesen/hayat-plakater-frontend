@@ -211,6 +211,7 @@ export default {
 .button {
   border: none;
   font-weight: 700;
+  margin: 2rem 0rem;
   padding: 1rem;
   max-width: 200px;
 

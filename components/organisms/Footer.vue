@@ -33,7 +33,7 @@
 
       <div class="footer-element">
         <h2>Hayat plakater</h2>
-        <p>kontakt@hayatplakat.dk</p>
+        <a href="mailto: kontakt@hayatplakat.dk">kontakt@hayatplakat.dk</a>
         <p>CVR: 42361542</p>
       </div>
 

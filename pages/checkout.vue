@@ -15,8 +15,8 @@
       </div> -->
 
     <div class="checkout-grid">
+      <h1>kassen</h1>
       <div class="checkout-order-grid">
-        <h1>kassen</h1>
         <div v-for="(product, index) of getShoppingCart" :key="index" class="order-grid">
           <div
             class="order-image"
@@ -41,45 +41,45 @@
           </div>
         </div>
       </div>
-      <div class="forms">
-        <div class="form">
-          <form @submit.prevent="handleCheckout">
-            <div>
-              <label for="name">Navn</label>
-              <input v-model="name" type="text" placeholder="Navn" name="name" required />
-            </div>
+    </div>
+    <div class="forms">
+      <div class="form">
+        <form @submit.prevent="handleCheckout">
+          <div>
+            <label for="name">Navn</label>
+            <input v-model="name" type="text" placeholder="Navn" name="name" required />
+          </div>
 
-            <div>
-              <label for="email">Email</label>
-              <input v-model="email" type="email" placeholder="Email" name="email" required />
-            </div>
+          <div>
+            <label for="email">Email</label>
+            <input v-model="email" type="email" placeholder="Email" name="email" required />
+          </div>
 
-            <div>
-              <label for="adress">Adresse</label>
-              <input v-model="address" type="text" placeholder="Addresse" name="address" required />
-            </div>
+          <div>
+            <label for="adress">Adresse</label>
+            <input v-model="address" type="text" placeholder="Addresse" name="address" required />
+          </div>
 
-            <div>
-              <label for="city">By</label>
-              <input v-model="city" type="text" placeholder="By" name="city" required />
-            </div>
+          <div>
+            <label for="city">By</label>
+            <input v-model="city" type="text" placeholder="By" name="city" required />
+          </div>
 
-            <div>
-              <label for="postalCode">Postnummer</label>
-              <input
-                v-model="postalCode"
-                type="number"
-                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                maxlength="4"
-                placeholder="Postnummer"
-                name="postalCode"
-                required
-              />
-            </div>
+          <div>
+            <label for="postalCode">Postnummer</label>
+            <input
+              v-model="postalCode"
+              type="number"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              maxlength="4"
+              placeholder="Postnummer"
+              name="postalCode"
+              required
+            />
+          </div>
 
-            <AtomsButton class="ctaBtn">Checkout</AtomsButton>
-          </form>
-        </div>
+          <AtomsButton class="ctaBtn">Checkout</AtomsButton>
+        </form>
       </div>
     </div>
   </div>
@@ -167,12 +167,10 @@ export default {
 <style lang="scss" scoped>
 .checkout-container {
   display: flex;
-  justify-content: center;
-  align-content: center;
 }
 .checkout-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
 }
 .GratisFragt {
   margin: 3rem 0;
@@ -182,7 +180,7 @@ export default {
 
 .checkout-order-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
   padding: 1rem 0;
 }
