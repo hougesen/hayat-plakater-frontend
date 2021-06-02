@@ -40,16 +40,19 @@ export default {
     i {
       margin-right: 1rem;
     }
+
     &--open {
       i {
         transform: rotate(90deg);
         transition: 0.3s;
       }
     }
+
     @media only screen and (min-width: 1200px) {
       font-size: 2rem;
     }
   }
+
   .accordion-content {
     padding: 0.5rem 0;
   }

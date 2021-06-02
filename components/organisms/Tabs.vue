@@ -51,19 +51,23 @@ export default {
 
   .tabs-header {
     display: flex;
+
     .tabs-button {
       background: none;
       border: none;
       margin-right: 1rem;
       font-size: 1.5rem;
+
       @media only screen and (min-width: 600px) {
         font-size: 2rem;
       }
     }
+
     .selected {
       text-decoration: underline;
     }
   }
+
   .tabs-body {
     p {
       @media only screen and (min-width: 600px) {

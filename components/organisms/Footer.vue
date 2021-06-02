@@ -62,11 +62,11 @@ export default {
 .footer {
   display: flex;
   flex-direction: column;
-  height: 100%;
 
   .footer-wave {
     margin-bottom: -1rem;
   }
+
   .footer-grid {
     z-index: 10;
     background: #050f1a;
@@ -75,18 +75,23 @@ export default {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding-bottom: 1rem;
+
     p {
       display: flex;
       flex-direction: column;
     }
+
     .logo {
       width: 200px;
+
       svg {
         fill: var(--white);
         stroke: var(--white);
+
         g {
           fill: inherit;
           stroke: inherit;
+
           path {
             fill: inherit;
             stroke: inherit;
@@ -94,21 +99,26 @@ export default {
         }
       }
     }
+
     i {
       margin: 0.5rem;
       font-size: 2rem;
       transition: 1s;
+
       &:hover {
         color: var(--white);
       }
     }
+
     .footer-element {
       display: flex;
       flex-direction: column;
       margin: 0 auto;
+
       a {
         color: var(--white);
       }
+
       @media only screen and (max-width: 1200px) {
         text-align: center;
       }
@@ -119,17 +129,21 @@ export default {
       flex-direction: row;
       margin: auto;
     }
+
     .social-media {
       &--desktop {
         display: block;
       }
+
       &--tablet {
         display: none;
       }
+
       &--mobile {
         display: none;
       }
     }
+
     @media only screen and (max-width: 1200px) {
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 2rem 0;
@@ -140,6 +154,7 @@ export default {
     @media only screen and (max-width: 600px) {
       grid-template-columns: repeat(1, 1fr);
     }
+
     @media only screen and (max-width: 425px) {
       grid-template-columns: repeat(1, 1fr);
     }

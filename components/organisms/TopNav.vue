@@ -77,18 +77,22 @@ export default {
   transition: 0.5s;
   grid-template-columns: repeat(3, 1fr);
   text-decoration: none;
+
   .logoSection {
     display: flex;
     justify-content: center;
     align-content: center;
     text-decoration: none;
+
     .logo {
       width: 170px;
       fill: var(--black);
       stroke: var(--black);
+
       g {
         fill: inherit;
         stroke: inherit;
+
         path {
           fill: inherit;
           stroke: inherit;
@@ -102,14 +106,17 @@ export default {
       font-size: 1.5rem;
       color: var(--black);
       transition: 0.3s;
+
       &:hover {
         color: #489efc;
         cursor: pointer;
       }
     }
+
     p {
       font-size: 0.9rem;
       color: var(--white);
+
       &:hover {
         cursor: pointer;
       }
@@ -126,6 +133,7 @@ export default {
       position: relative;
       z-index: 100;
       font-weight: 600;
+
       &::after {
         position: absolute;
         content: '';

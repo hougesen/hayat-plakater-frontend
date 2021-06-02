@@ -37,6 +37,7 @@ export default {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.4);
   overflow: hidden;
+
   .modal-inner {
     margin: 15% auto;
     width: fit-content;
@@ -45,6 +46,7 @@ export default {
     padding: 1rem 0;
     border-radius: var(--default-border-radius);
     padding: 2rem;
+
     .modal-header {
       overflow: hidden;
       height: 100%;
@@ -52,6 +54,7 @@ export default {
       justify-content: center;
       text-align: center;
     }
+
     @media only screen and (max-width: 1200px) {
       width: 90%;
     }

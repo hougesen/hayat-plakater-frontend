@@ -38,25 +38,28 @@ export default {
 .bottom-nav {
   z-index: 100;
   position: fixed;
+  display: grid;
   bottom: 0;
   background-color: var(--black);
   padding: 0.75rem 0;
   width: 100vw;
-  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: flex-end;
+
+  i {
+    font-size: 1.25rem;
+  }
+
+  .icon {
+    fill: var(--white);
+    height: 24px;
+  }
+
   a,
   i {
     text-align: center;
     color: var(--white);
     text-decoration: none;
-  }
-  i {
-    font-size: 1.25rem;
-  }
-  .icon {
-    fill: var(--white);
-    height: 24px;
   }
 }
 </style>

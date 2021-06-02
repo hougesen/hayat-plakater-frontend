@@ -77,6 +77,7 @@ export default {
 .cart-list {
   .cart-product {
     display: flex;
+
     div {
       margin: 1rem;
     }

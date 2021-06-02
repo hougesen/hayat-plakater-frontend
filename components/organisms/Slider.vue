@@ -68,12 +68,15 @@ export default {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
   .swiper-slide {
     display: flex;
     flex-direction: column;
+
     a {
       text-decoration: none;
     }
+
     img {
       width: 100%;
       height: auto;

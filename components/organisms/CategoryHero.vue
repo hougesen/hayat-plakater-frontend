@@ -47,14 +47,17 @@ export default {
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(600px, auto);
 }
+
 .child {
   grid-column: 1 / 3;
   background-color: var(--white);
+
   p {
     padding: 5rem 16rem;
     font-size: 2rem;
   }
 }
+
 .child1 {
   grid-column: 3 / 3;
   display: block;
@@ -63,6 +66,7 @@ export default {
   background-size: cover;
   background-position: center;
 }
+
 .categoryInfoBox {
   display: flex;
   justify-content: center;
@@ -72,6 +76,7 @@ export default {
   left: 200px;
   height: 280px;
   width: 400px;
+
   h2 {
     padding-top: 2rem;
     font-size: 6.5rem;

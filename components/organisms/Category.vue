@@ -52,6 +52,7 @@ export default {
   justify-content: center;
   padding-bottom: 40px;
   height: 350px;
+
   .categoryChild {
     position: relative;
     display: block;
@@ -60,6 +61,7 @@ export default {
     background-position: center;
     height: 100%;
     width: 100%;
+
     .infoBox {
       position: absolute;
       display: flex;
@@ -73,6 +75,7 @@ export default {
       height: 250px;
       width: 200px;
       box-shadow: 0px 5px 15px var(--black);
+
       p {
         font-size: 1.2rem;
         margin-top: 2.5rem;

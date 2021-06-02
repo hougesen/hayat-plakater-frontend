@@ -1,5 +1,15 @@
 <template>
-  <div id="container">
+  <div>
+    <div class="nav">
+      <div class="desktop">
+        <OrganismsTopNav />
+      </div>
+
+      <div class="mobile">
+        <OrganismsBottomNav />
+      </div>
+    </div>
+
     <div class="logo-section">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 423.606 112.97" class="logo">
         <g>
@@ -23,19 +33,11 @@
       </svg>
     </div>
 
-    <div class="nav">
-      <div class="desktop">
-        <OrganismsTopNav />
-      </div>
-
-      <div class="mobile">
-        <OrganismsBottomNav />
-      </div>
-    </div>
-
     <Nuxt />
 
-    <OrganismsFooter />
+    <div style="margin-top: auto">
+      <OrganismsFooter />
+    </div>
   </div>
 </template>
 
@@ -86,6 +88,7 @@ export default {
   padding: 0;
   font-family: 'Raleway', sans-serif;
   transition: 0.3s;
+
   &::before,
   &::after {
     box-sizing: border-box;
@@ -94,9 +97,11 @@ export default {
     padding: 0;
   }
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body,
 html {
   min-height: 100vh;
@@ -106,6 +111,7 @@ html {
   color: var(--black);
   background-color: var(--white);
 }
+
 h1,
 h2,
 h3,
@@ -115,37 +121,39 @@ h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
 }
+
 button {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   cursor: pointer;
 }
+
 .standard-width {
   padding-left: 20rem !important;
   padding-right: 20rem !important;
+
   @media only screen and (max-width: 1400px) {
     padding-left: 5rem !important;
     padding-right: 5rem !important;
   }
+
   @media only screen and (max-width: 1200px) {
     padding-left: 2.5rem !important;
     padding-right: 2.5rem !important;
   }
+
   @media only screen and (max-width: 600px) {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
 }
+
 .flex-center {
   place-items: center;
   place-content: center;
   place-self: center;
 }
-#container {
-  min-height: 100%;
-  margin-bottom: -330px;
-  position: relative;
-}
+
 .logo-section {
   display: none;
   margin: 1rem;
