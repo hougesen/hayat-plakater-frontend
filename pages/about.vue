@@ -46,7 +46,7 @@ hr {
   justify-content: center;
   align-items: center;
   height: 250px;
-  background-color: #000;
+  background-color: var(--black);
 }
 .logo {
   height: 150px;
@@ -60,28 +60,24 @@ hr {
     &:hover {
       font-size: 2rem;
       text-decoration: underline;
-    }
-  }
-  p {
-    font-size: 2.5rem;
-  }
-  @media only screen and (max-width: 1200px) {
-    h2 {
-      font-size: 1.5rem;
-      &:hover {
+      @media only screen and (max-width: 1200px) {
         font-size: 1.6rem;
         text-decoration: underline;
       }
     }
-    p {
+    @media only screen and (max-width: 1200px) {
       font-size: 1.5rem;
     }
-  }
-  @media only screen and (max-width: 600px) {
-    h2 {
+    @media only screen and (max-width: 600px) {
       font-size: 1rem;
     }
-    p {
+  }
+  p {
+    font-size: 2.5rem;
+    @media only screen and (max-width: 1200px) {
+      font-size: 1.5rem;
+    }
+    @media only screen and (max-width: 600px) {
       font-size: 1rem;
     }
   }

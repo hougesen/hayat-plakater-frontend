@@ -21,22 +21,13 @@ export default {
   border: none;
   padding: 1rem;
   &--primary {
-    border: 5px solid #000;
-    background-color: #fff;
-    color: #000;
+    border: 5px solid var(--black);
+    background-color: var(--white);
+    color: var(--black);
   }
 
   &--secondary {
     background-color: lighten(black, 90);
-  }
-
-  &--nordic {
-    background-color: #157fec;
-    color: white;
-  }
-  &--nature {
-    background-color: greenyellow;
-    color: white;
   }
 }
 </style>

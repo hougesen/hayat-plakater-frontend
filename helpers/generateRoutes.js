@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-// O(n²) ?
+// O(n²) btw fam
 export default async () => {
   const baseUrl = process.env.API_URL || 'http://localhost:1337/';
 

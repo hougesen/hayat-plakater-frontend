@@ -43,7 +43,7 @@
       </div>
       <div class="forms">
         <div class="form">
-          <form @submit.prevent="handleSubmit">
+          <form @submit.prevent="handleCheckout">
             <div>
               <label for="name">Navn</label>
               <input v-model="name" type="text" placeholder="Navn" name="name" required />
@@ -253,20 +253,20 @@ input[type='email'] {
   font-size: 1rem;
 }
 input:focus {
-  outline: 3px solid #000;
+  outline: 3px solid var(--black);
   -moz-outline-radius: 25px;
 }
 .ctaBtn {
   margin: 1rem 0;
   width: 100%;
   transition: 0.3s;
-  color: #000;
+  color: var(--black);
   font-size: 1rem;
   text-transform: uppercase;
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: var(--white);
+    background-color: var(--black);
   }
 }
 </style>
