@@ -19,5 +19,5 @@ jobs:
             "Abdjulaziz"]}, {"keywords": ["design"], "assignees":
             ["khalidalatti", "Hougesen", "Abdjulaziz",
             "skrog19"]},{"keywords":["fix", "bug", "fejl", "error"],
-            "assignees": ["Hougesen", Abdjulaziz"] ,"labels": ["BUG"]}]
+            "assignees": ["Hougesen", "Abdjulaziz"] ,"labels": ["BUG"]}]
           github-token: '${{ secrets.GITHUB_TOKEN }}'
