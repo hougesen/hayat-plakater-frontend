@@ -21,17 +21,17 @@ export default {
       type: String,
       default: '',
     },
-    categoryTxt: {
-      type: String,
-      required: true,
-    },
     categoryInfoBoxColor: {
       type: String,
-      default: '#000',
+      default: 'var(--black)',
     },
     categoryInfoBoxTxt: {
       type: String,
       default: '',
+    },
+    categoryTxt: {
+      type: String,
+      required: true,
     },
     categoryTxtColor: {
       type: String,
@@ -49,7 +49,7 @@ export default {
 }
 .child {
   grid-column: 1 / 3;
-  background-color: #fff;
+  background-color: var(--white);
   p {
     padding: 5rem 16rem;
     font-size: 2rem;

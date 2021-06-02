@@ -33,23 +33,27 @@ export default {
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 100000;
+  z-index: 1000;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.4);
   overflow: hidden;
   .modal-inner {
     margin: 15% auto;
-    width: 50%;
-    background-color: white;
+    width: fit-content;
+    background-color: var(--white);
     text-align: center;
     padding: 1rem 0;
-    border-radius: 10px;
+    border-radius: var(--default-border-radius);
+    padding: 2rem;
     .modal-header {
       overflow: hidden;
       height: 100%;
       display: flex;
       justify-content: center;
       text-align: center;
+    }
+    @media only screen and (max-width: 1200px) {
+      width: 90%;
     }
   }
 }

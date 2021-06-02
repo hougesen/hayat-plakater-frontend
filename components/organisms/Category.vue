@@ -14,19 +14,15 @@
 export default {
   name: 'Category',
   props: {
-    title: {
+    imgSrc: {
       type: String,
       required: true,
     },
-    titleColor: {
+    infoBoxPos: {
       type: String,
-      default: 'black',
+      default: '0',
     },
     linkTo: {
-      type: String,
-      required: true,
-    },
-    imgSrc: {
       type: String,
       required: true,
     },
@@ -38,9 +34,13 @@ export default {
       type: String,
       default: 'black',
     },
-    infoBoxPos: {
+    title: {
       type: String,
-      default: '0',
+      required: true,
+    },
+    titleColor: {
+      type: String,
+      default: 'black',
     },
   },
 };
@@ -72,7 +72,7 @@ export default {
       background: #fff;
       height: 250px;
       width: 200px;
-      box-shadow: 0px 5px 15px #000;
+      box-shadow: 0px 5px 15px var(--black);
       p {
         font-size: 1.2rem;
         margin-top: 2.5rem;

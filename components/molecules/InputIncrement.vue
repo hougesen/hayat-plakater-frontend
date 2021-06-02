@@ -1,10 +1,14 @@
 <template>
   <div class="increment-container">
-    <button @click="$emit('changeAmount', 'decrement')"><i class="fas fa-minus-circle"></i></button>
+    <button @click="$emit('changeAmount', 'decrement')">
+      <i class="fas fa-minus-circle"> </i>
+    </button>
 
     <slot class="slot" />
 
-    <button @click="$emit('changeAmount', 'increment')"><i class="fas fa-plus-circle"></i></button>
+    <button @click="$emit('changeAmount', 'increment')">
+      <i class="fas fa-plus-circle"></i>
+    </button>
   </div>
 </template>
 

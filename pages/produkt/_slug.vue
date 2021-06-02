@@ -18,15 +18,18 @@
           alt="`Billede der viser Hayat Plakater i en stue`"
         />
       </div>
+
       <div class="product-information">
         <h1 class="product-title">
           {{ currentProduct.name }}
         </h1>
+
         <h2 v-if="priceInfo">{{ priceInfo.price }}kr</h2>
 
         <form class="product-form">
           <div>
             <label for="size">Størrelse</label>
+
             <select v-model="priceInfo" name="size">
               <option
                 v-for="size in currentProduct.poster_price_sizes"
@@ -56,6 +59,7 @@
 
       <OrganismsSlider v-if="slides" :slides="slides" :slides-each-page="3" :title="false" />
     </div>
+
     <OrganismsAddedToCart
       v-if="showModal"
       :product-image="currentProduct.image[0].url"
@@ -78,16 +82,16 @@ export default {
   },
   data() {
     return {
-      showModal: false,
-      product: null,
-      error: null,
       amount: 1,
+      error: null,
+      product: null,
       priceInfo: {
         // Hardcoded to be the first element
         sizeId: '609033df6f5a97b74a65f520',
         size: '12x18',
         price: 100,
       },
+      showModal: false,
       slides: [],
     };
   },
@@ -150,8 +154,8 @@ export default {
         this.slides.push({
           id: product._id,
           imageUrl: product.image[0].url,
-          title: product.name,
           slug: product.slug,
+          title: product.name,
         });
       }
     } catch (error) {
@@ -163,12 +167,12 @@ export default {
     addToShoppingCart() {
       const item = {
         amount: this.amount,
-        productId: this.currentProduct.id,
-        name: this.currentProduct.name,
-        sizeId: this.priceInfo.sizeId,
-        size: this.priceInfo.size,
-        price: this.priceInfo.price,
         image: this.currentProduct.image[0].url,
+        name: this.currentProduct.name,
+        price: this.priceInfo.price,
+        productId: this.currentProduct.id,
+        size: this.priceInfo.size,
+        sizeId: this.priceInfo.sizeId,
       };
       this.$store.commit('addToShoppingCart', item);
 
@@ -184,6 +188,11 @@ export default {
 <style lang="scss" scoped>
 .breadcrumb {
   margin: 1rem 0;
+
+  @media only screen and (max-width: 600px) {
+    margin: 0;
+    text-align: center;
+  }
 }
 .product-page--grid {
   display: grid;
@@ -194,6 +203,10 @@ export default {
     display: flex;
     flex-direction: column;
   }
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+  }
 }
 .button {
   border: none;
@@ -202,11 +215,15 @@ export default {
   max-width: 200px;
 
   background-color: var(--cta-color);
-  color: white;
+  color: var(--white);
 }
 .product-image {
   img {
     max-height: 600px;
+    max-width: 100%;
+    @media only screen and (max-width: 600px) {
+      max-height: 400px;
+    }
   }
 }
 

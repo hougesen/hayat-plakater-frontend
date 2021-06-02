@@ -1,6 +1,6 @@
 <template>
   <div class="accordion">
-    <h2 class="accordion-title" :class="{ 'accordion-title--open': showContent }" @click="showContent = !showContent">
+    <h2 :class="{ 'accordion-title--open': showContent }" class="accordion-title" @click="showContent = !showContent">
       <span>
         <i class="fas fa-caret-right arrowIcon" />
 
@@ -37,15 +37,17 @@ export default {
 <style lang="scss" scoped>
 .accordion {
   .accordion-title {
-    font-size: 2rem;
     i {
       margin-right: 1rem;
     }
     &--open {
       i {
-        transition: 0.3s;
         transform: rotate(90deg);
+        transition: 0.3s;
       }
+    }
+    @media only screen and (min-width: 1200px) {
+      font-size: 2rem;
     }
   }
   .accordion-content {

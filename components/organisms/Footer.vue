@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 217.008">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 217.008" class="footer-wave">
       <path
         d="m0 85 32 2c32 2 96 6 160-4.8 64-10.9 128-36.5 192-33s128 36.1 192 48.6 128 4.9 192-14.3 128-49.8 192-67.3 128-21.9 192-7.9 128 46.4 192 52.2 128-14.8 192-11.2C1600 53 1664 81 1728 86s128-13 160-22l32-9v162H0z"
         style="fill: #050f1a"
@@ -30,12 +30,13 @@
           </g>
         </svg>
       </div>
+
       <div class="footer-element">
         <h2>Hayat plakater</h2>
         <p>kontakt@hayatplakat.dk</p>
-
         <p>CVR: 42361542</p>
       </div>
+
       <div class="footer-element">
         <h2>Information</h2>
         <nuxt-link to="/about" class="nav-link">Om os</nuxt-link>
@@ -61,10 +62,15 @@ export default {
 .footer {
   display: flex;
   flex-direction: column;
+  height: 100%;
 
+  .footer-wave {
+    margin-bottom: -1rem;
+  }
   .footer-grid {
+    z-index: 10;
     background: #050f1a;
-    color: #fff;
+    color: var(--white);
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -76,8 +82,8 @@ export default {
     .logo {
       width: 200px;
       svg {
-        fill: #fff;
-        stroke: #fff;
+        fill: var(--white);
+        stroke: var(--white);
         g {
           fill: inherit;
           stroke: inherit;
@@ -93,7 +99,7 @@ export default {
       font-size: 2rem;
       transition: 1s;
       &:hover {
-        color: #fff;
+        color: var(--white);
       }
     }
     .footer-element {
@@ -101,25 +107,42 @@ export default {
       flex-direction: column;
       margin: 0 auto;
       a {
-        color: #fff;
+        color: var(--white);
+      }
+      @media only screen and (max-width: 1200px) {
+        text-align: center;
       }
     }
+
     .logo,
     .social-media {
       flex-direction: row;
       margin: auto;
     }
-  }
-  @media only screen and (max-width: 1200px) {
-    .footer-grid {
+    .social-media {
+      &--desktop {
+        display: block;
+      }
+      &--tablet {
+        display: none;
+      }
+      &--mobile {
+        display: none;
+      }
+    }
+    @media only screen and (max-width: 1200px) {
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 2rem 0;
+      padding-top: 2rem;
+      padding-bottom: 8rem;
     }
-  }
-  @media only screen and (max-width: 600px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  @media only screen and (max-width: 425px) {
+
+    @media only screen and (max-width: 600px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @media only screen and (max-width: 425px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 }
 </style>

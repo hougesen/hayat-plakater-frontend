@@ -81,7 +81,7 @@ export default {
 
     .slide-title {
       font-size: 1.25rem;
-      color: var(--default-text-color);
+      color: var(--black);
       text-decoration: none;
     }
   }

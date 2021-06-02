@@ -70,7 +70,7 @@ export default {
     .product-title,
     .product-text {
       text-align: left;
-      color: var(--default-text-color);
+      color: var(--black);
       text-decoration: none;
     }
     .product-text {

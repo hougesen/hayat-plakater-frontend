@@ -46,7 +46,7 @@
 
         <template #content>
           <p class="accordion-content">
-            Utrolig flot og farverig kunstplakat med Permild & Rosengreen-logo, af den danske maler, skulptør og
+            Utrolig flot og farverig kunst plakat med Permild & Rosengreen-logo, af den danske maler, skulptør og
             forfatter, Asger Jorn. Plakaten ved navn “Orange samtale” afspejler den smukke, orange farve, der pryder
             plakatens motiv. Udover orange indeholder plakaten også faver som sort og beige. De få farver i mange
             streger, giver plakaten et på samme tid enkelt og ekspressivt udtryk, hvorfor den vil passe ind i de fleste
@@ -87,8 +87,8 @@
 export default {
   data() {
     return {
-      products: [],
       error: null,
+      products: [],
       slides: [],
       test: null,
     };
@@ -120,8 +120,10 @@ export default {
   margin-bottom: 3rem;
   padding: 10rem 0 5rem 0;
   h2 {
-    font-size: 2rem;
     margin-bottom: 1rem;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 2rem;
   }
 }
 .category-banners {
@@ -130,7 +132,9 @@ export default {
 .about-us {
   margin: 3rem 0;
   .accordion-content {
-    font-size: 1.25rem;
+    @media only screen and (min-width: 1200px) {
+      font-size: 1.25rem;
+    }
   }
 }
 </style>

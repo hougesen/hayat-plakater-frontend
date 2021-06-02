@@ -54,8 +54,11 @@ export default {
     .tabs-button {
       background: none;
       border: none;
-      font-size: 2rem;
       margin-right: 1rem;
+      font-size: 1.5rem;
+      @media only screen and (min-width: 600px) {
+        font-size: 2rem;
+      }
     }
     .selected {
       text-decoration: underline;
@@ -63,7 +66,9 @@ export default {
   }
   .tabs-body {
     p {
-      font-size: 1.25rem;
+      @media only screen and (min-width: 600px) {
+        font-size: 1.25rem;
+      }
     }
   }
 }
