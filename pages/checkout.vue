@@ -41,45 +41,45 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="forms">
-      <div class="form">
-        <form @submit.prevent="handleCheckout">
-          <div>
-            <label for="name">Navn</label>
-            <input v-model="name" type="text" placeholder="Navn" name="name" required />
-          </div>
+      <div class="forms">
+        <div class="form">
+          <form @submit.prevent="handleCheckout">
+            <div>
+              <label for="name">Navn</label>
+              <input v-model="name" type="text" placeholder="Navn" name="name" required />
+            </div>
 
-          <div>
-            <label for="email">Email</label>
-            <input v-model="email" type="email" placeholder="Email" name="email" required />
-          </div>
+            <div>
+              <label for="email">Email</label>
+              <input v-model="email" type="email" placeholder="Email" name="email" required />
+            </div>
 
-          <div>
-            <label for="adress">Adresse</label>
-            <input v-model="address" type="text" placeholder="Addresse" name="address" required />
-          </div>
+            <div>
+              <label for="adress">Adresse</label>
+              <input v-model="address" type="text" placeholder="Addresse" name="address" required />
+            </div>
 
-          <div>
-            <label for="city">By</label>
-            <input v-model="city" type="text" placeholder="By" name="city" required />
-          </div>
+            <div>
+              <label for="city">By</label>
+              <input v-model="city" type="text" placeholder="By" name="city" required />
+            </div>
 
-          <div>
-            <label for="postalCode">Postnummer</label>
-            <input
-              v-model="postalCode"
-              type="number"
-              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-              maxlength="4"
-              placeholder="Postnummer"
-              name="postalCode"
-              required
-            />
-          </div>
+            <div>
+              <label for="postalCode">Postnummer</label>
+              <input
+                v-model="postalCode"
+                type="number"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="4"
+                placeholder="Postnummer"
+                name="postalCode"
+                required
+              />
+            </div>
 
-          <AtomsButton class="ctaBtn">Checkout</AtomsButton>
-        </form>
+            <AtomsButton class="ctaBtn">Checkout</AtomsButton>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -165,19 +165,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.checkout-container {
-  display: flex;
-}
-.checkout-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-}
-.GratisFragt {
-  margin: 3rem 0;
-  text-align: center;
-  background-color: #d8d8d8;
-}
-
 .checkout-order-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -192,8 +179,9 @@ export default {
   .order-image {
     grid-column: 1 / 3;
     grid-row: 1/ 4;
-    background-repeat: no-repeat;
+    height: 500px;
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
   }
   .order-info {
@@ -224,16 +212,14 @@ export default {
 }
 .forms {
   display: flex;
-  padding: 0 1rem;
 }
 .form {
-  position: fixed;
+  padding: 2rem 0;
   display: flex;
   justify-content: center;
-  width: 500px;
+  width: 100%;
   background-color: #f0f0f0;
-  margin: 1rem 0;
-  padding: 2rem;
+  border-radius: 10px;
 }
 label {
   font-weight: 900;
@@ -266,5 +252,81 @@ input:focus {
     color: var(--white);
     background-color: var(--black);
   }
+}
+
+@media only screen and (max-width: 1400px) {
+  .checkout-order-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .order-grid {
+    grid-auto-rows: minmax(300px, auto);
+    grid-template-columns: repeat(3, 1fr);
+    .order-image {
+      height: auto;
+      grid-column: 1 / 3;
+      grid-row: 1/ 4;
+    }
+    .order-info {
+      grid-column: 3/ 3;
+      grid-row: 1/ 2;
+    }
+    .order-trash {
+      grid-column: 3/ 3;
+      grid-row: 2/ 3;
+    }
+    .order-add-or-remove {
+      grid-column: 3 / 3;
+      grid-row: 3/ 3;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  // .order-grid {
+  //   grid-auto-rows: minmax(300px, auto);
+  //   grid-template-columns: repeat(3, 1fr);
+  //   .order-image {
+  //     grid-column: 1 / 3;
+  //     grid-row: 1/ 4;
+  //     background-size: auto;
+  //   }
+  //   .order-info {
+  //     grid-column: 3/ 3;
+  //     grid-row: 1/ 2;
+  //     font-size: 1rem;
+  //   }
+  //   .order-trash {
+  //     grid-column: 3/ 3;
+  //     grid-row: 2/ 3;
+  //   }
+  //   .order-add-or-remove {
+  //     grid-column: 3 / 3;
+  //     grid-row: 3/ 3;
+  //   }
+  // }
+  .order-grid {
+    grid-auto-rows: minmax(200px, auto);
+    grid-template-columns: repeat(3, 1fr);
+    .order-image {
+      height: auto;
+      grid-column: 1 / 4;
+      grid-row: 1/ 3;
+    }
+    .order-info {
+      grid-column: 1 / 1;
+      grid-row: 3/ 3;
+    }
+    .order-trash {
+      grid-column: 2/ 2;
+      grid-row: 3/ 3;
+    }
+    .order-add-or-remove {
+      grid-column: 3 / 3;
+      grid-row: 3/ 3;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
 }
 </style>
