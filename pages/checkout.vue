@@ -66,7 +66,7 @@
             />
           </div>
 
-          <button type="submit" class="ctaBtn">Til checkout</AtomsButton>
+          <button type="submit" class="ctaBtn">Til checkout</button>
         </form>
       </div>
     </div>
