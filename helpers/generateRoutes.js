@@ -4,7 +4,7 @@ import axios from 'axios';
 export default async () => {
   const baseUrl = process.env.API_URL || 'http://localhost:1337/';
 
-  const routes = ['/', '/plakater', '/about', '/checkout', '/history'];
+  const routes = ['/', '/plakater', '/about', '/checkout'];
 
   const types = [
     {
