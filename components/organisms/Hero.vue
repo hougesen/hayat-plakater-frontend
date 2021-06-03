@@ -38,7 +38,7 @@ export default {
 
   .text {
     font-size: 2rem;
-    padding: 7rem;
+    padding: 0 7rem;
     grid-column: 1 / 3;
     grid-row: 1/ 1;
     height: 50vh;
@@ -47,15 +47,17 @@ export default {
     h1 {
       margin: 3rem;
       font-size: 6rem;
-
+      @media only screen and (max-width: 1500px) {
+        font-size: 3rem;
+      }
       @media only screen and (max-width: 1200px) {
-        margin: 3rem;
+        margin: 0.5rem;
         font-size: 2rem;
       }
 
       @media only screen and (max-width: 600px) {
-        font-size: 1.75rem;
-        margin: 1rem;
+        margin: 2rem;
+        font-size: 1.5rem;
       }
     }
 
@@ -73,11 +75,14 @@ export default {
 
       @media only screen and (max-width: 1200px) {
         font-size: 1.5rem;
+        margin: 0 1rem;
       }
-
+      @media only screen and (max-width: 800px) {
+        font-size: 0.8rem;
+        margin: 0 0.5rem;
+      }
       @media only screen and (max-width: 600px) {
         font-size: 1rem;
-        padding: 0.5rem 1rem;
         margin: 0 2rem;
       }
     }

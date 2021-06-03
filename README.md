@@ -1,5 +1,7 @@
 # hayat-plakater-frontend
 
+Project has been written using node v14.16.1 (npm v6.14.12).
+
 ## Build Setup
 
 ```bash
