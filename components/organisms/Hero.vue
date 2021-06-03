@@ -1,12 +1,12 @@
 <template>
   <div class="hero">
-    <div class="child">
+    <div class="text">
       <h1>{{ heroTxt }}</h1>
       <nuxt-link v-if="buttonLink" :to="buttonLink">
-        <AtomsButton class="ctaBtn">Se udvalget</AtomsButton>
+        <AtomsButton class="cta-button">Se udvalget</AtomsButton>
       </nuxt-link>
     </div>
-    <div class="child1" :style="`background-image: url(${heroImg})`"></div>
+    <div class="image" :style="`background-image: url(${heroImg})`"></div>
   </div>
 </template>
 <script>
@@ -36,7 +36,7 @@ export default {
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(200px, auto);
 
-  .child {
+  .text {
     font-size: 2rem;
     padding: 7rem;
     grid-column: 1 / 3;
@@ -59,7 +59,7 @@ export default {
       }
     }
 
-    .ctaBtn {
+    .cta-button {
       margin: 0 3rem;
       padding: 1rem 3rem;
       transition: 0.3s;
@@ -87,7 +87,7 @@ export default {
     }
   }
 
-  .child1 {
+  .image {
     grid-column: 3 / 3;
     grid-row: 1/ 1;
     height: 90vh;

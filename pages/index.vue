@@ -10,36 +10,6 @@
       <OrganismsSlider :slides="slides" :slides-each-page="3" />
     </div>
 
-    <!--     <div class="category-banners standard-width">
-      <OrganismsCategory
-        title="Sahara"
-        title-color="#CD9073"
-        link-to="google.com"
-        img-src="https://images.pexels.com/photos/3889891/pexels-photo-3889891.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-        text="Udforsk Saharaen"
-        text-color="#CD9073"
-        info-box-pos="20px"
-      />
-      <OrganismsCategory
-        title="Nature"
-        title-color="#395E4E"
-        link-to="google.com"
-        img-src="https://images.pexels.com/photos/1995730/pexels-photo-1995730.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-        text="Udforsk Saharaen"
-        text-color="#395E4E"
-        info-box-pos="1040px"
-      />
-      <OrganismsCategory
-        title="Sahara"
-        title-color="#A2D2CE"
-        link-to="google.com"
-        img-src="https://images.pexels.com/photos/2335126/pexels-photo-2335126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-        text="Udforsk Saharaen"
-        text-color="#A2D2CE"
-        info-box-pos="20px"
-      />
-    </div> -->
-
     <div class="about-us standard-width">
       <OrganismsAccordion :open="true">
         <template #title>Hvad er HAYAT?</template>

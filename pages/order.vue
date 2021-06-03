@@ -11,7 +11,9 @@
           <div class="icon-fix"></div>
         </div>
       </div>
-      <nuxt-link to="/"><AtomsButton class="ctaBtn">shop videre</AtomsButton></nuxt-link>
+      <nuxt-link to="/">
+        <AtomsButton class="ctaBtn"> Shop videre </AtomsButton>
+      </nuxt-link>
     </div>
   </div>
 </template>

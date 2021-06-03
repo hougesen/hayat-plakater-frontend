@@ -1,8 +1,8 @@
 <template>
   <div class="category">
-    <div class="categoryChild" :style="`background-image: url(${imgSrc})`">
+    <div class="category-child" :style="`background-image: url(${imgSrc})`">
       <a :href="linkTo">
-        <div class="infoBox" :style="`left:${infoBoxPos}`">
+        <div class="info-box" :style="`left:${infoBoxPos}`">
           <h1 :style="`color:${titleColor}`">{{ title }}</h1>
           <p :style="`color:${textColor}`">{{ text }}</p>
         </div>
@@ -53,7 +53,7 @@ export default {
   padding-bottom: 40px;
   height: 350px;
 
-  .categoryChild {
+  .category-child {
     position: relative;
     display: block;
     background-repeat: no-repeat;
@@ -62,7 +62,7 @@ export default {
     height: 100%;
     width: 100%;
 
-    .infoBox {
+    .info-box {
       position: absolute;
       display: flex;
       flex-direction: column;

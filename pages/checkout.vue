@@ -1,22 +1,9 @@
 <template>
   <div class="checkout-container standard-width">
-    <!--       <div
-        v-for="(product, index) of getShoppingCart"
-        :key="index"
-        style="background-color:blue; margin:2rem;"
-        class="product"
-      >
-        <img :src="`${getStrapiMedia(product.image)}`" :alt="product.name" class="product__image" />
-        <p>{{ product.name }} - {{ product.size }}</p>
-
-        <MoleculesInputIncrement @changeAmount="changeAmount(product.productId, ...arguments)">
-          {{ product.amount }}
-        </MoleculesInputIncrement>
-      </div> -->
-
     <div class="checkout-grid">
-      <h1>kassen</h1>
-      <div class="checkout-order-grid">
+      <h1>Indkøbskurv</h1>
+      <h2 v-if="getShoppingCart.length < 1">Din indkøbsvogn er tom.</h2>
+      <div v-else class="checkout-order-grid">
         <div v-for="(product, index) of getShoppingCart" :key="index" class="order-grid">
           <div
             class="order-image"
@@ -41,45 +28,44 @@
           </div>
         </div>
       </div>
-      <div class="forms">
-        <div class="form">
-          <form @submit.prevent="handleCheckout">
-            <div>
-              <label for="name">Navn</label>
-              <input v-model="name" type="text" placeholder="Navn" name="name" required />
-            </div>
 
-            <div>
-              <label for="email">Email</label>
-              <input v-model="email" type="email" placeholder="Email" name="email" required />
-            </div>
+      <div class="form">
+        <form @submit.prevent="handleCheckout">
+          <div>
+            <label for="name">Navn</label>
+            <input v-model="name" type="text" placeholder="Navn" name="name" required />
+          </div>
 
-            <div>
-              <label for="adress">Adresse</label>
-              <input v-model="address" type="text" placeholder="Addresse" name="address" required />
-            </div>
+          <div>
+            <label for="email">Email</label>
+            <input v-model="email" type="email" placeholder="Email" name="email" required />
+          </div>
 
-            <div>
-              <label for="city">By</label>
-              <input v-model="city" type="text" placeholder="By" name="city" required />
-            </div>
+          <div>
+            <label for="adress">Adresse</label>
+            <input v-model="address" type="text" placeholder="Addresse" name="address" required />
+          </div>
 
-            <div>
-              <label for="postalCode">Postnummer</label>
-              <input
-                v-model="postalCode"
-                type="number"
-                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                maxlength="4"
-                placeholder="Postnummer"
-                name="postalCode"
-                required
-              />
-            </div>
+          <div>
+            <label for="city">By</label>
+            <input v-model="city" type="text" placeholder="By" name="city" required />
+          </div>
 
-            <AtomsButton class="ctaBtn">Checkout</AtomsButton>
-          </form>
-        </div>
+          <div>
+            <label for="postalCode">Postnummer</label>
+            <input
+              v-model="postalCode"
+              type="number"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              maxlength="4"
+              placeholder="Postnummer"
+              name="postalCode"
+              required
+            />
+          </div>
+
+          <AtomsButton class="ctaBtn">Checkout</AtomsButton>
+        </form>
       </div>
     </div>
   </div>
@@ -210,10 +196,10 @@ export default {
     cursor: pointer;
   }
 }
-.forms {
-  display: flex;
-}
+
 .form {
+  display: flex;
+
   margin: 2rem 0;
   padding: 2rem 0;
   display: flex;

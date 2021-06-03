@@ -9,7 +9,7 @@
           :alt="`Plakat ${productName} - Hayat Plakater`"
           class="product-image"
         />
-        <div class="btns">
+        <div class="button-container">
           <button @click="goToCheckout">Til kassen</button>
           <button @click="closeModal">Fortsæt shopping</button>
         </div>
@@ -63,7 +63,7 @@ export default {
     height: auto;
   }
 
-  .btns {
+  .button-container {
     display: flex;
     justify-content: center;
     align-content: center;

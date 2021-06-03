@@ -1,6 +1,6 @@
 <template>
   <nav class="top-nav flex-center">
-    <nuxt-link to="/" class="logoSection">
+    <nuxt-link to="/" class="logo-container">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 423.606 112.97" class="logo">
         <g>
           <path
@@ -27,7 +27,7 @@
       <nuxt-link to="/plakater" class="nav-link">Plakater</nuxt-link>
       <nuxt-link to="/about" class="nav-link">Om os</nuxt-link>
     </div>
-    <div class="buttonsGrid flex-center">
+    <div class="button-grid flex-center">
       <div @click.prevent="goToCheckout">
         <i class="fas fa-shopping-cart"></i>
       </div>
@@ -78,7 +78,7 @@ export default {
   grid-template-columns: repeat(3, 1fr);
   text-decoration: none;
 
-  .logoSection {
+  .logo-container {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -101,7 +101,7 @@ export default {
     }
   }
 
-  .buttonsGrid {
+  .button-grid {
     i {
       font-size: 1.5rem;
       color: var(--black);

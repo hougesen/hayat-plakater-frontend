@@ -9,14 +9,14 @@
         class="child1"
         :style="`background-image: url('https://collectionapi.metmuseum.org/api/collection/v1/iiif/452417/1294352/main-image');`"
       ></div>
-      <div class="child bgcg">
+      <div class="child">
         <h2>Hvor det hele startede</h2>
         <p>
           From holy texts to royal decrees, Chaucer to Shakespeare and Greek to Latin, all writing was passed down from
           generation to generation – strange to think about in this technological age!1
         </p>
       </div>
-      <div class="child bgcb">
+      <div class="child">
         <h2>Oprindelse og anvendelse</h2>
         <p>
           From holy texts to royal decrees, Chaucer to Shakespeare and Greek to Latin, all writing was passed down from
@@ -31,14 +31,14 @@
         class="child1"
         :style="`background-image: url('https://www.rosettatype.com/blog/assets/2016-Arabic-calligraphic-styles/acs_easternkufi.jpg');`"
       ></div>
-      <div class="child bgcg">
+      <div class="child">
         <h2>De forskellige stilarter</h2>
         <p>
           From holy texts to royal decrees, Chaucer to Shakespeare and Greek to Latin, all writing was passed down from
           generation to generation – strange to think about in this technological age!3
         </p>
       </div>
-      <div class="child bgcb">
+      <div class="child">
         <h2>Moderne kalligrafi</h2>
         <p>
           From holy texts to royal decrees, Chaucer to Shakespeare and Greek to Latin, all writing was passed down from
@@ -65,12 +65,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bgcg {
-  background-color: #f0f0f0;
-}
-.bgcb {
-  background-color: #fffaf4;
-}
 .history-grid {
   margin: 2rem 0;
   display: grid;

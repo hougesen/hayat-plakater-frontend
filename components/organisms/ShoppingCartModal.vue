@@ -8,12 +8,12 @@
       </div>
       <div v-else class="cart-list">
         <div v-for="(product, index) in getShoppingCart" :key="index" class="cart-product">
-          <div class="cart-product-information">
+          <div>
             <h2>{{ product.name }}</h2>
             <p>{{ product.size }}</p>
           </div>
 
-          <div class="cart-product-amount">
+          <div>
             <p>
               <span>
                 <MoleculesInputIncrement @changeAmount="changeAmount(product.productId, ...arguments)">
@@ -23,7 +23,7 @@
             </p>
           </div>
 
-          <div class="cart-product-price">
+          <div>
             <p>{{ product.price }}kr</p>
           </div>
 
