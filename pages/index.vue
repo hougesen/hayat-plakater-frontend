@@ -1,10 +1,6 @@
 <template>
   <div>
-    <OrganismsHero
-      hero-txt="Giv dine vægge noget liv"
-      hero-img="https://images.pexels.com/photos/4067759/pexels-photo-4067759.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-      button-link="/plakater"
-    />
+    <OrganismsHero hero-txt="Giv dine vægge noget liv" button-link="/plakater" />
     <div class="frontpage-slider standard-width">
       <h2>Populære plakater</h2>
       <OrganismsSlider :slides="slides" :slides-each-page="3" />
@@ -16,13 +12,12 @@
 
         <template #content>
           <p class="accordion-content">
-            Utrolig flot og farverig kunst plakat med Permild & Rosengreen-logo, af den danske maler, skulptør og
-            forfatter, Asger Jorn. Plakaten ved navn “Orange samtale” afspejler den smukke, orange farve, der pryder
-            plakatens motiv. Udover orange indeholder plakaten også faver som sort og beige. De få farver i mange
-            streger, giver plakaten et på samme tid enkelt og ekspressivt udtryk, hvorfor den vil passe ind i de fleste
-            stilarter. Står du og mangler en fin plakat i sommerhuset eller i stuen, men er bange for at din
-            vægdekoration vil stjæle opmærksomhed fra andet interiør? Så frygt ej! Med denne flotte og varme plakat af
-            Asger Jorn, er du garanteret et roligt, men sigende bidrag til dit hjem.
+            Hos Hayat Plakater finder du moderne og stilrene plakat designs i forskellige stilarter! Vores unikke
+            posters er af høj kvalitet og er kendetegnet ved at indeholde arabisk kalligrafi. Vores mål er at bringe liv
+            i hjemmet med flotte plakater, som kan skabe stemning og give et unikt udtryk! Hos os kan du være sikker på
+            at finde en plakat, som du resonerer med. Vi har forskellige kategorier, som indeholder plakat til enhver
+            naturig stemning kan byde på. Vores eget designteam udvikler plakaterne og derfor sælges de kun hos Hayat
+            Plakater.
           </p>
         </template>
       </OrganismsAccordion>
@@ -32,20 +27,10 @@
 
         <template #content>
           <p class="accordion-content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum." Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC "Sed ut
-            perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-            aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
-            dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
-            sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore
-            magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-            suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in
-            ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
-            nulla pariatur?
+            Vores vision er at skabe mere liv til dine vægge, samt inspirerer og supplere med indretningen og designet i
+            hjemmet, uanset om det er soveværelset, gangen, kontoret eller hele hjemmet der kræver et komplet og
+            stilrent udtryk! Vi respekterer diversitet - respeket for at tænke i andre kreative baner, kulturer og
+            facetter af samfundet.
           </p>
         </template>
       </OrganismsAccordion>

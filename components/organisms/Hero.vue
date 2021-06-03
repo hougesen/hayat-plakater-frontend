@@ -6,7 +6,7 @@
         <AtomsButton class="cta-button">Se udvalget</AtomsButton>
       </nuxt-link>
     </div>
-    <div class="image" :style="`background-image: url(${heroImg})`"></div>
+    <div class="image"></div>
   </div>
 </template>
 <script>
@@ -17,10 +17,6 @@ export default {
     buttonLink: {
       type: String,
       default: '',
-    },
-    heroImg: {
-      type: String,
-      required: true,
     },
     heroTxt: {
       type: String,
@@ -98,6 +94,7 @@ export default {
     height: 90vh;
     width: 100%;
     display: block;
+    background-image: url('../../assets/shawka.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

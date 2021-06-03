@@ -13,8 +13,8 @@
           <div class="order-info">
             <h2>Navn: {{ product.name }}</h2>
             <h3>Størrelse: {{ product.size }}</h3>
-            <h3>Pris: {{ product.price }}</h3>
-            <h3>Totalpris: {{ parseInt(product.price) * parseInt(product.amount) }}</h3>
+            <h3>Pris: {{ product.price }}kr</h3>
+            <h3>Totalpris: {{ parseInt(product.price) * parseInt(product.amount) }}kr</h3>
           </div>
           <div class="order-trash">
             <MoleculesInputIncrement @changeAmount="changeAmount(product.productId, product.sizeId, ...arguments)">
@@ -31,6 +31,8 @@
 
       <div class="form">
         <form @submit.prevent="handleCheckout">
+          <h2 style="text-align: center">Pris i alt: {{ getTotalPrice }}kr</h2>
+
           <div>
             <label for="name">Navn</label>
             <input v-model="name" type="text" placeholder="Navn" name="name" required />
@@ -64,7 +66,7 @@
             />
           </div>
 
-          <AtomsButton class="ctaBtn">Checkout</AtomsButton>
+          <AtomsButton class="ctaBtn">Til checkout</AtomsButton>
         </form>
       </div>
     </div>
@@ -99,6 +101,9 @@ export default {
   computed: {
     getShoppingCart() {
       return this.$store.getters.getShoppingCart;
+    },
+    getTotalPrice() {
+      return this.$store.getters.getTotalPrice;
     },
   },
   methods: {
@@ -164,16 +169,21 @@ export default {
   grid-auto-rows: minmax(100px, auto);
   .order-image {
     grid-column: 1 / 3;
-    grid-row: 1/ 4;
+    grid-row: 1 / 4;
     height: 500px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @media only screen and (max-width: 600px) {
+      max-width: 100%;
+      height: auto;
+    }
   }
   .order-info {
     background-color: #f0f0f0;
     grid-column: 3 / 5;
-    grid-row: 1/ 3;
+    grid-row: 1 / 3;
     padding: 1rem;
   }
   .order-trash {
@@ -199,7 +209,6 @@ export default {
 
 .form {
   display: flex;
-
   margin: 2rem 0;
   padding: 2rem 0;
   display: flex;
