@@ -69,9 +69,6 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  background-color: rgba(162, 99, 62, 0.2);
-}
 .frontpage-slider {
   background-color: rgba(162, 99, 62, 0.2);
   margin-top: -5rem;
